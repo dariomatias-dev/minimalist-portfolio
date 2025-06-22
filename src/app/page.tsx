@@ -37,7 +37,7 @@ export default function Home() {
         {/* About Me Section */}
         <section
           id="about"
-          className="mx-auto mb-20 max-w-prose text-lg leading-relaxed text-gray-800"
+          className="mx-auto mb-20 max-w-5xl leading-relaxed text-gray-800"
         >
           <h2 className="mb-6 border-b border-gray-300 pb-2 text-3xl font-semibold">
             Sobre Mim
@@ -60,7 +60,7 @@ export default function Home() {
         {/* Education Section */}
         <section
           id="education"
-          className="mx-auto mb-20 max-w-prose leading-relaxed text-gray-800"
+          className="mx-auto mb-20 max-w-5xl leading-relaxed text-gray-800"
         >
           <h2 className="mb-6 border-b border-gray-300 pb-2 text-3xl font-semibold">
             Educação
@@ -76,7 +76,7 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="mx-auto mb-20 max-w-prose">
+        <section id="experience" className="mx-auto mb-20 max-w-5xl">
           <h2 className="mb-8 border-b border-gray-300 pb-2 text-3xl font-semibold">
             Experiência
           </h2>
@@ -101,7 +101,7 @@ export default function Home() {
         {/* Contact Section */}
         <section
           id="contact"
-          className="mx-auto mb-20 max-w-prose leading-relaxed text-gray-800"
+          className="mx-auto mb-20 max-w-5xl leading-relaxed text-gray-800"
         >
           <h2 className="mb-6 border-b border-gray-300 pb-2 text-3xl font-semibold">
             Contato
