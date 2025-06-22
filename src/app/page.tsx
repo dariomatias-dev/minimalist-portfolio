@@ -1,16 +1,7 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ProjectsSection } from "@/components/ProjectsSection";
-
-const skills = [
-  "Flutter",
-  "React",
-  "Next.js",
-  "TypeScript",
-  "TailwindCSS",
-  "Firebase",
-  "shadcn/ui",
-];
+import { SkillsSection } from "@/components/SkillsSection";
 
 const education = [
   {
@@ -64,22 +55,7 @@ export default function Home() {
 
         <ProjectsSection />
 
-        {/* Skills Section */}
-        <section id="skills" className="mx-auto mb-20 max-w-prose">
-          <h2 className="mb-6 border-b border-gray-300 pb-2 text-3xl font-semibold">
-            Habilidades
-          </h2>
-          <ul className="flex flex-wrap gap-4">
-            {skills.map((skill) => (
-              <li
-                key={skill}
-                className="rounded-full bg-gray-200 px-4 py-2 font-medium text-gray-900 select-none"
-              >
-                {skill}
-              </li>
-            ))}
-          </ul>
-        </section>
+        <SkillsSection />
 
         {/* Education Section */}
         <section
