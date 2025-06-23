@@ -18,17 +18,23 @@ const projects = [
     description: "App educativo para aprender Flutter com exemplos práticos.",
     technologies: ["Flutter", "Dart", "Firebase"],
     image:
-      "https://github.com/dariomatias-dev/flutter_guide_web/blob/main/public/flutter_guide_icon.png",
-    href: "https://github.com/dariomatias-dev/flutter_guide",
+      "https://raw.githubusercontent.com/dariomatias-dev/flutter_guide_web/main/public/flutter_guide_icon.png",
+    links: {
+      playStore: "https://play.google.com/store/apps/details?id=com.example.flutterguide",
+      github: "https://github.com/dariomatias-dev/flutter_guide",
+    },
   },
   {
     title: "Portfolio Next.js",
     description:
-      "Meu portfolio pessoal construído com Next.js, Tailwind e shadcn/ui.",
+      "Meu portfólio pessoal construído com Next.js, Tailwind e shadcn/ui.",
     technologies: ["Next.js", "TypeScript", "TailwindCSS", "shadcn/ui"],
     image:
-      "https://github.com/dariomatias-dev/flutter_guide_web/blob/main/public/flutter_guide_icon.png",
-    href: "https://github.com/dariomatias-dev/portfolio",
+      "https://raw.githubusercontent.com/dariomatias-dev/flutter_guide_web/main/public/flutter_guide_icon.png",
+    links: {
+      site: "https://dariomatias.dev",
+      github: "https://github.com/dariomatias-dev/portfolio",
+    },
   },
 ];
 
@@ -40,14 +46,14 @@ export const ProjectsSection = () => {
       </h2>
 
       <div className="grid gap-10 sm:grid-cols-2">
-        {projects.map(({ title, description, href, technologies, image }) => (
+        {projects.map(({ title, description, technologies, image, links }) => (
           <Card
             key={title}
-            className="flex flex-col rounded-lg border border-gray-200 shadow-sm transition-shadow hover:shadow-lg"
+            className="flex flex-col rounded-lg border border-gray-200 shadow-sm transition-shadow hover:shadow-md"
           >
             <div className="relative mb-4 h-48 w-full overflow-hidden rounded-t-lg border-b border-gray-200 bg-white">
               <img
-                src="https://raw.githubusercontent.com/dariomatias-dev/flutter_guide_web/main/public/flutter_guide_icon.png"
+                src={image}
                 alt={`${title} logo`}
                 className="h-full w-full object-contain p-6"
                 loading="lazy"
@@ -56,6 +62,7 @@ export const ProjectsSection = () => {
 
             <CardContent className="flex flex-grow flex-col">
               <CardTitle className="text-black">{title}</CardTitle>
+
               <p className="mt-2 flex-grow text-gray-700">{description}</p>
 
               <div className="mt-5">
@@ -89,6 +96,7 @@ export const ProjectsSection = () => {
                               height={16}
                               className="h-4 w-4"
                             />
+
                             <span>{info.description}</span>
                           </div>
                         </TooltipContent>
@@ -97,14 +105,52 @@ export const ProjectsSection = () => {
                   })}
                 </div>
 
-                <Link href={href} target="_blank" rel="noopener noreferrer">
-                  <Button
-                    variant="link"
-                    className="mt-4 p-0 text-gray-600 underline hover:text-gray-900"
-                  >
-                    Ver no GitHub
-                  </Button>
-                </Link>
+                <div className="mt-4 flex flex-wrap gap-4">
+                  {links.site && (
+                    <Link
+                      href={links.site}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        variant="link"
+                        className="p-0 text-gray-600 underline hover:text-gray-900"
+                      >
+                        Ver site
+                      </Button>
+                    </Link>
+                  )}
+
+                  {links.playStore && (
+                    <Link
+                      href={links.playStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        variant="link"
+                        className="p-0 text-gray-600 underline hover:text-gray-900"
+                      >
+                        Ver na Play Store
+                      </Button>
+                    </Link>
+                  )}
+
+                  {links.github && (
+                    <Link
+                      href={links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        variant="link"
+                        className="p-0 text-gray-600 underline hover:text-gray-900"
+                      >
+                        Ver no GitHub
+                      </Button>
+                    </Link>
+                  )}
+                </div>
               </div>
             </CardContent>
           </Card>
