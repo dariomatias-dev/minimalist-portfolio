@@ -2,6 +2,7 @@ import { AboutMeSection } from "@/components/AboutMeSection";
 import { ContactSection } from "@/components/ContactSection";
 import { EducationSection } from "@/components/EducationSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
+import { ServicesSection } from "@/components/ServicesSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
@@ -19,6 +20,8 @@ export default function Home() {
         <div className="mt-16" />
 
         <AboutMeSection />
+
+        <ServicesSection />
 
         <ProjectsSection />
 
