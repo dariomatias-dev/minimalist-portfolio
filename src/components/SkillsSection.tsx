@@ -7,18 +7,9 @@ import Link from "next/link";
 import { technologyDetails } from "@/lib/technologyDetails";
 import { Button } from "@/components/ui/button";
 
-const skills = [
-  "Flutter",
-  "React",
-  "Next.js",
-  "TypeScript",
-  "TailwindCSS",
-  "Firebase",
-  "shadcn/ui",
-];
-
 export const SkillsSection = () => {
-  const [activeTech, setActiveTech] = useState<string>(skills[0]);
+  const techKeys = Object.keys(technologyDetails);
+  const [activeTech, setActiveTech] = useState<string>(techKeys[0]);
 
   const info = technologyDetails[activeTech];
 
@@ -43,24 +34,18 @@ export const SkillsSection = () => {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            {skills.map((skill) => {
-              const tech = technologyDetails[skill];
-              if (!tech) return null;
-
-              return (
-                <button
-                  key={skill}
-                  onMouseEnter={() => setActiveTech(skill)}
-                  className={`rounded-md border px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-                    activeTech === skill
-                      ? "border-gray-600 text-black"
-                      : "border-gray-300 text-gray-700 hover:border-gray-500 hover:text-black"
+            {Object.entries(technologyDetails).map(([key, tech]) => (
+              <button
+                key={key}
+                onMouseEnter={() => setActiveTech(key)}
+                className={`rounded-md border px-4 py-2 text-sm font-medium transition-colors duration-200 ${activeTech === key
+                    ? "border-gray-600 text-black"
+                    : "border-gray-300 text-gray-700 hover:border-gray-500 hover:text-black"
                   }`}
-                >
-                  {tech.label}
-                </button>
-              );
-            })}
+              >
+                {tech.label}
+              </button>
+            ))}
           </div>
         </div>
 
