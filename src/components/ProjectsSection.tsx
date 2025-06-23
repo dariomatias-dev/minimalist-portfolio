@@ -97,7 +97,7 @@ export const ProjectsSection = () => {
                               className="h-4 w-4"
                             />
 
-                            <span>{info.description}</span>
+                            <span>{info.shortDescription}</span>
                           </div>
                         </TooltipContent>
                       </Tooltip>

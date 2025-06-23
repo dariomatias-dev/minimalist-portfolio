@@ -80,7 +80,7 @@ export const SkillsSection = () => {
           </div>
 
           <p className="text-sm leading-relaxed text-gray-700">
-            {info.description}
+            {info.fullDescription}
           </p>
 
           <Link href={info.url} target="_blank" rel="noopener noreferrer">
