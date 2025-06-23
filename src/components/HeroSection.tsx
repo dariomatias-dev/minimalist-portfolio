@@ -1,9 +1,21 @@
+"use client";
+
 import Link from "next/link";
-import { Download } from "lucide-react";
+import { Download, ChevronDown } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
 
 export const HeroSection = () => {
+  const scrollToAbout = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative mx-auto flex min-h-[90vh] max-w-3xl flex-col items-center justify-center px-6 text-center">
       <p className="mb-4 text-lg font-semibold text-gray-700">
@@ -21,16 +33,45 @@ export const HeroSection = () => {
         projetos diversos.
       </p>
 
-      <Link href="/curriculo.pdf" target="_blank" download>
-        <Button
-          variant="outline"
-          className="inline-flex min-w-[200px] items-center justify-center gap-2 rounded-full border py-7 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:ring-3 focus:ring-gray-300"
-          aria-label="Baixar currículo em PDF"
+      <div className="flex flex-wrap justify-center gap-4">
+        <Link
+          href="https://wa.me/5583986404371"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Baixar Currículo
-          <Download className="h-6 w-6" />
-        </Button>
-      </Link>
+          <Button
+            variant="default"
+            className="inline-flex min-w-[200px] items-center justify-center gap-2 rounded-full bg-black py-6 text-sm font-semibold text-white hover:bg-gray-900 focus:ring-2 focus:ring-gray-600"
+            aria-label="Contato via WhatsApp"
+          >
+            Fale comigo
+            <FaWhatsapp className="h-5 w-5" />
+          </Button>
+        </Link>
+
+        <Link href="/curriculo.pdf" target="_blank" download>
+          <Button
+            variant="outline"
+            className="inline-flex min-w-[200px] items-center justify-center gap-2 rounded-full border py-6 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:ring-2 focus:ring-gray-300"
+            aria-label="Baixar currículo em PDF"
+          >
+            Baixar Currículo
+            <Download className="h-5 w-5" />
+          </Button>
+        </Link>
+      </div>
+
+      <div className="absolute bottom-10 left-0 right-0 flex justify-center">
+        <a
+          href="#about"
+          aria-label="Scroll para a próxima seção"
+          className="animate-bounce text-gray-400 hover:text-gray-600 transition-colors"
+          style={{ animationDuration: "1500ms" }}
+          onClick={scrollToAbout}
+        >
+          <ChevronDown className="h-8 w-8" />
+        </a>
+      </div>
     </section>
   );
 };
