@@ -16,7 +16,7 @@ const projects = [
   {
     title: "Flutter Guide",
     description: "App educativo para aprender Flutter com exemplos práticos.",
-    technologies: ["Flutter", "Dart", "Firebase"],
+    technologies: ["Dart", "Flutter"],
     image:
       "https://raw.githubusercontent.com/dariomatias-dev/flutter_guide_web/main/public/flutter_guide_icon.png",
     links: {
@@ -29,7 +29,7 @@ const projects = [
     title: "Portfolio Next.js",
     description:
       "Meu portfólio pessoal construído com Next.js, Tailwind e shadcn/ui.",
-    technologies: ["Next.js", "TypeScript", "TailwindCSS", "shadcn/ui"],
+    technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
     image:
       "https://raw.githubusercontent.com/dariomatias-dev/flutter_guide_web/main/public/flutter_guide_icon.png",
     links: {
@@ -79,9 +79,11 @@ export const ProjectsSection = () => {
                             href={info.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded bg-gray-100 px-2 py-0.5 transition hover:underline"
+                            className="rounded bg-gray-100 px-2 py-0.5 text-gray-700"
                           >
-                            {info.label}
+                            <span className="relative inline-block before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-0 before:bg-gray-500 before:transition-all before:duration-300 hover:before:w-full">
+                              {info.label}
+                            </span>
                           </a>
                         </TooltipTrigger>
 
@@ -97,7 +99,6 @@ export const ProjectsSection = () => {
                               height={16}
                               className="h-4 w-4"
                             />
-
                             <span>{info.shortDescription}</span>
                           </div>
                         </TooltipContent>
