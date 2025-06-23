@@ -17,7 +17,7 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative mx-auto flex min-h-[90vh] max-w-3xl flex-col items-center justify-center px-6 text-center">
+    <section className="relative mx-auto flex min-h-[90vh] max-w-3xl scroll-mt-24 flex-col items-center justify-center px-6 text-center">
       <p className="mb-4 text-lg font-semibold text-gray-700">
         Olá! Eu sou Dário Matias
       </p>
@@ -61,11 +61,11 @@ export const HeroSection = () => {
         </Link>
       </div>
 
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center">
+      <div className="absolute right-0 bottom-10 left-0 flex justify-center">
         <a
           href="#about"
           aria-label="Scroll para a próxima seção"
-          className="animate-bounce text-gray-400 hover:text-gray-600 transition-colors"
+          className="animate-bounce text-gray-400 transition-colors hover:text-gray-600"
           style={{ animationDuration: "1500ms" }}
           onClick={scrollToAbout}
         >

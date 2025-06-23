@@ -17,7 +17,7 @@ const experience = [
 
 export const ExperienceSection = () => {
   return (
-    <section id="experience" className="mx-auto mb-20 max-w-5xl">
+    <section id="experience" className="mx-auto mb-20 max-w-5xl scroll-mt-24">
       <h2 className="mb-8 border-b border-gray-300 pb-2 text-3xl font-semibold">
         Experiência
       </h2>

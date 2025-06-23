@@ -2,11 +2,11 @@ export const AboutMeSection = () => {
   return (
     <section
       id="about"
-      className="mx-auto mb-20 max-w-5xl leading-relaxed text-gray-800"
+      className="mx-auto mb-20 max-w-5xl scroll-mt-24 leading-relaxed text-gray-800"
     >
-      <div className="mb-8">
-        <h2 className="text-3xl font-semibold">Sobre Mim</h2>
-      </div>
+      <h2 className="mb-8 border-b border-gray-300 pb-2 text-3xl font-semibold">
+        Sobre Mim
+      </h2>
 
       <div className="space-y-5 text-lg text-gray-800">
         <p>

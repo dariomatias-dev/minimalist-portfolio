@@ -23,7 +23,7 @@ export const SkillsSection = () => {
   const info = technologyDetails[activeTech];
 
   return (
-    <section id="skills" className="mx-auto mb-24 max-w-5xl">
+    <section id="skills" className="mx-auto mb-24 max-w-5xl scroll-mt-24">
       <div className="mb-8">
         <h2 className="text-3xl font-semibold">Habilidades</h2>
 

@@ -20,7 +20,8 @@ const projects = [
     image:
       "https://raw.githubusercontent.com/dariomatias-dev/flutter_guide_web/main/public/flutter_guide_icon.png",
     links: {
-      playStore: "https://play.google.com/store/apps/details?id=com.example.flutterguide",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.example.flutterguide",
       github: "https://github.com/dariomatias-dev/flutter_guide",
     },
   },
@@ -40,7 +41,7 @@ const projects = [
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="mx-auto mb-20 max-w-5xl">
+    <section id="projects" className="mx-auto mb-20 max-w-5xl scroll-mt-24">
       <h2 className="mb-10 border-b border-gray-300 pb-2 text-3xl font-semibold">
         Projetos
       </h2>
