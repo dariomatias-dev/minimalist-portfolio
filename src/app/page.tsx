@@ -1,15 +1,8 @@
+import { EducationSection } from "@/components/EducationSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { SkillsSection } from "@/components/SkillsSection";
-
-const education = [
-  {
-    institution: "Universidade Exemplo",
-    degree: "Bacharel em Ciência da Computação",
-    period: "2015 - 2019",
-  },
-];
 
 const experience = [
   {
@@ -42,6 +35,7 @@ export default function Home() {
           <h2 className="mb-6 border-b border-gray-300 pb-2 text-3xl font-semibold">
             Sobre Mim
           </h2>
+
           <p>
             Sou um desenvolvedor Full Stack com ampla experiência no
             desenvolvimento de sites, servidores e aplicativos móveis. Tenho
@@ -57,29 +51,14 @@ export default function Home() {
 
         <SkillsSection />
 
-        {/* Education Section */}
-        <section
-          id="education"
-          className="mx-auto mb-20 max-w-5xl leading-relaxed text-gray-800"
-        >
-          <h2 className="mb-6 border-b border-gray-300 pb-2 text-3xl font-semibold">
-            Educação
-          </h2>
-          {education.map(({ institution, degree, period }) => (
-            <article key={institution} className="mb-6">
-              <h3 className="text-xl font-semibold text-black">{degree}</h3>
-              <p className="text-gray-700 italic">
-                {institution} — {period}
-              </p>
-            </article>
-          ))}
-        </section>
+        <EducationSection />
 
         {/* Experience Section */}
         <section id="experience" className="mx-auto mb-20 max-w-5xl">
           <h2 className="mb-8 border-b border-gray-300 pb-2 text-3xl font-semibold">
             Experiência
           </h2>
+
           <div className="flex flex-col gap-10">
             {experience.map(({ role, company, period, description }) => (
               <article
@@ -87,9 +66,11 @@ export default function Home() {
                 className="border-l-4 border-gray-700 pl-5"
               >
                 <h3 className="text-xl font-semibold text-black">{role}</h3>
+
                 <p className="font-medium text-gray-700 italic">
                   {company} — {period}
                 </p>
+
                 <p className="mt-3 leading-relaxed text-gray-800">
                   {description}
                 </p>
