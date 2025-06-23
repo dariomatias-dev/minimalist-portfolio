@@ -93,7 +93,7 @@ export const ProjectsSection = () => {
                         >
                           <div className="flex items-center gap-2">
                             <Image
-                              src={`/icons/${info.iconName}.png`}
+                              src={`/icons/${info.iconNameDark ?? info.iconName}.png`}
                               alt={info.label}
                               width={16}
                               height={16}

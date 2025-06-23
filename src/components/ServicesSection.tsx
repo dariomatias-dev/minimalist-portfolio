@@ -23,7 +23,8 @@ export const ServicesSection = () => {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-gray-700">
-              Desenvolvimento de websites responsivos, modernos e otimizados para SEO.
+              Desenvolvimento de websites responsivos, modernos e otimizados
+              para SEO.
             </p>
           </CardContent>
         </Card>
@@ -37,7 +38,8 @@ export const ServicesSection = () => {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-gray-700">
-              Desenvolvimento de apps nativos e multiplataforma com ótima experiência do usuário.
+              Desenvolvimento de apps nativos e multiplataforma com ótima
+              experiência do usuário.
             </p>
           </CardContent>
         </Card>
@@ -51,7 +53,8 @@ export const ServicesSection = () => {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-gray-700">
-              APIs e sistemas backend seguros, robustos e escaláveis com boas práticas.
+              APIs e sistemas backend seguros, robustos e escaláveis com boas
+              práticas.
             </p>
           </CardContent>
         </Card>

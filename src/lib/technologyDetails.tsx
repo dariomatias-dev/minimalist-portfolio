@@ -1,6 +1,7 @@
 export type Technology = {
   label: string;
   iconName: string;
+  iconNameDark?: string;
   url: string;
   shortDescription: string;
   fullDescription: string;
@@ -28,6 +29,7 @@ export const technologyDetails: Record<string, Technology> = {
   "Next.js": {
     label: "Next.js",
     iconName: "nextjs_icon",
+    iconNameDark: "nextjs_dark_icon",
     url: "https://nextjs.org",
     shortDescription:
       "Framework React com renderização híbrida, ótimo para SEO e performance.",
