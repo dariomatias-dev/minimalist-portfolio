@@ -25,10 +25,11 @@ export const SkillsSection = () => {
       </div>
 
       <div className="grid items-start gap-12 md:grid-cols-2">
-        <div className="h-44">
+        <div className="h-60">
           <div className="mb-4 text-sm font-medium text-gray-800">
             Tecnologias:
           </div>
+
           <div className="flex flex-wrap gap-3">
             {Object.entries(technologyDetails).map(([key, tech]) => (
               <button

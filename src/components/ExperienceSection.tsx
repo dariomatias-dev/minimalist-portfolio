@@ -31,15 +31,8 @@ export const ExperienceSection = () => {
     return [yearsText, monthsText].filter(Boolean).join(" ");
   };
 
-  const {
-    role,
-    company,
-    startDate,
-    endDate,
-    description,
-    location,
-    type,
-  } = experience[0];
+  const { role, company, startDate, endDate, description, location, type } =
+    experience[0];
 
   const periodStart = new Date(startDate).toLocaleString("pt-BR", {
     month: "short",
@@ -47,9 +40,9 @@ export const ExperienceSection = () => {
   });
   const periodEnd = endDate
     ? new Date(endDate).toLocaleString("pt-BR", {
-      month: "short",
-      year: "numeric",
-    })
+        month: "short",
+        year: "numeric",
+      })
     : "o momento";
 
   const duration = calculateDuration(startDate, endDate);
@@ -64,22 +57,22 @@ export const ExperienceSection = () => {
         Experiência
       </h2>
 
-      <article className="rounded-lg border border-gray-200 bg-white p-8 shadow-md transition-shadow hover:shadow-lg">
-        <h3 className="text-2xl font-semibold text-gray-900 mb-2">{role}</h3>
+      <article className="cursor-pointer rounded-lg border border-gray-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
+        <h3 className="mb-2 text-2xl font-semibold text-gray-900">{role}</h3>
 
-        <p className="text-lg font-medium text-gray-700 italic mb-1">
+        <p className="mb-1 text-lg font-medium text-gray-700 italic">
           {company} {type && <span className="font-normal">· {type}</span>}
         </p>
 
-        <p className="text-sm text-gray-500 mb-1">
+        <p className="mb-1 text-sm text-gray-500">
           {periodStart} - {periodEnd} · {duration}
         </p>
 
         {location && (
-          <p className="text-sm text-gray-400 italic mb-4">{location}</p>
+          <p className="mb-4 text-sm text-gray-400 italic">{location}</p>
         )}
 
-        <p className="text-gray-800 leading-relaxed">{description}</p>
+        <p className="leading-relaxed text-gray-800">{description}</p>
       </article>
     </section>
   );

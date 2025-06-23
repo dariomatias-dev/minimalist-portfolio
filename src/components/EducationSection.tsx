@@ -22,7 +22,7 @@ export const EducationSection = () => {
         {education.map(({ institution, campus, degree, period, status }) => (
           <article
             key={institution + degree}
-            className="rounded-md border border-gray-200 bg-white p-5 shadow-sm"
+            className="cursor-pointer rounded-md border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
           >
             <h3 className="text-lg font-semibold text-gray-900">{degree}</h3>
 

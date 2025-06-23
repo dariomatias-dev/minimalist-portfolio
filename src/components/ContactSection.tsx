@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Linkedin, Instagram } from "lucide-react";
+import { FiMail, FiLinkedin, FiInstagram } from "react-icons/fi";
 
 export const ContactSection = () => {
   return (
@@ -26,12 +26,10 @@ export const ContactSection = () => {
         {/* Email */}
         <Link
           href="mailto:matiasdario75@gmail.com"
-          className="flex items-center gap-3 text-gray-800 transition-colors hover:text-black"
+          className="flex items-center gap-3 text-gray-600 underline transition-colors hover:text-gray-900"
         >
-          <Mail className="h-5 w-5 text-gray-600" />
-          <span className="text-sm underline underline-offset-4 sm:text-base">
-            matiasdario75@gmail.com
-          </span>
+          <FiMail className="h-5 w-5" />
+          <span className="text-sm sm:text-base">matiasdario75@gmail.com</span>
         </Link>
 
         {/* LinkedIn */}
@@ -39,10 +37,10 @@ export const ContactSection = () => {
           href="https://www.linkedin.com/in/dariomatias-dev/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 text-gray-800 transition-colors hover:text-black"
+          className="flex items-center gap-3 text-gray-600 underline transition-colors hover:text-gray-900"
         >
-          <Linkedin className="h-5 w-5 text-gray-600" />
-          <span className="text-sm underline underline-offset-4 sm:text-base">
+          <FiLinkedin className="h-5 w-5" />
+          <span className="text-sm sm:text-base">
             linkedin.com/in/dariomatias
           </span>
         </Link>
@@ -52,12 +50,10 @@ export const ContactSection = () => {
           href="https://www.instagram.com/dariomatias_dev/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 text-gray-800 transition-colors hover:text-black"
+          className="flex items-center gap-3 text-gray-600 underline transition-colors hover:text-gray-900"
         >
-          <Instagram className="h-5 w-5 text-gray-600" />
-          <span className="text-sm underline underline-offset-4 sm:text-base">
-            @dariomatias_dev
-          </span>
+          <FiInstagram className="h-5 w-5" />
+          <span className="text-sm sm:text-base">@dariomatias_dev</span>
         </Link>
       </div>
     </section>

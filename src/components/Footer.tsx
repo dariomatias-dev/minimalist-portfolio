@@ -18,7 +18,7 @@ export const Footer = () => {
             href="https://github.com/dariomatias-dev"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline hover:text-gray-900"
+            className="underline transition-colors hover:text-gray-900"
           >
             Dário Matias
           </Link>
