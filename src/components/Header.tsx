@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback } from "react";
 
 export const Header = () => {
@@ -27,12 +26,13 @@ export const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-gray-300 bg-white/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
       <div className="mx-auto max-w-5xl px-6">
         <nav className="flex h-16 items-center justify-between text-sm font-semibold text-gray-800">
-          <Link
-            href="/"
-            className="text-xl font-bold tracking-tight hover:text-black"
+          <a
+            href="#hero"
+            onClick={(e) => handleScroll(e, "hero")}
+            className="text-xl font-bold tracking-tight transition-colors duration-300 hover:text-black cursor-pointer"
           >
             Dário Matias
-          </Link>
+          </a>
 
           <ul className="flex space-x-8">
             {navItems.map(({ label, href, id }) => (
@@ -40,9 +40,10 @@ export const Header = () => {
                 <a
                   href={href}
                   onClick={(e) => handleScroll(e, id)}
-                  className="cursor-pointer transition-colors hover:text-black"
+                  className="group relative cursor-pointer text-gray-700 transition-colors duration-300 hover:text-black"
                 >
                   {label}
+                  <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full" />
                 </a>
               </li>
             ))}
