@@ -9,6 +9,7 @@ import * as yup from "yup";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { showToast, ToastType } from "@/lib/toastNotification";
 import { SocialLinks } from "./SocialLinks";
 
 const schema = yup.object({
@@ -50,12 +51,19 @@ export const ContactSection = () => {
           message: data.message,
           email: data.email,
         },
-        publicKey
+        publicKey,
       );
 
       reset();
+
+      showToast({
+        type: ToastType.Success,
+        message: "Email enviado com sucesso",
+      });
     } catch (error) {
       console.error("Erro ao enviar email:", error);
+
+      showToast({ type: ToastType.Error, message: "Erro ao enviar email" });
     } finally {
       setIsSending(false);
     }
@@ -79,7 +87,6 @@ export const ContactSection = () => {
         Envie uma mensagem diretamente ou entre em contato pelas redes sociais.
       </p>
 
-      {/* Contact Form */}
       <form
         className="mb-12 grid gap-5"
         onSubmit={handleSubmit(onSubmit)}
