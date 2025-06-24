@@ -1,8 +1,8 @@
 import { Project } from "@/@types/Project";
-import { technologyDetails } from "@/lib/technologyDetails";
 import Image from "next/image";
 import Link from "next/link";
 
+import { technologyDetails } from "@/lib/technologyDetails";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardTitle } from "../ui/card";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
@@ -77,45 +77,24 @@ export const ProjectCard = ({
           </div>
 
           <div className="mt-4 flex flex-wrap gap-4">
-            {links.site && (
-              <Link href={links.site} target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="link"
-                  className="p-0 text-gray-600 underline hover:text-gray-900"
-                >
-                  Ver site
-                </Button>
-              </Link>
-            )}
-
-            {links.playStore && (
-              <Link
-                href={links.playStore}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  variant="link"
-                  className="p-0 text-gray-600 underline hover:text-gray-900"
-                >
-                  Ver na Play Store
-                </Button>
-              </Link>
-            )}
-
-            {links.github && (
-              <Link
-                href={links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  variant="link"
-                  className="p-0 text-gray-600 underline hover:text-gray-900"
-                >
-                  Ver no GitHub
-                </Button>
-              </Link>
+            {links.length > 0 && (
+              <div className="mt-4 flex flex-wrap gap-4">
+                {links.map((link) => (
+                  <Link
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button
+                      variant="link"
+                      className="p-0 text-gray-600 underline hover:text-gray-900"
+                    >
+                      {link.label}
+                    </Button>
+                  </Link>
+                ))}
+              </div>
             )}
           </div>
         </div>
