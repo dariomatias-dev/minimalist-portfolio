@@ -9,7 +9,7 @@ export const projects: Project[] = [
     image: "image_placeholder.png",
     links: [
       {
-        label: "Ver Repositório",
+        type: "site",
         url: "https://github.com/dariomatias-dev/portfolio",
       },
     ],
@@ -22,11 +22,11 @@ export const projects: Project[] = [
     image: "image_placeholder.png",
     links: [
       {
-        label: "Ver na Play Store",
+        type: "playStore",
         url: "https://play.google.com/store/apps/details?id=com.dariomatias.flutter_guide",
       },
       {
-        label: "Ver Repositório",
+        type: "github",
         url: "https://github.com/dariomatias-dev/flutter_guide_app",
       },
     ],
@@ -39,11 +39,11 @@ export const projects: Project[] = [
     image: "image_placeholder.png",
     links: [
       {
-        label: "Ver Site",
+        type: "site",
         url: "https://flutter-guide-web.vercel.app/",
       },
       {
-        label: "Ver Repositório",
+        type: "github",
         url: "https://github.com/dariomatias-dev/flutter_guide_web",
       },
     ],
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     image: "image_placeholder.png",
     links: [
       {
-        label: "Ver na Play Store",
+        type: "playStore",
         url: "https://play.google.com/store/apps/details?id=com.dariomatias.fit_app",
       },
     ],
@@ -67,11 +67,11 @@ export const projects: Project[] = [
     image: "image_placeholder.png",
     links: [
       {
-        label: "Ver no pub.dev",
+        type: "pubDev",
         url: "https://pub.dev/packages/scroll_infinity",
       },
       {
-        label: "Ver Repositório",
+        type: "github",
         url: "https://github.com/dariomatias-dev/scroll_infinity",
       },
     ],
@@ -84,11 +84,11 @@ export const projects: Project[] = [
     image: "image_placeholder.png",
     links: [
       {
-        label: "Ver na pkg.go.dev",
+        type: "goDev",
         url: "https://pkg.go.dev/github.com/dariomatias-dev/go-validators",
       },
       {
-        label: "Ver Repositório",
+        type: "github",
         url: "https://github.com/dariomatias-dev/go-validators",
       },
     ],

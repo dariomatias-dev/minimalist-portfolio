@@ -1,5 +1,12 @@
+export type ProjectLinkType =
+  | "github"
+  | "site"
+  | "playStore"
+  | "pubDev"
+  | "goDev";
+
 export interface ProjectLink {
-  label: string;
+  type: ProjectLinkType;
   url: string;
 }
 

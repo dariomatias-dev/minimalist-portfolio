@@ -1,7 +1,8 @@
-import { Project } from "@/@types/Project";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Project } from "@/@types/Project";
+import { linkDetails } from "@/lib/linkDetails";
 import { technologyDetails } from "@/lib/technologyDetails";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardTitle } from "../ui/card";
@@ -78,23 +79,35 @@ export const ProjectCard = ({
 
           <div className="mt-4 flex flex-wrap gap-4">
             {links.length > 0 && (
-              <div className="mt-4 flex flex-wrap gap-4">
-                {links.map((link) => (
-                  <Link
-                    key={link.url}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      variant="link"
-                      className="p-0 text-gray-600 underline hover:text-gray-900"
-                    >
-                      {link.label}
-                    </Button>
-                  </Link>
-                ))}
-              </div>
+              <>
+                {links.map(({ type, url }) => {
+                  const detail = linkDetails[type];
+                  if (!detail) return null;
+
+                  return (
+                    <Tooltip key={url} delayDuration={100}>
+                      <TooltipTrigger asChild>
+                        <Link href={url} target="_blank" rel="noopener noreferrer">
+                          <Button
+                            variant="link"
+                            className="p-0 text-gray-600 underline hover:text-gray-900 cursor-pointer"
+                            aria-label={detail.tooltip}
+                          >
+                            {detail.label}
+                          </Button>
+                        </Link>
+                      </TooltipTrigger>
+
+                      <TooltipContent
+                        className="z-50 max-w-xs rounded-md bg-black px-3 py-2 text-xs text-white shadow-md"
+                        sideOffset={8}
+                      >
+                        {detail.tooltip}
+                      </TooltipContent>
+                    </Tooltip>
+                  );
+                })}
+              </>
             )}
           </div>
         </div>
