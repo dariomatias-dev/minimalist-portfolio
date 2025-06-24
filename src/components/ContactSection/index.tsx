@@ -1,11 +1,60 @@
 "use client";
 
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { SocialLinks } from "./SocialLinks";
 
 export const ContactSection = () => {
+  const [isSending, setIsSending] = useState(false);
+  const [form, setForm] = useState({
+    subject: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    setIsSending(true);
+
+    const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID as string;
+    const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID as string;
+    const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY as string;
+
+    try {
+      await emailjs.send(
+        serviceID,
+        templateID,
+        {
+          subject: form.subject,
+          message: form.message,
+          email: form.email,
+        },
+        publicKey,
+      );
+
+      setForm({
+        subject: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Erro ao enviar email:", error);
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -25,19 +74,36 @@ export const ContactSection = () => {
       </p>
 
       {/* Contact Form */}
-      <form className="mb-12 grid gap-5" noValidate>
+      <form className="mb-12 grid gap-5" onSubmit={handleSubmit} noValidate>
         <div className="grid gap-4 sm:grid-cols-2">
-          <Input placeholder="Seu nome" />
-          <Input placeholder="Seu e-mail" type="email" />
+          <Input
+            name="subject"
+            placeholder="Assunto"
+            value={form.subject}
+            onChange={handleChange}
+            required
+          />
+          <Input
+            name="email"
+            type="email"
+            placeholder="Seu e-mail"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
         </div>
+
         <Textarea
+          name="message"
           placeholder="Sua mensagem"
           rows={4}
-          className="min-h-[160px]"
+          value={form.message}
+          onChange={handleChange}
+          required
         />
 
-        <Button type="submit" className="w-fit">
-          Enviar mensagem
+        <Button type="submit" className="w-fit" disabled={isSending}>
+          {isSending ? "Enviando..." : "Enviar mensagem"}
         </Button>
       </form>
 
