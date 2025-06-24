@@ -1,38 +1,46 @@
 "use client";
 
 import emailjs from "@emailjs/browser";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
+import * as z from "zod";
 
 import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { showToast, ToastType } from "@/lib/toastNotification";
 import { SocialLinks } from "./SocialLinks";
 
-const schema = yup.object({
-  subject: yup.string().required("Campo obrigatório"),
-  email: yup
+const schema = z.object({
+  subject: z.string().min(1, "Campo obrigatório"),
+  email: z
     .string()
-    .required("Campo obrigatório")
+    .min(1, "Campo obrigatório")
     .email("Formato de e-mail inválido"),
-  message: yup.string().required("Campo obrigatório"),
+  message: z.string().min(1, "Campo obrigatório"),
 });
 
-type FormData = yup.InferType<typeof schema>;
+type FormData = z.infer<typeof schema>;
 
 export const ContactSection = () => {
   const [isSending, setIsSending] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormData>({
-    resolver: yupResolver(schema),
+  const form = useForm<FormData>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      subject: "",
+      email: "",
+      message: "",
+    },
   });
 
   const onSubmit = async (data: FormData) => {
@@ -54,7 +62,7 @@ export const ContactSection = () => {
         publicKey,
       );
 
-      reset();
+      form.reset();
 
       showToast({
         type: ToastType.Success,
@@ -87,58 +95,75 @@ export const ContactSection = () => {
         Envie uma mensagem diretamente ou entre em contato pelas redes sociais.
       </p>
 
-      <form
-        className="mb-12 grid gap-5"
-        onSubmit={handleSubmit(onSubmit)}
-        noValidate
-      >
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <Input
-              placeholder="Assunto"
-              {...register("subject")}
-              className="focus-visible:ring-0"
+      <Form {...form}>
+        <form
+          className="mb-12 grid gap-5"
+          onSubmit={form.handleSubmit(onSubmit)}
+          noValidate
+        >
+          <div className="grid items-start gap-4 sm:grid-cols-2">
+            <FormField
+              control={form.control}
+              name="subject"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Assunto</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Assunto"
+                      {...field}
+                      className="focus-visible:ring-0"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-            {errors.subject && (
-              <p className="mt-1 text-sm text-red-500">
-                {errors.subject.message}
-              </p>
-            )}
+
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Seu e-mail</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder="Seu e-mail"
+                      {...field}
+                      className="focus-visible:ring-0"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
           </div>
 
-          <div>
-            <Input
-              type="email"
-              placeholder="Seu e-mail"
-              {...register("email")}
-              className="focus-visible:ring-0"
-            />
-            {errors.email && (
-              <p className="mt-1 text-sm text-red-500">
-                {errors.email.message}
-              </p>
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Sua mensagem</FormLabel>
+                <FormControl>
+                  <Textarea
+                    rows={6}
+                    placeholder="Sua mensagem"
+                    {...field}
+                    className="focus-visible:ring-0"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
             )}
-          </div>
-        </div>
-
-        <div>
-          <Textarea
-            placeholder="Sua mensagem"
-            rows={6}
-            {...register("message")}
-            className="focus-visible:ring-0"
           />
-          {errors.message && (
-            <p className="mt-1 text-sm text-red-500">
-              {errors.message.message}
-            </p>
-          )}
-        </div>
 
-        <Button type="submit" className="w-fit" disabled={isSending}>
-          {isSending ? "Enviando..." : "Enviar mensagem"}
-        </Button>
-      </form>
+          <Button type="submit" className="w-fit" disabled={isSending}>
+            {isSending ? "Enviando..." : "Enviar mensagem"}
+          </Button>
+        </form>
+      </Form>
 
       <SocialLinks />
     </section>
