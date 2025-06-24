@@ -29,7 +29,7 @@ export const Header = () => {
           <a
             href="#hero"
             onClick={(e) => handleScroll(e, "hero")}
-            className="text-xl font-bold tracking-tight transition-colors duration-300 hover:text-black cursor-pointer"
+            className="cursor-pointer text-xl font-bold tracking-tight transition-colors duration-300 hover:text-black"
           >
             Dário Matias
           </a>
