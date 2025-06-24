@@ -6,11 +6,9 @@ import { useCallback } from "react";
 export const Header = () => {
   const navItems = [
     { label: "Sobre Mim", href: "#about", id: "about" },
-    { label: "Serviços", href: "#services", id: "services" },
+    { label: "Especialidades", href: "#specialties", id: "specialties" },
     { label: "Projetos", href: "#projects", id: "projects" },
-    { label: "Habilidades", href: "#skills", id: "skills" },
-    { label: "Educação", href: "#education", id: "education" },
-    { label: "Experiência", href: "#experience", id: "experience" },
+    { label: "Trajetória", href: "#journey", id: "journey" },
     { label: "Contato", href: "#contact", id: "contact" },
   ];
 
@@ -19,9 +17,8 @@ export const Header = () => {
       e.preventDefault();
 
       const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
+
+      if (el) el.scrollIntoView({ behavior: "smooth" });
     },
     [],
   );
