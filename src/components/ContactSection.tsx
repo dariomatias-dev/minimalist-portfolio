@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { FiMail, FiLinkedin, FiInstagram, FiGithub } from "react-icons/fi";
+
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+import { socialLinks } from "@/constants/socialLinks";
 
 export const ContactSection = () => {
   return (
@@ -48,33 +49,6 @@ export const ContactSection = () => {
 };
 
 export const SocialLinks = () => {
-  const links = [
-    {
-      href: "mailto:matiasdario75@gmail.com",
-      label: "E-mail",
-      subLabel: "matiasdario75@gmail.com",
-      icon: <FiMail className="h-6 w-6" />,
-    },
-    {
-      href: "https://www.linkedin.com/in/dariomatias-dev/",
-      label: "LinkedIn",
-      subLabel: "dariomatias-dev",
-      icon: <FiLinkedin className="h-6 w-6" />,
-    },
-    {
-      href: "https://github.com/dariomatias-dev",
-      label: "GitHub",
-      subLabel: "dariomatias-dev",
-      icon: <FiGithub className="h-6 w-6" />,
-    },
-    {
-      href: "https://www.instagram.com/dariomatias_dev/",
-      label: "Instagram",
-      subLabel: "@dariomatias_dev",
-      icon: <FiInstagram className="h-6 w-6" />,
-    },
-  ];
-
   return (
     <section aria-labelledby="social-section">
       <h3
@@ -89,7 +63,7 @@ export const SocialLinks = () => {
       </p>
 
       <ul className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
-        {links.map(({ href, label, subLabel, icon }) => (
+        {socialLinks.map(({ href, label, subLabel, icon }) => (
           <li key={href}>
             <Link
               href={href}
