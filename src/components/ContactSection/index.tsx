@@ -1,30 +1,40 @@
 "use client";
 
-import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { SocialLinks } from "./SocialLinks";
 
+const schema = yup.object({
+  subject: yup.string().required("Campo obrigatório"),
+  email: yup
+    .string()
+    .required("Campo obrigatório")
+    .email("Formato de e-mail inválido"),
+  message: yup.string().required("Campo obrigatório"),
+});
+
+type FormData = yup.InferType<typeof schema>;
+
 export const ContactSection = () => {
   const [isSending, setIsSending] = useState(false);
-  const [form, setForm] = useState({
-    subject: "",
-    email: "",
-    message: "",
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: yupResolver(schema),
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const onSubmit = async (data: FormData) => {
     setIsSending(true);
 
     const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID as string;
@@ -36,18 +46,14 @@ export const ContactSection = () => {
         serviceID,
         templateID,
         {
-          subject: form.subject,
-          message: form.message,
-          email: form.email,
+          subject: data.subject,
+          message: data.message,
+          email: data.email,
         },
-        publicKey,
+        publicKey
       );
 
-      setForm({
-        subject: "",
-        email: "",
-        message: "",
-      });
+      reset();
     } catch (error) {
       console.error("Erro ao enviar email:", error);
     } finally {
@@ -74,33 +80,53 @@ export const ContactSection = () => {
       </p>
 
       {/* Contact Form */}
-      <form className="mb-12 grid gap-5" onSubmit={handleSubmit} noValidate>
+      <form
+        className="mb-12 grid gap-5"
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+      >
         <div className="grid gap-4 sm:grid-cols-2">
-          <Input
-            name="subject"
-            placeholder="Assunto"
-            value={form.subject}
-            onChange={handleChange}
-            required
-          />
-          <Input
-            name="email"
-            type="email"
-            placeholder="Seu e-mail"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
+          <div>
+            <Input
+              placeholder="Assunto"
+              {...register("subject")}
+              className="focus-visible:ring-0"
+            />
+            {errors.subject && (
+              <p className="mt-1 text-sm text-red-500">
+                {errors.subject.message}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <Input
+              type="email"
+              placeholder="Seu e-mail"
+              {...register("email")}
+              className="focus-visible:ring-0"
+            />
+            {errors.email && (
+              <p className="mt-1 text-sm text-red-500">
+                {errors.email.message}
+              </p>
+            )}
+          </div>
         </div>
 
-        <Textarea
-          name="message"
-          placeholder="Sua mensagem"
-          rows={4}
-          value={form.message}
-          onChange={handleChange}
-          required
-        />
+        <div>
+          <Textarea
+            placeholder="Sua mensagem"
+            rows={6}
+            {...register("message")}
+            className="focus-visible:ring-0"
+          />
+          {errors.message && (
+            <p className="mt-1 text-sm text-red-500">
+              {errors.message.message}
+            </p>
+          )}
+        </div>
 
         <Button type="submit" className="w-fit" disabled={isSending}>
           {isSending ? "Enviando..." : "Enviar mensagem"}
