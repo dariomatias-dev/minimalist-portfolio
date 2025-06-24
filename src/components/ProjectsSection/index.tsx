@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import { projects } from "@/constants/projects";
 import { ProjectCard } from "./ProjectCard";
+import { Button } from "../ui/button";
 
 export const ProjectsSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -45,40 +46,42 @@ export const ProjectsSection = () => {
 
       <div className="relative">
         {/* Carousel */}
-        <div ref={emblaRef} className="overflow-hidden">
+        <div ref={emblaRef} className="overflow-hidden pb-6">
           <div className="flex gap-6 px-1">
-            {projects.map(
-              (project) => (
-                <div
-                  key={project.title}
-                  className="max-w-sm min-w-[300px] flex-shrink-0"
-                >
-                  <ProjectCard project={project} />
-                </div>
-              ),
-            )}
+            {projects.map((project) => (
+              <div
+                key={project.title}
+                className="max-w-sm min-w-[300px] flex-shrink-0"
+              >
+                <ProjectCard project={project} />
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Carousel's Actions */}
-        <div className="mt-4 flex justify-between">
-          <button
+        <div className="flex justify-between">
+          <Button
             onClick={scrollPrev}
             disabled={!canScrollPrev}
-            className="rounded-full bg-white p-2 shadow-md transition disabled:opacity-30"
+            variant="ghost"
+            size="icon"
+            className="cursor-pointer rounded-full shadow-md transition-colors duration-200 hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-gray-300 disabled:opacity-30"
             aria-label="Anterior"
           >
             <ChevronLeft className="h-5 w-5" />
-          </button>
+          </Button>
 
-          <button
+          <Button
             onClick={scrollNext}
             disabled={!canScrollNext}
-            className="rounded-full bg-white p-2 shadow-md transition disabled:opacity-30"
+            variant="ghost"
+            size="icon"
+            className="cursor-pointer rounded-full shadow-md transition-colors duration-200 hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-gray-300 disabled:opacity-30"
             aria-label="Próximo"
           >
             <ChevronRight className="h-5 w-5" />
-          </button>
+          </Button>
         </div>
       </div>
     </section>

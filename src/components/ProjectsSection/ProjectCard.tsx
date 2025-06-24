@@ -11,9 +11,11 @@ interface ProjectCardProps {
   project: Project;
 }
 
-export const ProjectCard = ({ project: { title, description, technologies, image, links } }: ProjectCardProps) => {
+export const ProjectCard = ({
+  project: { title, description, technologies, image, links },
+}: ProjectCardProps) => {
   return (
-    <Card className="flex h-full flex-col rounded-lg border border-gray-200 pt-0 pb-6 shadow-sm transition-shadow hover:shadow-md">
+    <Card className="flex h-full flex-col rounded-md border border-gray-200 bg-white p-6 pt-0 pb-6 shadow-sm transition-shadow hover:shadow-md">
       <div className="relative h-48 w-full overflow-hidden rounded-t-lg border-b border-gray-200 bg-white">
         <img
           src={image || "/image_placeholder.png"}
@@ -31,9 +33,7 @@ export const ProjectCard = ({ project: { title, description, technologies, image
       <CardContent className="flex flex-grow flex-col">
         <CardTitle className="text-black">{title}</CardTitle>
 
-        <p className="mt-2 flex-grow text-gray-700">
-          {description}
-        </p>
+        <p className="mt-2 flex-grow text-gray-700">{description}</p>
 
         <div className="mt-5">
           <div className="flex flex-wrap gap-2 text-xs font-medium text-gray-500 select-none">
@@ -78,11 +78,7 @@ export const ProjectCard = ({ project: { title, description, technologies, image
 
           <div className="mt-4 flex flex-wrap gap-4">
             {links.site && (
-              <Link
-                href={links.site}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href={links.site} target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="link"
                   className="p-0 text-gray-600 underline hover:text-gray-900"
@@ -125,5 +121,5 @@ export const ProjectCard = ({ project: { title, description, technologies, image
         </div>
       </CardContent>
     </Card>
-  )
-}
+  );
+};
