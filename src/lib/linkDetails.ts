@@ -20,7 +20,8 @@ export const linkDetails: Record<
   },
   pubDev: {
     label: "Ver no pub.dev",
-    tooltip: "Pacote Dart/Flutter hospedado no pub.dev, o repositório oficial de pacotes Dart/Flutter, onde pode ver a documentação, versões e dependências.",
+    tooltip:
+      "Pacote Dart/Flutter hospedado no pub.dev, o repositório oficial de pacotes Dart/Flutter, onde pode ver a documentação, versões e dependências.",
   },
   goDev: {
     label: "Ver na pkg.go.dev",

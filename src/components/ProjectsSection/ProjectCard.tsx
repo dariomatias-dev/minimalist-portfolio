@@ -87,10 +87,14 @@ export const ProjectCard = ({
                   return (
                     <Tooltip key={url} delayDuration={100}>
                       <TooltipTrigger asChild>
-                        <Link href={url} target="_blank" rel="noopener noreferrer">
+                        <Link
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <Button
                             variant="link"
-                            className="p-0 text-gray-600 underline hover:text-gray-900 cursor-pointer"
+                            className="cursor-pointer p-0 text-gray-600 underline hover:text-gray-900"
                             aria-label={detail.tooltip}
                           >
                             {detail.label}

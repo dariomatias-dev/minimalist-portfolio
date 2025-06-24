@@ -85,7 +85,7 @@ export const SpecialtiesSection = () => {
           </div>
 
           {/* Technology Description */}
-          <div className="rounded-md border border-gray-200 bg-white px-5 py-4">
+          <div className="rounded-md border border-gray-200 bg-white px-5 py-4 shadow-sm transition-shadow hover:shadow-md">
             <div className="mb-3 flex items-center gap-3">
               <Image
                 src={`/icons/${selectedInfo.iconName}.png`}

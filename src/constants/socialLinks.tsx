@@ -4,7 +4,7 @@ import { SocialLink } from "@/@types/SocialLink";
 
 export const socialLinks: SocialLink[] = [
   {
-    href: "mailto:matiasdario75@gmail.com",
+    href: "matiasdario75@gmail.com",
     label: "E-mail",
     subLabel: "matiasdario75@gmail.com",
     icon: <FiMail className="h-6 w-6" />,

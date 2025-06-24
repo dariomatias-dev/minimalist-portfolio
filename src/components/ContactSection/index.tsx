@@ -110,7 +110,7 @@ export const ContactSection = () => {
                   <FormLabel>Assunto</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="Assunto"
+                      placeholder="Digite o assunto"
                       {...field}
                       className="focus-visible:ring-0"
                     />
@@ -129,7 +129,7 @@ export const ContactSection = () => {
                   <FormControl>
                     <Input
                       type="email"
-                      placeholder="Seu e-mail"
+                      placeholder="exemplo@email.com"
                       {...field}
                       className="focus-visible:ring-0"
                     />
@@ -145,11 +145,11 @@ export const ContactSection = () => {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Sua mensagem</FormLabel>
+                <FormLabel>Mensagem</FormLabel>
                 <FormControl>
                   <Textarea
                     rows={6}
-                    placeholder="Sua mensagem"
+                    placeholder="Escreva sua mensagem aqui..."
                     {...field}
                     className="focus-visible:ring-0"
                   />
