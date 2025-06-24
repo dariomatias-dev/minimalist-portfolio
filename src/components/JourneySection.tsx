@@ -17,9 +17,9 @@ export const JourneySection = () => {
 
   const formattedEnd = exp.endDate
     ? new Date(exp.endDate).toLocaleString("pt-BR", {
-      month: "short",
-      year: "numeric",
-    })
+        month: "short",
+        year: "numeric",
+      })
     : "o momento";
 
   const duration = useMemo(() => {

@@ -1,7 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { FiMail, FiLinkedin, FiInstagram } from "react-icons/fi";
+import { FiMail, FiLinkedin, FiInstagram, FiGithub } from "react-icons/fi";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 export const ContactSection = () => {
   return (
@@ -18,44 +21,91 @@ export const ContactSection = () => {
         bate-papo sobre tecnologia.
       </p>
 
-      <p className="mb-8 text-gray-600">
-        Entre em contato pelos canais abaixo:
+      <p className="mb-6 text-gray-600">
+        Envie uma mensagem diretamente ou entre em contato pelas redes sociais.
       </p>
 
-      <div className="flex flex-col gap-5">
-        {/* Email */}
-        <Link
-          href="mailto:matiasdario75@gmail.com"
-          className="flex items-center gap-3 text-gray-600 underline transition-colors hover:text-gray-900"
-        >
-          <FiMail className="h-5 w-5" />
-          <span className="text-sm sm:text-base">matiasdario75@gmail.com</span>
-        </Link>
+      {/* Contact Form */}
+      <form className="mb-12 grid gap-5" noValidate>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Input placeholder="Seu nome" />
+          <Input placeholder="Seu e-mail" type="email" />
+        </div>
+        <Textarea
+          placeholder="Sua mensagem"
+          rows={4}
+          className="min-h-[160px]"
+        />
 
-        {/* LinkedIn */}
-        <Link
-          href="https://www.linkedin.com/in/dariomatias-dev/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 text-gray-600 underline transition-colors hover:text-gray-900"
-        >
-          <FiLinkedin className="h-5 w-5" />
-          <span className="text-sm sm:text-base">
-            linkedin.com/in/dariomatias
-          </span>
-        </Link>
+        <Button type="submit" className="w-fit">
+          Enviar mensagem
+        </Button>
+      </form>
 
-        {/* Instagram */}
-        <Link
-          href="https://www.instagram.com/dariomatias_dev/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 text-gray-600 underline transition-colors hover:text-gray-900"
-        >
-          <FiInstagram className="h-5 w-5" />
-          <span className="text-sm sm:text-base">@dariomatias_dev</span>
-        </Link>
-      </div>
+      <SocialLinks />
+    </section>
+  );
+};
+
+export const SocialLinks = () => {
+  const links = [
+    {
+      href: "mailto:matiasdario75@gmail.com",
+      label: "E-mail",
+      subLabel: "matiasdario75@gmail.com",
+      icon: <FiMail className="h-6 w-6" />,
+    },
+    {
+      href: "https://www.linkedin.com/in/dariomatias-dev/",
+      label: "LinkedIn",
+      subLabel: "dariomatias-dev",
+      icon: <FiLinkedin className="h-6 w-6" />,
+    },
+    {
+      href: "https://github.com/dariomatias-dev",
+      label: "GitHub",
+      subLabel: "dariomatias-dev",
+      icon: <FiGithub className="h-6 w-6" />,
+    },
+    {
+      href: "https://www.instagram.com/dariomatias_dev/",
+      label: "Instagram",
+      subLabel: "@dariomatias_dev",
+      icon: <FiInstagram className="h-6 w-6" />,
+    },
+  ];
+
+  return (
+    <section aria-labelledby="social-section">
+      <h3
+        id="social-section"
+        className="mb-6 text-xl font-semibold tracking-tight text-gray-900"
+      >
+        Redes Sociais
+      </h3>
+
+      <p className="mb-10 max-w-lg text-gray-600">
+        Me acompanhe e fique por dentro dos meus projetos e atualizações.
+      </p>
+
+      <ul className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+        {links.map(({ href, label, subLabel, icon }) => (
+          <li key={href}>
+            <Link
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="flex flex-col items-center justify-center gap-2 rounded-md border border-gray-200 bg-white px-6 py-7 shadow-sm transition-shadow hover:shadow-md focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none"
+            >
+              <div className="text-gray-900">{icon}</div>
+              <span className="text-sm font-semibold text-gray-900">
+                {label}
+              </span>
+              <span className="text-xs text-gray-500">{subLabel}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };
