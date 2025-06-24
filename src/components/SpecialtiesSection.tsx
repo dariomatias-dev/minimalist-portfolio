@@ -1,34 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Monitor, Smartphone, Server } from "lucide-react";
+import { useState } from "react";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { services } from "@/constants/services";
 import { technologyDetails } from "@/lib/technologyDetails";
-
-const services = [
-  {
-    title: "Criação de Sites",
-    description:
-      "Desenvolvimento de websites responsivos, modernos e otimizados para SEO.",
-    icon: <Monitor className="h-5 w-5 text-gray-700" />,
-  },
-  {
-    title: "Criação de Aplicativos",
-    description:
-      "Desenvolvimento de apps multiplataforma com ótima experiência do usuário.",
-    icon: <Smartphone className="h-5 w-5 text-gray-700" />,
-  },
-  {
-    title: "Criação de Servidores",
-    description:
-      "APIs e sistemas backend seguros, robustos e escaláveis com boas práticas.",
-    icon: <Server className="h-5 w-5 text-gray-700" />,
-  },
-];
 
 export const SpecialtiesSection = () => {
   const techKeys = Object.keys(technologyDetails);
