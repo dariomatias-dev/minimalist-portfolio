@@ -10,6 +10,10 @@ export const projects: Project[] = [
     links: [
       {
         type: "site",
+        url: "https://dariomatias-portfolio.vercel.app/",
+      },
+      {
+        type: "github",
         url: "https://github.com/dariomatias-dev/portfolio",
       },
     ],
@@ -79,8 +83,8 @@ export const projects: Project[] = [
   {
     title: "Go Validators",
     description:
-      "Pacote com utilitários de validação para garantir a integridade dos dados em aplicações Go, utilizando apenas bibliotecas nativas.",
-    technologies: ["GoLang"],
+      "Pacote com utilitários de validação para garantir a integridade dos dados em aplicações Go (GoLang), utilizando apenas bibliotecas nativas.",
+    technologies: ["Go"],
     image: "image_placeholder.png",
     links: [
       {
