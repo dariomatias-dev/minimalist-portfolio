@@ -1,4 +1,6 @@
-export const projects = [
+import { Project } from "@/@types/Project";
+
+export const projects: Project[] = [
   {
     title: "Flutter Guide App",
     description:

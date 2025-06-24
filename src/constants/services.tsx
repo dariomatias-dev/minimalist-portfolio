@@ -1,6 +1,8 @@
 import { Monitor, Smartphone, Server } from "lucide-react";
 
-export const services = [
+import { Service } from "@/@types/Service";
+
+export const services: Service[] = [
   {
     title: "Criação de Sites",
     description:
