@@ -6,8 +6,7 @@ export const projects: Project[] = [
     description:
       "Flutter Guide é um app educativo que ajuda desenvolvedores a aprender Flutter com exemplos práticos.",
     technologies: ["Dart", "Flutter"],
-    image:
-      "https://raw.githubusercontent.com/dariomatias-dev/flutter_guide_web/main/public/flutter_guide_icon.png",
+    image: "image_placeholder.png",
     links: {
       playStore:
         "https://play.google.com/store/apps/details?id=com.dariomatias.flutter_guide",
@@ -19,8 +18,7 @@ export const projects: Project[] = [
     description:
       "Site oficial do Flutter Guide, com informações, principais funcionalidades, capturas de tela, política de privacidade e link direto para download na Google Play Store.",
     technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
-    image:
-      "https://raw.githubusercontent.com/dariomatias-dev/flutter_guide_web/main/public/flutter_guide_icon.png",
+    image: "image_placeholder.png",
     links: {
       site: "https://flutter-guide-web.vercel.app/",
       github: "https://github.com/dariomatias-dev/flutter_guide_web",
@@ -30,8 +28,7 @@ export const projects: Project[] = [
     title: "Fit App",
     description: "Aplicativo de treinos para facilitar seus exercícios.",
     technologies: ["Dart", "Flutter"],
-    image:
-      "https://raw.githubusercontent.com/dariomatias-dev/flutter_guide_web/main/public/flutter_guide_icon.png",
+    image: "image_placeholder.png",
     links: {
       playStore:
         "https://play.google.com/store/apps/details?id=com.dariomatias.fit_app",
@@ -41,8 +38,7 @@ export const projects: Project[] = [
     title: "Scroll Infinity",
     description: "Pacote Flutter para adição simplificada de rolagem infinita.",
     technologies: ["Dart", "Flutter"],
-    image:
-      "https://raw.githubusercontent.com/dariomatias-dev/flutter_guide_web/main/public/flutter_guide_icon.png",
+    image: "image_placeholder.png",
     links: {
       github: "https://github.com/dariomatias-dev/scroll_infinity",
     },
@@ -52,8 +48,7 @@ export const projects: Project[] = [
     description:
       "Pacote com utilitários de validação para garantir a integridade dos dados em aplicações Go, utilizando apenas bibliotecas nativas.",
     technologies: ["GoLang"],
-    image:
-      "https://raw.githubusercontent.com/dariomatias-dev/flutter_guide_web/main/public/flutter_guide_icon.png",
+    image: "image_placeholder.png",
     links: {
       github: "https://github.com/dariomatias-dev/go-validators",
     },

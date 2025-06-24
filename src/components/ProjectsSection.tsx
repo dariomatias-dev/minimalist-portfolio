@@ -1,20 +1,20 @@
 "use client";
 
+import useEmblaCarousel from "embla-carousel-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { technologyDetails } from "@/lib/technologyDetails";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { projects } from "@/constants/projects";
+import { technologyDetails } from "@/lib/technologyDetails";
 
 export const ProjectsSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -53,7 +53,7 @@ export const ProjectsSection = () => {
       </h2>
 
       <div className="relative">
-        {/* Carousel wrapper */}
+        {/* Carousel */}
         <div ref={emblaRef} className="overflow-hidden">
           <div className="flex gap-6 px-1">
             {projects.map(
@@ -62,13 +62,18 @@ export const ProjectsSection = () => {
                   key={title}
                   className="max-w-sm min-w-[300px] flex-shrink-0"
                 >
-                  <Card className="flex h-full flex-col rounded-lg border border-gray-200 shadow-sm transition-shadow hover:shadow-md">
-                    <div className="relative mb-4 h-48 w-full overflow-hidden rounded-t-lg border-b border-gray-200 bg-white">
+                  <Card className="flex h-full flex-col rounded-lg border border-gray-200 pt-0 pb-6 shadow-sm transition-shadow hover:shadow-md">
+                    <div className="relative h-48 w-full overflow-hidden rounded-t-lg border-b border-gray-200 bg-white">
                       <img
-                        src={image}
+                        src={image || "/image_placeholder.png"}
                         alt={`${title} logo`}
-                        className="h-full w-full object-contain p-6"
+                        className="h-full w-full object-cover"
                         loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+
+                          e.currentTarget.src = "/image_placeholder.png";
+                        }}
                       />
                     </div>
 
@@ -106,9 +111,7 @@ export const ProjectsSection = () => {
                                 >
                                   <div className="flex items-center gap-2">
                                     <Image
-                                      src={`/icons/${
-                                        info.iconNameDark ?? info.iconName
-                                      }.png`}
+                                      src={`/icons/${info.iconNameDark ?? info.iconName}.png`}
                                       alt={info.label}
                                       width={16}
                                       height={16}
@@ -177,7 +180,7 @@ export const ProjectsSection = () => {
           </div>
         </div>
 
-        {/* Botões abaixo do carrossel */}
+        {/* Carousel's Actions */}
         <div className="mt-4 flex justify-between">
           <button
             onClick={scrollPrev}
