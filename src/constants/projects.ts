@@ -2,6 +2,19 @@ import { Project } from "@/@types/Project";
 
 export const projects: Project[] = [
   {
+    title: "Portfólio",
+    description:
+      "Portfólio pessoal com informações sobre mim, projetos, experiências e contato.",
+    technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
+    image: "image_placeholder.png",
+    links: [
+      {
+        label: "Ver Repositório",
+        url: "https://github.com/dariomatias-dev/portfolio",
+      },
+    ],
+  },
+  {
     title: "Flutter Guide App",
     description:
       "Flutter Guide é um app educativo que ajuda desenvolvedores a aprender Flutter com exemplos práticos.",
@@ -54,6 +67,10 @@ export const projects: Project[] = [
     image: "image_placeholder.png",
     links: [
       {
+        label: "Ver no pub.dev",
+        url: "https://pub.dev/packages/scroll_infinity",
+      },
+      {
         label: "Ver Repositório",
         url: "https://github.com/dariomatias-dev/scroll_infinity",
       },
@@ -66,6 +83,10 @@ export const projects: Project[] = [
     technologies: ["GoLang"],
     image: "image_placeholder.png",
     links: [
+      {
+        label: "Ver na pkg.go.dev",
+        url: "https://pkg.go.dev/github.com/dariomatias-dev/go-validators",
+      },
       {
         label: "Ver Repositório",
         url: "https://github.com/dariomatias-dev/go-validators",

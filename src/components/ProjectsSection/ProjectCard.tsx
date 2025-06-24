@@ -15,7 +15,7 @@ export const ProjectCard = ({
   project: { title, description, technologies, image, links },
 }: ProjectCardProps) => {
   return (
-    <Card className="flex h-full flex-col rounded-md border border-gray-200 bg-white p-6 pt-0 pb-6 shadow-sm transition-shadow hover:shadow-md">
+    <Card className="flex h-full flex-col rounded-lg border border-gray-200 shadow-sm transition-shadow hover:shadow-md">
       <div className="relative h-48 w-full overflow-hidden rounded-t-lg border-b border-gray-200 bg-white">
         <img
           src={image || "/image_placeholder.png"}
