@@ -2,31 +2,11 @@
 
 import { useMemo } from "react";
 
-const education = [
-  {
-    institution: "Instituto Federal da Paraíba",
-    campus: "Campus Esperança",
-    degree: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
-    period: "fev de 2024 - dez de 2027",
-    status: "Em andamento",
-  },
-];
-
-const experience = [
-  {
-    role: "Desenvolvedor Mobile",
-    company: "Media4ALL Soluções em Tecnologia",
-    startDate: "2024-03-01",
-    endDate: null,
-    description:
-      "Desenvolvimento e manutenção de aplicativos móveis construídos em Flutter e integração com APIs REST.",
-    location: "João Pessoa, Paraíba, Brasil · Remota",
-    type: "Estágio",
-  },
-];
+import { educations } from "@/constants/educations";
+import { experiences } from "@/constants/experiences";
 
 export const JourneySection = () => {
-  const exp = experience[0];
+  const exp = experiences[0];
 
   const formattedStart = useMemo(() => {
     return new Date(exp.startDate).toLocaleString("pt-BR", {
@@ -37,9 +17,9 @@ export const JourneySection = () => {
 
   const formattedEnd = exp.endDate
     ? new Date(exp.endDate).toLocaleString("pt-BR", {
-        month: "short",
-        year: "numeric",
-      })
+      month: "short",
+      year: "numeric",
+    })
     : "o momento";
 
   const duration = useMemo(() => {
@@ -107,7 +87,7 @@ export const JourneySection = () => {
             Formação Acadêmica
           </h3>
 
-          {education.map((edu) => (
+          {educations.map((edu) => (
             <article
               key={edu.institution + edu.degree}
               className="rounded-md border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
