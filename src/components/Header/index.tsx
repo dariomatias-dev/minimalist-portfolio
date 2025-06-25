@@ -4,31 +4,11 @@ import { Menu, X } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 import { MobileMenu } from "./MobileMenu";
+import { navItems } from "@/constants/navItems";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-
-  const navItems = [
-    { label: "Sobre Mim", href: "#about", id: "about" },
-    { label: "Especialidades", href: "#specialties", id: "specialties" },
-    { label: "Projetos", href: "#projects", id: "projects" },
-    { label: "Trajetória", href: "#journey", id: "journey" },
-    { label: "Contato", href: "#contact", id: "contact" },
-  ];
-
-  useEffect(() => {
-    if (menuOpen) {
-      setShowMenu(true);
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-
-      const timeout = setTimeout(() => setShowMenu(false), 300);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [menuOpen]);
 
   const handleScroll = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -43,6 +23,19 @@ export const Header = () => {
     },
     [],
   );
+
+  useEffect(() => {
+    if (menuOpen) {
+      setShowMenu(true);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+
+      const timeout = setTimeout(() => setShowMenu(false), 300);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [menuOpen]);
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-gray-300 bg-white/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
