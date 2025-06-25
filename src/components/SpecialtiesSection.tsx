@@ -57,7 +57,7 @@ export const SpecialtiesSection = () => {
 
         <div className="grid items-start gap-12 md:grid-cols-2">
           {/* Technology List */}
-          <div className="h-60">
+          <div>
             <span className="mb-4 block text-sm font-medium text-gray-800">
               Tecnologias:
             </span>

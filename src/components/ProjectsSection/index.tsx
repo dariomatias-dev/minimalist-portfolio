@@ -51,7 +51,7 @@ export const ProjectsSection = () => {
             {projects.map((project) => (
               <div
                 key={project.title}
-                className="max-w-sm min-w-[300px] flex-shrink-0"
+                className="w-full max-w-[380px] flex-shrink-0"
               >
                 <ProjectCard project={project} />
               </div>

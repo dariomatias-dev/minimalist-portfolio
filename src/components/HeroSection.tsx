@@ -52,10 +52,10 @@ export const HeroSection = () => {
           </Button>
         </Link>
 
-        <Link href="/curriculo.pdf" target="_blank" download>
+        <Link href="/curriculum.pdf" target="_blank" download>
           <Button
             variant="outline"
-            className="inline-flex min-w-[200px] items-center justify-center gap-2 rounded-full border py-6 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:ring-2 focus:ring-gray-300"
+            className="inline-flex min-w-[200px] items-center justify-center gap-2 rounded-full border border-gray-300 bg-transparent py-6 text-sm font-medium text-gray-800 transition-colors duration-150 hover:bg-gray-50 focus-visible:ring-1 focus-visible:ring-gray-300 focus-visible:outline-none"
             aria-label="Baixar currículo em PDF"
           >
             Baixar Currículo
