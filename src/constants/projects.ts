@@ -53,18 +53,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Fit App",
-    description: "Aplicativo de treinos para facilitar seus exercícios.",
-    technologies: ["Dart", "Flutter"],
-    image: "image_placeholder.png",
-    links: [
-      {
-        type: "playStore",
-        url: "https://play.google.com/store/apps/details?id=com.dariomatias.fit_app",
-      },
-    ],
-  },
-  {
     title: "Scroll Infinity",
     description: "Pacote Flutter para adição simplificada de rolagem infinita.",
     technologies: ["Dart", "Flutter"],
