@@ -45,7 +45,7 @@ export const Header = () => {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-300 bg-white/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
+    <header className="fixed top-0 z-50 w-full border-b border-gray-300 bg-white/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
       <div className="mx-auto max-w-5xl px-6">
         <nav className="flex h-16 items-center justify-between text-sm font-semibold text-gray-800">
           <a

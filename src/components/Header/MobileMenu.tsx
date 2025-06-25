@@ -20,14 +20,14 @@ export const MobileMenu = ({
       {/* Close Button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 p-2 text-gray-700 transition hover:text-black"
+        className="fixed top-4 right-4 p-2 text-gray-700 transition hover:text-black"
         aria-label="Close menu"
       >
         <X className="h-6 w-6" />
       </button>
 
       {/* Navigation items */}
-      <div className="mt-16 flex h-full w-full flex-col items-center justify-center">
+      <div className="flex h-full w-full flex-col items-center justify-center">
         {navItems.map(({ label, href, id }) => (
           <a
             key={href}
