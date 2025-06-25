@@ -21,20 +21,22 @@ export const HeroSection = () => {
       id="hero"
       className="relative mx-auto flex min-h-[90vh] max-w-3xl scroll-mt-24 flex-col items-center justify-center px-6 text-center"
     >
-      <p className="mb-4 text-lg font-semibold text-gray-700">
-        Olá! Eu sou Dário Matias
-      </p>
+      <div className="py-10  mb-10">
+        <p className="mb-4 text-base sm:text-lg font-semibold text-gray-700">
+          Olá! Eu sou Dário Matias
+        </p>
 
-      <h1 className="mb-8 text-6xl font-extrabold tracking-tight text-gray-900">
-        Full Stack Developer
-      </h1>
+        <h1 className="mb-8 text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900">
+          Full Stack Developer
+        </h1>
 
-      <p className="mx-auto mb-12 max-w-xl text-sm text-gray-600">
-        Desenvolvedor mobile especializado em Flutter, com experiência em
-        frontend web e backend. Atualmente curso Análise e Desenvolvimento de
-        Sistemas no IFPB - campus Esperança, ampliando conhecimentos através de
-        projetos diversos.
-      </p>
+        <p className="mx-auto max-w-xl text-sm sm:text-base text-gray-600">
+          Desenvolvedor mobile especializado em Flutter, com experiência em
+          frontend web e backend. Atualmente curso Análise e Desenvolvimento de
+          Sistemas no IFPB - campus Esperança, ampliando conhecimentos através de
+          projetos diversos.
+        </p>
+      </div>
 
       <div className="flex flex-wrap justify-center gap-4">
         <Link
@@ -64,7 +66,7 @@ export const HeroSection = () => {
         </Link>
       </div>
 
-      <div className="absolute right-0 bottom-10 left-0 flex justify-center">
+      <div className="hidden sm:flex absolute right-0 bottom-10 left-0 justify-center">
         <a
           href="#about"
           aria-label="Scroll para a próxima seção"
