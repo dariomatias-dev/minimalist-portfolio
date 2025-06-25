@@ -1,4 +1,5 @@
 import { AboutMeSection } from "@/components/AboutMeSection";
+import { Blockquote } from "@/components/Blockquote";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -17,11 +18,21 @@ export default function Home() {
 
         <AboutMeSection />
 
+        <Blockquote
+          quote="Comece de onde você está. Use o que você tem. Faça o que você pode."
+          author="Arthur Ashe"
+        />
+
         <SpecialtiesSection />
 
         <ProjectsSection />
 
         <JourneySection />
+
+        <Blockquote
+          quote="A maior glória não é ficar de pé, mas levantar-se cada vez que se cai."
+          author="Confúcio"
+        />
 
         <ContactSection />
       </main>
