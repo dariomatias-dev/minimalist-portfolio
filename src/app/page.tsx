@@ -15,8 +15,6 @@ export default function Home() {
       <main className="mx-auto min-h-screen max-w-5xl bg-white px-6 text-gray-900">
         <HeroSection />
 
-        <div className="mt-16" />
-
         <AboutMeSection />
 
         <SpecialtiesSection />

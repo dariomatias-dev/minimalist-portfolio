@@ -19,7 +19,7 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative mx-auto flex min-h-[90vh] max-w-3xl scroll-mt-24 flex-col items-center justify-center px-6 text-center"
+      className="relative mx-auto flex min-h-[95vh] max-w-3xl scroll-mt-24 flex-col items-center justify-center px-6 text-center"
     >
       <div className="py-10  mb-10">
         <p className="mb-4 text-base sm:text-lg font-semibold text-gray-700">
