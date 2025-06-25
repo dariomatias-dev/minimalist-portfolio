@@ -80,7 +80,7 @@ export const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="mx-auto mb-20 max-w-5xl scroll-mt-24 leading-relaxed text-gray-800"
+      className="mx-auto mb-16 max-w-5xl scroll-mt-24 leading-relaxed text-gray-800 sm:mb-20"
     >
       <h2 className="mb-6 border-b border-gray-300 pb-2 text-3xl font-semibold">
         Contato

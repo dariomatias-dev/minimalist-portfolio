@@ -27,7 +27,7 @@ export const MobileMenu = ({
       </button>
 
       {/* Navigation items */}
-      <div className="h-full flex flex-col justify-center items-center mt-16 w-full">
+      <div className="mt-16 flex h-full w-full flex-col items-center justify-center">
         {navItems.map(({ label, href, id }) => (
           <a
             key={href}
@@ -36,7 +36,7 @@ export const MobileMenu = ({
               handleScroll(e, id);
               onClose();
             }}
-            className="block text-center  w-full px-4 py-3 text-2xl transition hover:text-black"
+            className="block w-full px-4 py-3 text-center text-2xl transition hover:text-black"
           >
             {label}
           </a>

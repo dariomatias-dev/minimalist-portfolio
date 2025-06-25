@@ -21,20 +21,20 @@ export const HeroSection = () => {
       id="hero"
       className="relative mx-auto flex min-h-[95vh] max-w-3xl scroll-mt-24 flex-col items-center justify-center px-6 text-center"
     >
-      <div className="py-10  mb-10">
-        <p className="mb-4 text-base sm:text-lg font-semibold text-gray-700">
+      <div className="mb-10 py-10">
+        <p className="mb-4 text-base font-semibold text-gray-700 sm:text-lg">
           Olá! Eu sou Dário Matias
         </p>
 
-        <h1 className="mb-8 text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900">
+        <h1 className="mb-8 text-5xl font-extrabold tracking-tight text-gray-900 md:text-6xl">
           Full Stack Developer
         </h1>
 
-        <p className="mx-auto max-w-xl text-sm sm:text-base text-gray-600">
+        <p className="mx-auto max-w-xl text-sm text-gray-600 sm:text-base">
           Desenvolvedor mobile especializado em Flutter, com experiência em
           frontend web e backend. Atualmente curso Análise e Desenvolvimento de
-          Sistemas no IFPB - campus Esperança, ampliando conhecimentos através de
-          projetos diversos.
+          Sistemas no IFPB - campus Esperança, ampliando conhecimentos através
+          de projetos diversos.
         </p>
       </div>
 
@@ -66,7 +66,7 @@ export const HeroSection = () => {
         </Link>
       </div>
 
-      <div className="hidden sm:flex absolute right-0 bottom-10 left-0 justify-center">
+      <div className="absolute right-0 bottom-10 left-0 hidden justify-center sm:flex">
         <a
           href="#about"
           aria-label="Scroll para a próxima seção"
