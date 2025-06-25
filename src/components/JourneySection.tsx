@@ -44,7 +44,7 @@ export const JourneySection = () => {
   return (
     <section
       id="journey"
-      className="mx-auto mb-16 max-w-5xl scroll-mt-24 text-gray-800 sm:mb-20"
+      className="mx-auto mb-16 max-w-5xl scroll-mt-20 text-gray-800 sm:mb-20 sm:scroll-mt-24"
     >
       <h2 className="mb-8 border-b border-gray-300 pb-2 text-3xl font-semibold">
         Trajetória

@@ -41,7 +41,7 @@ export const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="mx-auto mb-16 max-w-5xl scroll-mt-24 sm:mb-20"
+      className="mx-auto mb-16 max-w-5xl scroll-mt-20 sm:mb-20 sm:scroll-mt-24"
     >
       <h2 className="mb-10 border-b border-gray-300 pb-2 text-3xl font-semibold">
         Projetos
