@@ -15,7 +15,7 @@ export const MobileMenu = ({
 }: MobileMenuProps) => {
   return (
     <div
-      className={`fixed inset-0 z-40 flex h-screen w-screen transform flex-col items-start bg-white/95 text-lg font-semibold text-gray-800 backdrop-blur-md transition-all duration-300 ease-in-out md:hidden ${isVisible ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-5 opacity-0"} `}
+      className={`fixed inset-0 z-40 flex h-screen w-screen transform flex-col items-start bg-white/96 text-lg font-semibold text-gray-800 backdrop-blur-md transition-all duration-300 ease-in-out md:hidden ${isVisible ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-5 opacity-0"} `}
     >
       {/* Close Button */}
       <button

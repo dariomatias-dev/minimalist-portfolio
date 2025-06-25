@@ -21,7 +21,7 @@ export const HeroSection = () => {
       id="hero"
       className="relative mx-auto flex min-h-screen max-w-3xl scroll-mt-24 flex-col items-center justify-center px-6 text-center"
     >
-      <div className="mb-10 py-10">
+      <div className="mb-10 pb-10">
         <p className="mb-4 text-base font-semibold text-gray-700 sm:text-lg">
           Olá! Eu sou Dário Matias
         </p>
