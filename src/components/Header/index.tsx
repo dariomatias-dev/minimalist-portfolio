@@ -1,8 +1,14 @@
 "use client";
 
-import { useCallback } from "react";
+import { Menu, X } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
+
+import { MobileMenu } from "./MobileMenu";
 
 export const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
   const navItems = [
     { label: "Sobre Mim", href: "#about", id: "about" },
     { label: "Especialidades", href: "#specialties", id: "specialties" },
@@ -11,13 +17,29 @@ export const Header = () => {
     { label: "Contato", href: "#contact", id: "contact" },
   ];
 
+  useEffect(() => {
+    if (menuOpen) {
+      setShowMenu(true);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+
+      const timeout = setTimeout(() => setShowMenu(false), 300);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [menuOpen]);
+
   const handleScroll = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
       e.preventDefault();
 
       const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
 
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+        setMenuOpen(false);
+      }
     },
     [],
   );
@@ -34,7 +56,17 @@ export const Header = () => {
             Dário Matias
           </a>
 
-          <ul className="flex space-x-8">
+          {/* Mobile Menu Icon */}
+          <button
+            onClick={() => setMenuOpen((prev) => !prev)}
+            className="block md:hidden"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+          >
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {/* Desktop Menu */}
+          <ul className="hidden space-x-8 md:flex">
             {navItems.map(({ label, href, id }) => (
               <li key={href}>
                 <a
@@ -50,6 +82,16 @@ export const Header = () => {
           </ul>
         </nav>
       </div>
+
+      {/* Mobile Menu */}
+      {showMenu && (
+        <MobileMenu
+          navItems={navItems}
+          handleScroll={handleScroll}
+          onClose={() => setMenuOpen(false)}
+          isVisible={menuOpen}
+        />
+      )}
     </header>
   );
 };
