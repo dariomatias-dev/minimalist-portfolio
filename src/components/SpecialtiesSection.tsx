@@ -1,11 +1,10 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { services } from "@/constants/services";
 import { technologyDetails } from "@/lib/technologyDetails";
 
@@ -19,101 +18,114 @@ export const SpecialtiesSection = () => {
       id="specialties"
       className="mx-auto mb-16 max-w-5xl scroll-mt-20 leading-relaxed text-gray-800 sm:mb-20 sm:scroll-mt-24"
     >
-      {/* Title */}
-      <h2 className="mb-8 border-b border-gray-300 pb-2 text-3xl font-semibold">
-        Especialidades
-      </h2>
+      <div className="mx-auto max-w-2xl text-center">
+        <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+          Uma Abordagem Completa
+        </h2>
+        <p className="mt-4 text-lg leading-8 text-zinc-600">
+          Da concepção à entrega, meu trabalho abrange todo o ciclo de vida de
+          um produto digital.
+        </p>
+      </div>
 
-      {/* Services  */}
-      <div className="mb-16 grid w-full gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <div className="mx-auto mt-20 grid max-w-6xl grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
         {services.map(({ title, description, icon }) => (
-          <Card
-            key={title}
-            className="shadow-sm transition-shadow hover:shadow-md"
-          >
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-base font-semibold text-gray-900">
-                {title}
-              </CardTitle>
+          <div key={title} className="flex flex-col items-center text-center">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-zinc-500">
               {icon}
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700">{description}</p>
-            </CardContent>
-          </Card>
+            </div>
+
+            <h3 className="text-base font-medium text-zinc-900">{title}</h3>
+
+            <p className="mt-2 max-w-xs text-sm leading-6 text-zinc-600">
+              {description}
+            </p>
+          </div>
         ))}
       </div>
 
       {/* Technical Skills */}
-      <div>
-        <h3 className="mb-4 text-xl font-semibold text-gray-800">
-          Habilidades Técnicas
-        </h3>
+      <div id="skills" className="mt-24 sm:mt-32">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+            Minha Stack Tecnológica
+          </h2>
 
-        <p className="mb-8 text-gray-600">
-          Tecnologias com as quais tenho experiência e utilizo frequentemente em
-          meus projetos profissionais e pessoais.
-        </p>
+          <p className="mt-4 text-lg leading-8 text-zinc-600">
+            Ferramentas e tecnologias que utilizo para construir soluções
+            digitais modernas, performáticas e de alta qualidade.
+          </p>
+        </div>
 
-        <div className="grid items-start gap-12 md:grid-cols-2">
-          {/* Technology List */}
-          <div>
-            <span className="mb-4 block text-sm font-medium text-gray-800">
-              Tecnologias:
-            </span>
+        {/* Technology List */}
+        <div className="mx-auto mt-16 grid max-w-5xl items-start gap-x-8 gap-y-10 lg:mt-20 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <h3 className="text-base leading-7 font-semibold text-zinc-900">
+              Tecnologias
+            </h3>
 
-            <div className="flex flex-wrap gap-3">
-              {techKeys.map((techKey) => {
-                const { label } = technologyDetails[techKey];
-                const isSelected = selectedTech === techKey;
-
-                return (
-                  <button
-                    key={techKey}
-                    onMouseEnter={() => setSelectedTech(techKey)}
-                    className={`rounded-md border px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-                      isSelected
-                        ? "border-gray-600 text-black"
-                        : "border-gray-300 text-gray-700 hover:border-gray-500 hover:text-black"
-                    }`}
-                  >
-                    {label}
-                  </button>
-                );
-              })}
+            <div className="mt-4 flex flex-wrap gap-3">
+              {techKeys.map((techKey) => (
+                <button
+                  key={techKey}
+                  onClick={() => setSelectedTech(techKey)}
+                  className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${
+                    selectedTech === techKey
+                      ? "border-zinc-900 bg-zinc-900 text-white"
+                      : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900"
+                  }`}
+                >
+                  {technologyDetails[techKey].label}
+                </button>
+              ))}
             </div>
           </div>
 
           {/* Technology Description */}
-          <div className="rounded-md border border-gray-200 bg-white px-5 py-4 shadow-sm transition-shadow hover:shadow-md">
-            <div className="mb-3 flex items-center gap-3">
-              <Image
-                src={`/icons/${selectedInfo.iconName}.png`}
-                alt={selectedInfo.label}
-                width={20}
-                height={20}
-              />
-              <h4 className="text-base font-semibold text-gray-900">
-                {selectedInfo.label}
-              </h4>
-            </div>
-
-            <p className="text-sm leading-relaxed text-gray-700">
-              {selectedInfo.fullDescription}
-            </p>
-
-            <Link
-              href={selectedInfo.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                variant="link"
-                className="mt-4 p-0 text-sm text-gray-600 underline hover:text-gray-900"
+          <div className="lg:sticky lg:top-24 lg:col-span-8">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedTech}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="rounded-xl border border-zinc-200 bg-white p-8 shadow-sm"
               >
-                Visitar site oficial
-              </Button>
-            </Link>
+                <div className="flex items-center gap-4">
+                  <Image
+                    src={`/icons/${selectedInfo.iconName}.png`}
+                    alt={selectedInfo.label}
+                    width={36}
+                    height={36}
+                  />
+                  <h4 className="text-xl font-semibold text-zinc-900">
+                    {selectedInfo.label}
+                  </h4>
+                </div>
+
+                <p className="mt-5 text-base leading-relaxed text-zinc-700">
+                  {selectedInfo.fullDescription}
+                </p>
+
+                <div className="mt-8">
+                  <Link
+                    href={selectedInfo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900"
+                  >
+                    <span>Visitar site oficial</span>
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-200 group-hover:translate-x-1"
+                    >
+                      →
+                    </span>
+                  </Link>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
