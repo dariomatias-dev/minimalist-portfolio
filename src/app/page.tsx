@@ -13,28 +13,30 @@ export default function Home() {
     <>
       <Header />
 
-      <main className="mx-auto mb-16 flex min-h-screen max-w-5xl flex-col gap-20 bg-white px-6 text-gray-900 sm:mb-20 sm:gap-24">
+      <main className="mx-auto mb-16 flex min-h-screen max-w-5xl flex-col bg-white px-6 text-gray-900 sm:mb-20">
         <HeroSection />
 
-        <AboutMeSection />
+        <div className="flex min-h-screen flex-col gap-20 sm:gap-24">
+          <AboutMeSection />
 
-        <Blockquote
-          quote="Comece de onde você está. Use o que você tem. Faça o que você pode."
-          author="Arthur Ashe"
-        />
+          <Blockquote
+            quote="Comece de onde você está. Use o que você tem. Faça o que você pode."
+            author="Arthur Ashe"
+          />
 
-        <SpecialtiesSection />
+          <SpecialtiesSection />
 
-        <ProjectsSection />
+          <ProjectsSection />
 
-        <JourneySection />
+          <JourneySection />
 
-        <Blockquote
-          quote="A maior glória não é ficar de pé, mas levantar-se cada vez que se cai."
-          author="Confúcio"
-        />
+          <Blockquote
+            quote="A maior glória não é ficar de pé, mas levantar-se cada vez que se cai."
+            author="Confúcio"
+          />
 
-        <ContactSection />
+          <ContactSection />
+        </div>
       </main>
 
       <Footer />
