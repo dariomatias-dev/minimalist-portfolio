@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { ReactNode } from "react";
 
 type SocialLinkProps = {
   href: string;
   label: string;
   subLabel: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   isCopied: boolean;
   onCopy?: () => void;
 };

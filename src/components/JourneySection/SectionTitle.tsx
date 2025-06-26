@@ -1,5 +1,7 @@
+import { ReactNode } from "react";
+
 interface SectionTitleProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export const SectionTitle = ({ children }: SectionTitleProps) => (

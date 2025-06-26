@@ -1,8 +1,9 @@
 import { X } from "lucide-react";
+import { MouseEvent } from "react";
 
 type MobileMenuProps = {
   navItems: { label: string; href: string; id: string }[];
-  handleScroll: (e: React.MouseEvent<HTMLAnchorElement>, id: string) => void;
+  handleScroll: (e: MouseEvent<HTMLAnchorElement>, id: string) => void;
   onClose: () => void;
   isVisible: boolean;
 };

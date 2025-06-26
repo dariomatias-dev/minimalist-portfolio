@@ -3,7 +3,7 @@
 import { ArrowUpRight, Package, Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { ElementType, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 
 import type { Project, ProjectLinkType } from "@/@types/Project";
@@ -13,7 +13,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 const linkDetails: Record<
   ProjectLinkType,
-  { icon: React.ElementType; label: string }
+  { icon: ElementType; label: string }
 > = {
   github: { icon: FaGithub, label: "GitHub" },
   site: { icon: ArrowUpRight, label: "Website" },

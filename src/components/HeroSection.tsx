@@ -2,12 +2,13 @@
 
 import { ChevronDown, Download } from "lucide-react";
 import Link from "next/link";
+import { MouseEvent } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 import { ActionButton } from "./ActionButton";
 
 export const HeroSection = () => {
-  const scrollToAbout = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const scrollToAbout = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
     const aboutSection = document.getElementById("about");

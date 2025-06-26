@@ -1,17 +1,17 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import { useCallback, useEffect, useState } from "react";
+import { MouseEvent, useCallback, useEffect, useState } from "react";
 
-import { MobileMenu } from "./MobileMenu";
 import { navItems } from "@/constants/navItems";
+import { MobileMenu } from "./MobileMenu";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
   const handleScroll = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    (e: MouseEvent<HTMLAnchorElement>, id: string) => {
       e.preventDefault();
 
       const el = document.getElementById(id);

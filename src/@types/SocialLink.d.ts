@@ -1,8 +1,8 @@
-import React from "react";
+import { ReactElement } from "react";
 
 export interface SocialLink {
   href: string;
   label: string;
   subLabel: string;
-  icon: React.ReactElement;
+  icon: ReactElement;
 }
