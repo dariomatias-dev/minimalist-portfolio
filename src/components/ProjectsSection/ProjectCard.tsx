@@ -1,26 +1,14 @@
 "use client";
 
-import { ArrowUpRight, Package, Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { ElementType, useState } from "react";
-import { FaGithub } from "react-icons/fa";
+import { useState } from "react";
 
-import type { Project, ProjectLinkType } from "@/@types/Project";
+import type { Project } from "@/@types/Project";
 import { technologyDetails } from "@/lib/technologyDetails";
 import { Badge } from "../ui/badge";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
-
-const linkDetails: Record<
-  ProjectLinkType,
-  { icon: ElementType; label: string }
-> = {
-  github: { icon: FaGithub, label: "GitHub" },
-  site: { icon: ArrowUpRight, label: "Website" },
-  playStore: { icon: Play, label: "Play Store" },
-  pubDev: { icon: Package, label: "Pub.dev" },
-  goDev: { icon: Package, label: "Go.dev" },
-};
+import { linkDetails } from "@/constants/linkDetails";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
   const [imageSrc, setImageSrc] = useState(
