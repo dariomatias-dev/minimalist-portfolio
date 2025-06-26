@@ -5,7 +5,7 @@ interface BlockquoteProps {
 
 export const Blockquote = ({ quote, author }: BlockquoteProps) => {
   return (
-    <section className="my-32 sm:my-40 md:my-40">
+    <section className="my-24 sm:my-32 md:my-40">
       <div className="mx-auto max-w-3xl px-6">
         <blockquote className="text-center">
           <hr className="mx-auto mb-12 h-px w-24 border-0 bg-gray-300" />
