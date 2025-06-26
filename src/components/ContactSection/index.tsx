@@ -12,7 +12,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -21,12 +20,12 @@ import { showToast, ToastType } from "@/lib/toastNotification";
 import { SocialLinks } from "./SocialLinks";
 
 const schema = z.object({
-  subject: z.string().min(1, "Campo obrigatório"),
+  subject: z.string().min(1, "O assunto é obrigatório."),
   email: z
     .string()
-    .min(1, "Campo obrigatório")
-    .email("Formato de e-mail inválido"),
-  message: z.string().min(1, "Campo obrigatório"),
+    .min(1, "O e-mail é obrigatório.")
+    .email("Por favor, insira um e-mail válido."),
+  message: z.string().min(1, "A mensagem é obrigatória."),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -80,39 +79,71 @@ export const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="mx-auto mb-16 max-w-5xl scroll-mt-20 leading-relaxed text-gray-800 sm:mb-20 sm:scroll-mt-24"
+      className="mx-auto mb-16 w-full max-w-3xl scroll-mt-24 px-6 text-center sm:mb-20"
     >
-      <h2 className="mb-6 border-b border-gray-300 pb-2 text-3xl font-semibold">
-        Contato
+      <h2 className="text-4xl font-semibold text-gray-900 sm:text-5xl">
+        Entre em Contato
       </h2>
-
-      <p className="text-gray-600">
-        Estou sempre aberto a novas conexões, colaborações ou apenas um bom
-        bate-papo sobre tecnologia.
+      <p className="mt-4 text-lg leading-relaxed text-gray-600">
+        Estou à disposição para discutir possíveis colaborações, ideias de
+        projeto ou quaisquer assuntos profissionais.
       </p>
 
-      <p className="mb-6 text-gray-600">
-        Envie uma mensagem diretamente ou entre em contato pelas redes sociais.
-      </p>
+      <div className="mt-12 text-left sm:mt-16">
+        <Form {...form}>
+          <form
+            className="space-y-6"
+            onSubmit={form.handleSubmit(onSubmit)}
+            noValidate
+          >
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <FormField
+                control={form.control}
+                name="subject"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="Assunto"
+                        {...field}
+                        className="border-gray-200 bg-white/50 focus-visible:ring-gray-400"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-      <Form {...form}>
-        <form
-          className="mb-12 grid gap-5"
-          onSubmit={form.handleSubmit(onSubmit)}
-          noValidate
-        >
-          <div className="grid items-start gap-4 sm:grid-cols-2">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        type="email"
+                        placeholder="Seu e-mail"
+                        {...field}
+                        className="border-gray-200 bg-white/50 focus-visible:ring-gray-400"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+
             <FormField
               control={form.control}
-              name="subject"
+              name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Assunto</FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder="Digite o assunto"
+                    <Textarea
+                      rows={5}
+                      placeholder="Sua mensagem..."
                       {...field}
-                      className="focus-visible:ring-0"
+                      className="border-gray-200 bg-white/50 focus-visible:ring-gray-400"
                     />
                   </FormControl>
                   <FormMessage />
@@ -120,50 +151,21 @@ export const ContactSection = () => {
               )}
             />
 
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Seu e-mail</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      placeholder="exemplo@email.com"
-                      {...field}
-                      className="focus-visible:ring-0"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
+            <div className="flex justify-center pt-4">
+              <Button
+                type="submit"
+                variant="outline"
+                className="min-w-[200px] rounded-full border-black bg-black py-6 text-base font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black"
+                disabled={isSending}
+              >
+                {isSending ? "Enviando..." : "Enviar"}
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </div>
 
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Mensagem</FormLabel>
-                <FormControl>
-                  <Textarea
-                    rows={6}
-                    placeholder="Escreva sua mensagem aqui..."
-                    {...field}
-                    className="focus-visible:ring-0"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <Button type="submit" className="w-fit" disabled={isSending}>
-            {isSending ? "Enviando..." : "Enviar mensagem"}
-          </Button>
-        </form>
-      </Form>
+      <div className="mx-auto my-12 h-px w-20 bg-gray-200 sm:my-16" />
 
       <SocialLinks />
     </section>

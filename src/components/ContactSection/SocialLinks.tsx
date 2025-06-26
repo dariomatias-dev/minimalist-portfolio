@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+
 import { socialLinks } from "@/constants/socialLinks";
 
 export const SocialLinks = () => {
@@ -26,7 +27,7 @@ export const SocialLinks = () => {
         Redes Sociais
       </h3>
 
-      <p className="mb-10 max-w-lg text-gray-600">
+      <p className="mb-10 text-gray-600">
         Me acompanhe e fique por dentro dos meus projetos e atualizações.
       </p>
 
