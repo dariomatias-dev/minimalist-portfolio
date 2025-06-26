@@ -1,113 +1,139 @@
-"use client";
-
-import { useMemo } from "react";
-
 import { educations } from "@/constants/educations";
 import { experiences } from "@/constants/experiences";
 
-export const JourneySection = () => {
-  const exp = experiences[0];
+const TimelineSpine = () => (
+  <div
+    className="absolute top-0 left-1/2 h-full w-px -translate-x-1/2"
+    style={{
+      backgroundImage:
+        "linear-gradient(to bottom, #cbd5e1 60%, transparent 40%)",
+      backgroundSize: "1px 10px",
+      backgroundRepeat: "repeat-y",
+    }}
+  />
+);
 
-  const formattedStart = useMemo(() => {
-    return new Date(exp.startDate).toLocaleString("pt-BR", {
-      month: "short",
-      year: "numeric",
-    });
-  }, [exp.startDate]);
+interface JourneyItemProps {
+  date: string;
+  title: string;
+  subtitle: string;
+  details?: string;
+  isLeft?: boolean;
+}
 
-  const formattedEnd = exp.endDate
-    ? new Date(exp.endDate).toLocaleString("pt-BR", {
-        month: "short",
-        year: "numeric",
-      })
-    : "o momento";
-
-  const duration = useMemo(() => {
-    const start = new Date(exp.startDate);
-    const end = exp.endDate ? new Date(exp.endDate) : new Date();
-
-    let years = end.getFullYear() - start.getFullYear();
-    let months = end.getMonth() - start.getMonth();
-
-    if (months < 0) {
-      years--;
-      months += 12;
-    }
-
-    const yearsText = years > 0 ? `${years} ano${years > 1 ? "s" : ""}` : "";
-    const monthsText =
-      months > 0 ? `${months} mês${months > 1 ? "es" : ""}` : "";
-
-    return [yearsText, monthsText].filter(Boolean).join(" ");
-  }, [exp.startDate, exp.endDate]);
+const JourneyItem = ({
+  date,
+  title,
+  subtitle,
+  details,
+  isLeft = false,
+}: JourneyItemProps) => {
+  const alignmentClasses = isLeft
+    ? "sm:text-right sm:pr-16"
+    : "sm:text-left sm:pl-16";
+  const itemContainerClasses = isLeft ? "sm:justify-start" : "sm:justify-end";
 
   return (
-    <section
-      id="journey"
-      className="mx-auto mb-16 max-w-5xl scroll-mt-20 text-gray-800 sm:mb-20 sm:scroll-mt-24"
-    >
-      <h2 className="mb-8 border-b border-gray-300 pb-2 text-3xl font-semibold">
-        Trajetória
-      </h2>
+    <li className={`relative flex ${itemContainerClasses}`}>
+      <div
+        className={`absolute top-[11px] hidden h-px w-12 bg-slate-200 sm:block ${
+          isLeft ? "right-1/2" : "left-1/2"
+        }`}
+      />
+      <div className="absolute top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-slate-300" />
+      <div className={`w-full sm:w-1/2 ${alignmentClasses}`}>
+        <p className="text-sm text-slate-500">{date}</p>
+        <h4 className="mt-1.5 text-xl font-semibold text-slate-800">{title}</h4>
+        <p className="mt-1.5 text-slate-600">{subtitle}</p>
 
-      <div className="space-y-14">
-        {/* Experience */}
+        {details && (
+          <p className="mx-auto mt-4 max-w-prose text-sm leading-relaxed text-slate-500 sm:mx-0">
+            {details}
+          </p>
+        )}
+      </div>
+    </li>
+  );
+};
+
+interface SectionTitleProps {
+  children: React.ReactNode;
+}
+
+const SectionTitle = ({ children }: SectionTitleProps) => (
+  <h3 className="text-center text-2xl font-semibold text-slate-800">
+    {children}
+  </h3>
+);
+
+const formatYear = (date: string) => {
+  return new Date(date).getFullYear().toString();
+};
+
+export const JourneySection = () => {
+  return (
+    <section id="journey" className="mx-auto max-w-5xl scroll-mt-24 px-4">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          Trajetória
+        </h2>
+
+        <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-600">
+          Minha jornada profissional e acadêmica, onde cada passo foi uma
+          oportunidade de crescimento e aprendizado.
+        </p>
+      </div>
+
+      <div className="mt-20 space-y-20">
         <div>
-          <h3 className="mb-6 text-xl font-semibold text-gray-900">
-            Experiência Profissional
-          </h3>
+          <SectionTitle>Carreira</SectionTitle>
 
-          <article className="rounded-md border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-            <h4 className="text-lg font-semibold text-gray-900">{exp.role}</h4>
+          <div className="relative mt-12">
+            <TimelineSpine />
 
-            <div className="mt-1 flex flex-col gap-1 text-sm sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-gray-700">
-                {exp.company} {exp.type && <span>· {exp.type}</span>}
-              </p>
-              <p className="text-gray-500 italic">
-                {formattedStart} - {formattedEnd} · {duration}
-              </p>
-            </div>
-
-            {exp.location && (
-              <p className="mt-1 text-sm text-gray-400 italic">
-                {exp.location}
-              </p>
-            )}
-
-            <p className="mt-3 text-sm leading-relaxed text-gray-700">
-              {exp.description}
-            </p>
-          </article>
+            <ul
+              role="list"
+              className="space-y-12 text-center sm:space-y-16 sm:text-left"
+            >
+              {experiences.map((exp, index) => (
+                <JourneyItem
+                  key={`${exp.company}-${exp.role} - ${index}`}
+                  isLeft={index % 2 === 0}
+                  date={`${formatYear(exp.startDate)} - ${
+                    exp.endDate ? formatYear(exp.endDate) : "Atual"
+                  }`}
+                  title={exp.role}
+                  subtitle={`${exp.company}${exp.type ? ` · ${exp.type}` : ""}`}
+                  details={exp.description}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
 
-        {/* Education */}
         <div>
-          <h3 className="mb-6 text-xl font-semibold text-gray-900">
-            Formação Acadêmica
-          </h3>
+          <SectionTitle>Educação</SectionTitle>
 
-          {educations.map((edu) => (
-            <article
-              key={edu.institution + edu.degree}
-              className="rounded-md border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+          <div className="relative mt-12">
+            <TimelineSpine />
+
+            <ul
+              role="list"
+              className="space-y-12 text-center sm:space-y-16 sm:text-left"
             >
-              <h4 className="text-lg font-semibold text-gray-900">
-                {edu.degree}
-              </h4>
-
-              <div className="mt-1 flex flex-col gap-1 text-sm sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-gray-700">
-                  {edu.institution} — {edu.campus}
-                </p>
-                {edu.status && (
-                  <span className="text-gray-500 italic">{edu.status}</span>
-                )}
-              </div>
-
-              <p className="mt-1 text-sm text-gray-500 italic">{edu.period}</p>
-            </article>
-          ))}
+              {educations.map((edu, index) => (
+                <JourneyItem
+                  key={`${edu.institution}-${edu.degree} - ${index}`}
+                  isLeft={index % 2 !== 0}
+                  date={edu.period}
+                  title={edu.degree}
+                  subtitle={`${edu.institution} — ${edu.campus}${
+                    edu.status ? ` · ${edu.status}` : ""
+                  }`}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
