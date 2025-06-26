@@ -1,10 +1,9 @@
 "use client";
 
+import { ChevronDown, Download } from "lucide-react";
 import Link from "next/link";
-import { Download, ChevronDown } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
-import { Button } from "@/components/ui/button";
 import { ActionButton } from "./ActionButton";
 
 export const HeroSection = () => {

@@ -1,6 +1,9 @@
+"use client";
+
 import { ArrowUpRight, Package, Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 
 import type { Project, ProjectLinkType } from "@/@types/Project";
@@ -20,18 +23,21 @@ const linkDetails: Record<
 };
 
 export const ProjectCard = ({ project }: { project: Project }) => {
+  const [imageSrc, setImageSrc] = useState(
+    project.image || "/image_placeholder.png",
+  );
+
   return (
     <article className="group bg-card text-card-foreground relative flex h-full flex-col rounded-lg border shadow-sm transition-shadow duration-300 hover:shadow-md">
       <div className="bg-background relative h-48 w-full overflow-hidden rounded-t-lg border-b">
-        <img
-          src={project.image || "/image_placeholder.png"}
+        <Image
+          src={imageSrc}
           alt={`${project.title} image`}
-          className="h-full w-full object-cover"
-          loading="lazy"
-          onError={(e) => {
-            e.currentTarget.onerror = null;
-            e.currentTarget.src = "/image_placeholder.png";
-          }}
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority={false}
+          onError={() => setImageSrc("/image_placeholder.png")}
         />
       </div>
 
