@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { showToast, ToastType } from "@/lib/toastNotification";
 import { SocialLinks } from "./SocialLinks";
+import { ActionButton } from "../ActionButton";
 
 const schema = z.object({
   subject: z.string().min(1, "O assunto é obrigatório."),
@@ -152,14 +153,12 @@ export const ContactSection = () => {
             />
 
             <div className="flex justify-center pt-4">
-              <Button
+              <ActionButton
                 type="submit"
                 variant="outline"
-                className="min-w-[200px] rounded-full border-black bg-black py-6 text-base font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black"
+                label={isSending ? "Enviando..." : "Enviar"}
                 disabled={isSending}
-              >
-                {isSending ? "Enviando..." : "Enviar"}
-              </Button>
+              />
             </div>
           </form>
         </Form>

@@ -21,10 +21,11 @@ export const JourneyItem = ({
   return (
     <li className={`relative flex ${itemContainerClasses}`}>
       <div
-        className={`absolute top-[11px] hidden h-px w-12 bg-slate-200 sm:block ${isLeft ? "right-1/2" : "left-1/2"
-          }`}
+        className={`absolute top-[11px] hidden h-px w-12 bg-slate-200 sm:block ${
+          isLeft ? "right-1/2" : "left-1/2"
+        }`}
       />
-      <div className="absolute left-1/2 -top-5 h-3 w-3 -translate-x-1/2 rounded-full bg-slate-300 sm:top-1.5" />
+      <div className="absolute -top-5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-slate-300 sm:top-1.5" />
 
       <div className={`bg-background w-full sm:w-1/2 ${alignmentClasses}`}>
         <p className="text-sm text-slate-500">{date}</p>
