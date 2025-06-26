@@ -5,6 +5,7 @@ import { Download, ChevronDown } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
+import { ActionButton } from "./ActionButton";
 
 export const HeroSection = () => {
   const scrollToAbout = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -44,25 +45,18 @@ export const HeroSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button
-            variant="default"
-            className="inline-flex min-w-[200px] items-center justify-center gap-2 rounded-full bg-black py-6 text-sm font-semibold text-white hover:bg-gray-900 focus:ring-2 focus:ring-gray-600"
-            aria-label="Contato via WhatsApp"
-          >
-            Fale comigo
-            <FaWhatsapp className="h-5 w-5" />
-          </Button>
+          <ActionButton
+            label="Fale comigo"
+            icon={<FaWhatsapp className="h-5 w-5" />}
+          />
         </Link>
 
         <Link href="/curriculum.pdf" target="_blank" download>
-          <Button
+          <ActionButton
             variant="outline"
-            className="inline-flex min-w-[200px] items-center justify-center gap-2 rounded-full border border-gray-300 bg-transparent py-6 text-sm font-medium text-gray-800 transition-colors duration-150 hover:bg-gray-50 focus-visible:ring-1 focus-visible:ring-gray-300 focus-visible:outline-none"
-            aria-label="Baixar currículo em PDF"
-          >
-            Baixar Currículo
-            <Download className="h-5 w-5" />
-          </Button>
+            label="Baixar Currículo"
+            icon={<Download className="h-5 w-5" />}
+          />
         </Link>
       </div>
 
