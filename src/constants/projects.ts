@@ -6,7 +6,7 @@ export const projects: Project[] = [
     description:
       "Portfólio pessoal com informações sobre mim, projetos, experiências e contato.",
     technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
-    image: "image_placeholder.png",
+    image: "/image_placeholder.png",
     links: [
       {
         type: "site",
@@ -23,7 +23,7 @@ export const projects: Project[] = [
     description:
       "Flutter Guide é um app educativo que ajuda desenvolvedores a aprender Flutter com exemplos práticos.",
     technologies: ["Dart", "Flutter"],
-    image: "image_placeholder.png",
+    image: "/image_placeholder.png",
     links: [
       {
         type: "playStore",
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     description:
       "Site oficial do Flutter Guide, com informações, principais funcionalidades, capturas de tela, política de privacidade e link direto para download na Google Play Store.",
     technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
-    image: "image_placeholder.png",
+    image: "/image_placeholder.png",
     links: [
       {
         type: "site",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     title: "Scroll Infinity",
     description: "Pacote Flutter para adição simplificada de rolagem infinita.",
     technologies: ["Dart", "Flutter"],
-    image: "image_placeholder.png",
+    image: "/image_placeholder.png",
     links: [
       {
         type: "pubDev",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     description:
       "Pacote com utilitários de validação para garantir a integridade dos dados em aplicações Go (GoLang), utilizando apenas bibliotecas nativas.",
     technologies: ["Go"],
-    image: "image_placeholder.png",
+    image: "/image_placeholder.png",
     links: [
       {
         type: "goDev",

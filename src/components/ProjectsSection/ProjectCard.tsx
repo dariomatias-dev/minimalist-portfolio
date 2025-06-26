@@ -1,60 +1,65 @@
+import { ArrowUpRight, Package, Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 
-import { Project } from "@/@types/Project";
-import { linkDetails } from "@/lib/linkDetails";
+import type { Project, ProjectLinkType } from "@/@types/Project";
 import { technologyDetails } from "@/lib/technologyDetails";
-import { Button } from "../ui/button";
-import { Card, CardContent, CardTitle } from "../ui/card";
+import { Badge } from "../ui/badge";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
-interface ProjectCardProps {
-  project: Project;
-}
+const linkDetails: Record<
+  ProjectLinkType,
+  { icon: React.ElementType; label: string }
+> = {
+  github: { icon: FaGithub, label: "GitHub" },
+  site: { icon: ArrowUpRight, label: "Website" },
+  playStore: { icon: Play, label: "Play Store" },
+  pubDev: { icon: Package, label: "Pub.dev" },
+  goDev: { icon: Package, label: "Go.dev" },
+};
 
-export const ProjectCard = ({
-  project: { title, description, technologies, image, links },
-}: ProjectCardProps) => {
+export const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <Card className="flex h-full flex-col rounded-lg border border-gray-200 shadow-sm transition-shadow hover:shadow-md">
-      <div className="relative h-48 w-full overflow-hidden rounded-t-lg border-b border-gray-200 bg-white">
+    <article className="group bg-card text-card-foreground relative flex h-full flex-col rounded-lg border shadow-sm transition-shadow duration-300 hover:shadow-md">
+      <div className="bg-background relative h-48 w-full overflow-hidden rounded-t-lg border-b">
         <img
-          src={image || "/image_placeholder.png"}
-          alt={`${title} logo`}
+          src={project.image || "/image_placeholder.png"}
+          alt={`${project.title} image`}
           className="h-full w-full object-cover"
           loading="lazy"
           onError={(e) => {
             e.currentTarget.onerror = null;
-
             e.currentTarget.src = "/image_placeholder.png";
           }}
         />
       </div>
 
-      <CardContent className="flex flex-grow flex-col">
-        <CardTitle className="text-black">{title}</CardTitle>
+      <div className="flex flex-1 flex-col p-4">
+        <h3 className="flex items-center text-xl font-semibold">
+          <span>{project.title}</span>
+        </h3>
 
-        <p className="mt-2 flex-grow text-gray-700">{description}</p>
+        <p className="text-muted-foreground mt-2 flex-1 text-sm">
+          {project.description}
+        </p>
 
-        <div className="mt-5">
-          <div className="flex flex-wrap gap-2 text-xs font-medium text-gray-500 select-none">
-            {technologies.map((tech) => {
+        <div className="mt-4 flex flex-col gap-4 border-t pt-4">
+          <div className="flex flex-wrap gap-2">
+            {project.technologies.slice(0, 4).map((tech) => {
               const info = technologyDetails[tech];
-              if (!info) return null;
 
               return (
-                <Tooltip key={tech} delayDuration={100}>
+                <Tooltip key={tech} delayDuration={150}>
                   <TooltipTrigger asChild>
-                    <a
+                    <Link
                       href={info.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded bg-gray-100 px-2 py-0.5 text-gray-700"
+                      aria-label={`Saber mais sobre ${info.label}`}
                     >
-                      <span className="relative inline-block before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-0 before:bg-gray-500 before:transition-all before:duration-300 hover:before:w-full">
-                        {info.label}
-                      </span>
-                    </a>
+                      <Badge variant="outline">{info.label}</Badge>
+                    </Link>
                   </TooltipTrigger>
 
                   <TooltipContent
@@ -69,6 +74,7 @@ export const ProjectCard = ({
                         height={16}
                         className="h-4 w-4"
                       />
+
                       <span>{info.shortDescription}</span>
                     </div>
                   </TooltipContent>
@@ -77,45 +83,26 @@ export const ProjectCard = ({
             })}
           </div>
 
-          <div className="mt-4 flex flex-wrap gap-4">
-            {links.length > 0 && (
-              <>
-                {links.map(({ type, url }) => {
-                  const detail = linkDetails[type];
-                  if (!detail) return null;
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            {project.links.map(({ type, url }) => {
+              const detail = linkDetails[type];
 
-                  return (
-                    <Tooltip key={url} delayDuration={100}>
-                      <TooltipTrigger asChild>
-                        <Link
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Button
-                            variant="link"
-                            className="cursor-pointer p-0 text-gray-600 underline hover:text-gray-900"
-                            aria-label={detail.tooltip}
-                          >
-                            {detail.label}
-                          </Button>
-                        </Link>
-                      </TooltipTrigger>
-
-                      <TooltipContent
-                        className="z-50 max-w-xs rounded-md bg-black px-3 py-2 text-xs text-white shadow-md"
-                        sideOffset={8}
-                      >
-                        {detail.tooltip}
-                      </TooltipContent>
-                    </Tooltip>
-                  );
-                })}
-              </>
-            )}
+              return (
+                <Link
+                  key={url}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary hover:border-primary inline-flex h-auto items-center gap-1.5 rounded-none border-b border-transparent p-0 text-sm font-medium no-underline transition-colors"
+                >
+                  <detail.icon className="h-4 w-4" />
+                  {detail.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </article>
   );
 };
