@@ -81,9 +81,8 @@ export const ContactSection = () => {
       id="contact"
       className="mx-auto mb-16 w-full max-w-3xl scroll-mt-24 px-6 text-center sm:mb-20"
     >
-      <h2 className="text-4xl font-semibold text-gray-900 sm:text-5xl">
-        Entre em Contato
-      </h2>
+      <h2 className="text-foreground text-4xl font-bold">Entre em Contato</h2>
+
       <p className="mt-4 text-lg leading-relaxed text-gray-600">
         Estou à disposição para discutir possíveis colaborações, ideias de
         projeto ou quaisquer assuntos profissionais.

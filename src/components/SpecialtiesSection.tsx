@@ -19,9 +19,10 @@ export const SpecialtiesSection = () => {
       className="mx-auto mb-16 max-w-5xl scroll-mt-20 leading-relaxed text-gray-800 sm:mb-20 sm:scroll-mt-24"
     >
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+        <h2 className="text-foreground text-4xl font-bold tracking-tight">
           Uma Abordagem Completa
         </h2>
+
         <p className="mt-4 text-lg leading-8 text-zinc-600">
           Da concepção à entrega, meu trabalho abrange todo o ciclo de vida de
           um produto digital.
@@ -47,9 +48,9 @@ export const SpecialtiesSection = () => {
       {/* Technical Skills */}
       <div id="skills" className="mt-24 sm:mt-32">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+          <h3 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">
             Minha Stack Tecnológica
-          </h2>
+          </h3>
 
           <p className="mt-4 text-lg leading-8 text-zinc-600">
             Ferramentas e tecnologias que utilizo para construir soluções

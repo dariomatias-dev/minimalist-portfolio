@@ -12,7 +12,7 @@ export const JourneySection = () => {
   return (
     <section id="journey" className="mx-auto max-w-5xl scroll-mt-24 px-4">
       <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        <h2 className="text-foreground text-4xl font-bold tracking-tight">
           Trajetória
         </h2>
 

@@ -40,9 +40,10 @@ export const ProjectsSection = () => {
     <section id="projects" className="mb-16 w-full scroll-mt-24 sm:mb-20">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-foreground text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="text-foreground text-4xl font-bold tracking-tight">
             O Que Tenho Criado
           </h2>
+
           <p className="text-muted-foreground mt-4 text-lg">
             Uma seleção dos meus principais projetos desenvolvidos ao longo da
             minha trajetória.

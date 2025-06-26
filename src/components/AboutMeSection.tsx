@@ -4,7 +4,7 @@ export const AboutMeSection = () => {
       id="about"
       className="mx-auto mb-24 max-w-3xl scroll-mt-24 px-4 text-center sm:mb-32"
     >
-      <h2 className="text-foreground text-4xl font-semibold">Sobre Mim</h2>
+      <h2 className="text-foreground text-4xl font-bold">Sobre Mim</h2>
 
       <div className="text-muted-foreground mt-8 space-y-6 text-base leading-relaxed text-balance sm:text-lg">
         <p>
