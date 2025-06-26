@@ -2,39 +2,40 @@ export const AboutMeSection = () => {
   return (
     <section
       id="about"
-      className="mx-auto mb-16 max-w-5xl scroll-mt-20 leading-relaxed text-gray-800 sm:mb-20 sm:scroll-mt-24"
+      className="mx-auto mb-24 max-w-3xl scroll-mt-24 px-4 text-center sm:mb-32"
     >
-      <h2 className="mb-8 border-b border-gray-300 pb-2 text-3xl font-semibold">
-        Sobre Mim
-      </h2>
+      <h2 className="text-foreground text-4xl font-semibold">Sobre Mim</h2>
 
-      <div className="space-y-5 text-lg text-gray-800">
+      <div className="text-muted-foreground mt-8 space-y-6 text-base leading-relaxed text-balance sm:text-lg">
         <p>
-          Sou um desenvolvedor <strong>Full Stack</strong> com sólida
-          experiência na construção de soluções completas e escaláveis,
-          abrangendo desde interfaces modernas e acessíveis até integrações com
-          APIs e sistemas de backend.
+          Sou um desenvolvedor{" "}
+          <strong className="text-foreground">Full Stack</strong> com
+          experiência na criação de soluções completas — de interfaces modernas
+          e acessíveis a integrações com sistemas robustos de backend.
         </p>
 
         <p>
-          No frontend, atuo principalmente com <strong>React</strong> e{" "}
-          <strong>Next.js</strong>, desenvolvendo aplicações responsivas, com
-          foco em desempenho, acessibilidade e excelente experiência do usuário.
-          No desenvolvimento mobile, utilizo <strong>Flutter</strong> para criar
-          aplicações nativas e multiplataforma.
+          No frontend, utilizo{" "}
+          <strong className="text-foreground">React</strong> e{" "}
+          <strong className="text-foreground">Next.js</strong> para desenvolver
+          aplicações responsivas, performáticas e com excelente experiência do
+          usuário. Também atuo com{" "}
+          <strong className="text-foreground">Flutter</strong> no
+          desenvolvimento mobile, criando apps nativos e multiplataforma.
         </p>
 
         <p>
-          No backend, trabalho com <strong>TypeScript</strong> (Node.js) e{" "}
-          <strong>Go (Golang)</strong>, desenvolvendo APIs robustas, seguras e
-          de alta performance, aplicando boas práticas de arquitetura, testes e
-          manutenção.
+          No backend, trabalho com{" "}
+          <strong className="text-foreground">TypeScript</strong> (Node.js) e{" "}
+          <strong className="text-foreground">Go</strong>, construindo APIs
+          escaláveis, seguras e de alta performance, com foco em boas práticas,
+          testes e manutenção.
         </p>
 
         <p>
-          Busco constantemente aprimorar minhas habilidades e entregar soluções
-          bem estruturadas, com código limpo, eficiência e qualidade técnica,
-          seja em projetos pessoais ou profissionais.
+          Tenho compromisso com a qualidade técnica e estou em constante
+          evolução, buscando entregar soluções bem estruturadas, eficientes e
+          sustentáveis — seja em projetos pessoais ou profissionais.
         </p>
       </div>
     </section>
