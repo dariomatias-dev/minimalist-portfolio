@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <Header />
 
-      <main className="mx-auto min-h-screen max-w-5xl bg-white px-6 text-gray-900">
+      <main className="mx-auto mb-16 flex min-h-screen max-w-5xl flex-col gap-20 bg-white px-6 text-gray-900 sm:mb-20 sm:gap-24">
         <HeroSection />
 
         <AboutMeSection />

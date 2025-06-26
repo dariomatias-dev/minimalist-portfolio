@@ -10,7 +10,10 @@ export const JourneySection = () => {
   };
 
   return (
-    <section id="journey" className="mx-auto max-w-5xl scroll-mt-24 px-4">
+    <section
+      id="journey"
+      className="mx-auto max-w-5xl scroll-mt-20 px-4 sm:scroll-mt-24"
+    >
       <div className="text-center">
         <h2 className="text-foreground text-4xl font-bold tracking-tight">
           Trajetória

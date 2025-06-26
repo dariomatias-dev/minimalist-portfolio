@@ -16,7 +16,7 @@ export const SpecialtiesSection = () => {
   return (
     <section
       id="specialties"
-      className="mx-auto mb-16 max-w-5xl scroll-mt-20 leading-relaxed text-gray-800 sm:mb-20 sm:scroll-mt-24"
+      className="mx-auto max-w-5xl scroll-mt-20 leading-relaxed text-gray-800 sm:scroll-mt-24"
     >
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-foreground text-4xl font-bold tracking-tight">
@@ -46,7 +46,7 @@ export const SpecialtiesSection = () => {
       </div>
 
       {/* Technical Skills */}
-      <div id="skills" className="mt-24 sm:mt-32">
+      <div id="skills" className="mt-20 sm:mt-28">
         <div className="mx-auto max-w-2xl text-center">
           <h3 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">
             Minha Stack Tecnológica

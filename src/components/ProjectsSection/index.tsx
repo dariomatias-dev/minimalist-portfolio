@@ -37,7 +37,7 @@ export const ProjectsSection = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section id="projects" className="mb-16 w-full scroll-mt-24 sm:mb-20">
+    <section id="projects" className="w-full scroll-mt-20 sm:scroll-mt-24">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-foreground text-4xl font-bold tracking-tight">
