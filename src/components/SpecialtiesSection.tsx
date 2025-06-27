@@ -19,52 +19,40 @@ export const SpecialtiesSection = () => {
       className="mx-auto max-w-5xl scroll-mt-24 leading-relaxed text-gray-800"
     >
       <motion.div
-        className="mx-auto max-w-2xl text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-foreground text-4xl font-bold tracking-tight">
-          Uma Abordagem Completa
-        </h2>
-        <p className="mt-4 text-lg leading-8 text-zinc-600">
-          Da concepção à entrega, meu trabalho abrange todo o ciclo de vida de
-          um produto digital.
-        </p>
-      </motion.div>
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-foreground text-4xl font-bold tracking-tight">
+            Uma Abordagem Completa
+          </h2>
+          <p className="mt-4 text-lg leading-8 text-zinc-600">
+            Da concepção à entrega, meu trabalho abrange todo o ciclo de vida de
+            um produto digital.
+          </p>
+        </div>
 
-      <motion.div
-        className="mx-auto mt-20 grid max-w-6xl grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.15,
-            },
-          },
-        }}
-      >
-        {services.map(({ title, description, icon }) => (
-          <motion.div
-            key={title}
-            className="flex flex-col items-center text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-zinc-500">
-              {icon}
-            </div>
-            <h3 className="text-base font-medium text-zinc-900">{title}</h3>
-            <p className="mt-2 max-w-xs text-sm leading-6 text-zinc-600">
-              {description}
-            </p>
-          </motion.div>
-        ))}
+        <div className="mx-auto mt-20 flex max-w-6xl flex-wrap justify-start gap-12">
+          {services.map(({ title, description, icon }) => (
+            <motion.div
+              key={title}
+              className="mx-auto flex w-72 flex-col items-center text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-zinc-500">
+                {icon}
+              </div>
+              <h3 className="text-base font-medium text-zinc-900">{title}</h3>
+              <p className="mt-2 max-w-xs text-sm leading-6 text-zinc-600">
+                {description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
 
       {/* Technical Skills */}
@@ -88,7 +76,7 @@ export const SpecialtiesSection = () => {
 
         <div className="mx-auto mt-6 grid max-w-5xl items-start gap-x-8 gap-y-10 lg:mt-20 lg:grid-cols-12">
           <motion.div
-            className="mt-4 flex flex-wrap gap-3 justify-center lg:justify-start lg:col-span-4"
+            className="mt-4 flex flex-wrap justify-center gap-3 lg:col-span-4 lg:justify-start"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -108,10 +96,11 @@ export const SpecialtiesSection = () => {
               <motion.button
                 key={techKey}
                 onClick={() => setSelectedTech(techKey)}
-                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${selectedTech === techKey
-                  ? "border-zinc-900 bg-zinc-900 text-white"
-                  : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900"
-                  }`}
+                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${
+                  selectedTech === techKey
+                    ? "border-zinc-900 bg-zinc-900 text-white"
+                    : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900"
+                }`}
                 variants={{
                   hidden: { opacity: 0, scale: 0.8 },
                   visible: { opacity: 1, scale: 1 },
@@ -169,7 +158,6 @@ export const SpecialtiesSection = () => {
             </AnimatePresence>
           </div>
         </div>
-
       </div>
     </section>
   );
