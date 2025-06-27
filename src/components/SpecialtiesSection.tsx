@@ -86,50 +86,40 @@ export const SpecialtiesSection = () => {
           </p>
         </motion.div>
 
-        <div className="mx-auto mt-16 grid max-w-5xl items-start gap-x-8 gap-y-10 lg:mt-20 lg:grid-cols-12">
+        <div className="mx-auto mt-6 grid max-w-5xl items-start gap-x-8 gap-y-10 lg:mt-20 lg:grid-cols-12">
           <motion.div
-            className="lg:col-span-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            className="mt-4 flex flex-wrap gap-3 justify-center lg:justify-start lg:col-span-4"
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-          >
-            <h3 className="text-base leading-7 font-semibold text-zinc-900">
-              Tecnologias
-            </h3>
-
-            <motion.div
-              className="mt-4 flex flex-wrap gap-3"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: {
-                    staggerChildren: 0.1,
-                  },
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.6,
+                  staggerChildren: 0.1,
                 },
-              }}
-            >
-              {techKeys.map((techKey) => (
-                <motion.button
-                  key={techKey}
-                  onClick={() => setSelectedTech(techKey)}
-                  className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${
-                    selectedTech === techKey
-                      ? "border-zinc-900 bg-zinc-900 text-white"
-                      : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900"
+              },
+            }}
+          >
+            {techKeys.map((techKey) => (
+              <motion.button
+                key={techKey}
+                onClick={() => setSelectedTech(techKey)}
+                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${selectedTech === techKey
+                  ? "border-zinc-900 bg-zinc-900 text-white"
+                  : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900"
                   }`}
-                  variants={{
-                    hidden: { opacity: 0, scale: 0.8 },
-                    visible: { opacity: 1, scale: 1 },
-                  }}
-                >
-                  {technologyDetails[techKey].label}
-                </motion.button>
-              ))}
-            </motion.div>
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8 },
+                  visible: { opacity: 1, scale: 1 },
+                }}
+              >
+                {technologyDetails[techKey].label}
+              </motion.button>
+            ))}
           </motion.div>
 
           {/* Technology Description */}
@@ -179,6 +169,7 @@ export const SpecialtiesSection = () => {
             </AnimatePresence>
           </div>
         </div>
+
       </div>
     </section>
   );
