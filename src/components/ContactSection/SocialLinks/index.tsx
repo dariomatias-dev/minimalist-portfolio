@@ -19,7 +19,7 @@ export const SocialLinks = () => {
   };
 
   return (
-    <section aria-labelledby="social-section">
+    <div>
       <h3
         id="social-section"
         className="mb-6 text-xl font-semibold tracking-tight text-gray-900"
@@ -50,6 +50,6 @@ export const SocialLinks = () => {
           );
         })}
       </ul>
-    </section>
+    </div>
   );
 };
