@@ -66,7 +66,7 @@ export const Header = () => {
 
           {/* Desktop Menu */}
           <ul className="hidden space-x-8 md:flex">
-            {navItems.map(({ label, href, id }, index) => (
+            {navItems.map(({ label, href, id }) => (
               <li key={href}>
                 <a
                   href={href}
