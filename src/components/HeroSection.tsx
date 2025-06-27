@@ -38,10 +38,10 @@ export const HeroSection = () => {
         </h1>
 
         <p className="mx-auto max-w-xl text-sm text-gray-600 sm:text-base">
-          Desenvolvedor mobile especializado em Flutter, com experiência em
-          frontend web e backend. Atualmente curso Análise e Desenvolvimento de
-          Sistemas no IFPB - campus Esperança, ampliando conhecimentos através
-          de projetos diversos.
+          Sou um desenvolvedor Full Stack com destaque em frontend web e mobile,
+          e experiência em backend. Atualmente, estudo Análise e Desenvolvimento
+          de Sistemas no IFPB - Campus Esperança e, de forma contínua, busco
+          evoluir meus conhecimentos por meio de projetos variados.
         </p>
       </motion.div>
 
