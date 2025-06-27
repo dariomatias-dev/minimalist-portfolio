@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
@@ -58,7 +59,7 @@ export const ContactSection = () => {
           message: data.message,
           email: data.email,
         },
-        publicKey,
+        publicKey
       );
 
       form.reset();
@@ -77,24 +78,40 @@ export const ContactSection = () => {
   };
 
   return (
-    <section
+    <motion.section
       id="contact"
       className="mx-auto w-full max-w-3xl px-6 text-center scroll-mt-24"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true }}
     >
-      <h2 className="text-foreground text-4xl font-bold">Entre em Contato</h2>
+      <motion.h2
+        className="text-foreground text-4xl font-bold"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15, duration: 0.5 }}
+      >
+        Entre em Contato
+      </motion.h2>
 
-      <p className="mt-4 text-lg leading-relaxed text-gray-600">
-        Estou à disposição para discutir possíveis colaborações, ideias de
-        projeto ou quaisquer assuntos profissionais.
-      </p>
+      <motion.p
+        className="mt-4 text-lg leading-relaxed text-gray-600"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+      >
+        Estou à disposição para discutir possíveis colaborações, ideias de projeto ou quaisquer assuntos profissionais.
+      </motion.p>
 
-      <div className="mt-12 text-left sm:mt-16">
+      <motion.div
+        className="mt-12 text-left sm:mt-16"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.45, duration: 0.6 }}
+      >
         <Form {...form}>
-          <form
-            className="space-y-6"
-            onSubmit={form.handleSubmit(onSubmit)}
-            noValidate
-          >
+          <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)} noValidate>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <FormField
                 control={form.control}
@@ -112,7 +129,6 @@ export const ContactSection = () => {
                   </FormItem>
                 )}
               />
-
               <FormField
                 control={form.control}
                 name="email"
@@ -151,21 +167,40 @@ export const ContactSection = () => {
             />
 
             <div className="flex justify-center pt-4">
-              <ActionButton
-                type="submit"
-                variant="outline"
-                animation="invert"
-                label={isSending ? "Enviando..." : "Enviar"}
-                disabled={isSending}
-              />
+              <motion.div
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <ActionButton
+                  type="submit"
+                  variant="outline"
+                  animation="invert"
+                  label={isSending ? "Enviando..." : "Enviar"}
+                  disabled={isSending}
+                />
+              </motion.div>
             </div>
           </form>
         </Form>
-      </div>
+      </motion.div>
 
-      <div className="mx-auto my-12 h-px w-20 bg-gray-200 sm:my-16" />
+      <motion.div
+        className="mx-auto my-12 h-px w-20 bg-gray-200 sm:my-16"
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        style={{ transformOrigin: "center" }}
+      />
 
-      <SocialLinks />
-    </section>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.65, duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <SocialLinks />
+      </motion.div>
+    </motion.section>
   );
 };
