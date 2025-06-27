@@ -28,7 +28,8 @@ export const SocialLinks = () => {
       </h3>
 
       <p className="mb-10 text-gray-600">
-        Me acompanhe e fique por dentro dos meus projetos e atualizações.
+        Me acompanhe para ficar por dentro dos meus projetos e atualizações, ou
+        envie uma mensagem.
       </p>
 
       <ul className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
