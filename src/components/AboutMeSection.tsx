@@ -6,7 +6,7 @@ export const AboutMeSection = () => {
   return (
     <section
       id="about"
-      className="mx-auto max-w-3xl px-4 text-center scroll-mt-24"
+      className="mx-auto max-w-3xl scroll-mt-24 px-4 text-center"
     >
       <motion.h2
         className="text-foreground text-4xl font-bold"
@@ -43,13 +43,24 @@ export const AboutMeSection = () => {
             }}
             transition={{ duration: 0.5 }}
           >
-            {text.split(/(Flutter|Next\.js|React|TypeScript|Go|Full Stack)/g).map((part, i) =>
-              ["Flutter", "Next.js", "React", "TypeScript", "Go", "Full Stack"].includes(part) ? (
-                <strong key={i} className="text-foreground">{part}</strong>
-              ) : (
-                <span key={i}>{part}</span>
-              )
-            )}
+            {text
+              .split(/(Flutter|Next\.js|React|TypeScript|Go|Full Stack)/g)
+              .map((part, i) =>
+                [
+                  "Flutter",
+                  "Next.js",
+                  "React",
+                  "TypeScript",
+                  "Go",
+                  "Full Stack",
+                ].includes(part) ? (
+                  <strong key={i} className="text-foreground">
+                    {part}
+                  </strong>
+                ) : (
+                  <span key={i}>{part}</span>
+                ),
+              )}
           </motion.p>
         ))}
       </motion.div>

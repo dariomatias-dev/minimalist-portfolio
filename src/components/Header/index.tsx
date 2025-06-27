@@ -67,9 +67,7 @@ export const Header = () => {
           {/* Desktop Menu */}
           <ul className="hidden space-x-8 md:flex">
             {navItems.map(({ label, href, id }, index) => (
-              <li
-                key={href}
-              >
+              <li key={href}>
                 <a
                   href={href}
                   onClick={(e) => handleScroll(e, id)}

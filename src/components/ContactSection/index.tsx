@@ -59,7 +59,7 @@ export const ContactSection = () => {
           message: data.message,
           email: data.email,
         },
-        publicKey
+        publicKey,
       );
 
       form.reset();
@@ -80,7 +80,7 @@ export const ContactSection = () => {
   return (
     <motion.section
       id="contact"
-      className="mx-auto w-full max-w-3xl px-6 text-center scroll-mt-24"
+      className="mx-auto w-full max-w-3xl scroll-mt-24 px-6 text-center"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -101,7 +101,8 @@ export const ContactSection = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
       >
-        Estou à disposição para discutir possíveis colaborações, ideias de projeto ou quaisquer assuntos profissionais.
+        Estou à disposição para discutir possíveis colaborações, ideias de
+        projeto ou quaisquer assuntos profissionais.
       </motion.p>
 
       <motion.div
@@ -111,7 +112,11 @@ export const ContactSection = () => {
         transition={{ delay: 0.45, duration: 0.6 }}
       >
         <Form {...form}>
-          <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)} noValidate>
+          <form
+            className="space-y-6"
+            onSubmit={form.handleSubmit(onSubmit)}
+            noValidate
+          >
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <FormField
                 control={form.control}

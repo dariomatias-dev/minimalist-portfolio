@@ -13,7 +13,7 @@ export const JourneySection = () => {
   };
 
   return (
-    <section id="journey" className="mx-auto max-w-5xl px-4 scroll-mt-24">
+    <section id="journey" className="mx-auto max-w-5xl scroll-mt-24 px-4">
       <motion.div
         className="text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -51,11 +51,11 @@ export const JourneySection = () => {
                 <JourneyItem
                   key={`${exp.company}-${exp.role} - ${index}`}
                   isLeft={index % 2 === 0}
-                  date={`${formatYear(exp.startDate)} - ${exp.endDate ? formatYear(exp.endDate) : "Atual"
-                    }`}
+                  date={`${formatYear(exp.startDate)} - ${
+                    exp.endDate ? formatYear(exp.endDate) : "Atual"
+                  }`}
                   title={exp.role}
-                  subtitle={`${exp.company}${exp.type ? ` · ${exp.type}` : ""
-                    }`}
+                  subtitle={`${exp.company}${exp.type ? ` · ${exp.type}` : ""}`}
                   details={exp.description}
                 />
               ))}
@@ -83,8 +83,9 @@ export const JourneySection = () => {
                   isLeft={index % 2 !== 0}
                   date={edu.period}
                   title={edu.degree}
-                  subtitle={`${edu.institution} — ${edu.campus}${edu.status ? ` · ${edu.status}` : ""
-                    }`}
+                  subtitle={`${edu.institution} — ${edu.campus}${
+                    edu.status ? ` · ${edu.status}` : ""
+                  }`}
                 />
               ))}
             </ul>

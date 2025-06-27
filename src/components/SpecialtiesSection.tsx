@@ -16,7 +16,7 @@ export const SpecialtiesSection = () => {
   return (
     <section
       id="specialties"
-      className="mx-auto max-w-5xl leading-relaxed text-gray-800 scroll-mt-24"
+      className="mx-auto max-w-5xl scroll-mt-24 leading-relaxed text-gray-800"
     >
       <motion.div
         className="mx-auto max-w-2xl text-center"
@@ -116,10 +116,11 @@ export const SpecialtiesSection = () => {
                 <motion.button
                   key={techKey}
                   onClick={() => setSelectedTech(techKey)}
-                  className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${selectedTech === techKey
-                    ? "border-zinc-900 bg-zinc-900 text-white"
-                    : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900"
-                    }`}
+                  className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${
+                    selectedTech === techKey
+                      ? "border-zinc-900 bg-zinc-900 text-white"
+                      : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900"
+                  }`}
                   variants={{
                     hidden: { opacity: 0, scale: 0.8 },
                     visible: { opacity: 1, scale: 1 },
@@ -133,49 +134,49 @@ export const SpecialtiesSection = () => {
 
           {/* Technology Description */}
           <div className="lg:sticky lg:top-24 lg:col-span-8">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={selectedTech}
-                  className="rounded-xl border border-zinc-200 bg-white p-8 shadow-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex items-center gap-4">
-                    <Image
-                      src={`/icons/${selectedInfo.iconName}.png`}
-                      alt={selectedInfo.label}
-                      width={36}
-                      height={36}
-                    />
-                    <h4 className="text-xl font-semibold text-zinc-900">
-                      {selectedInfo.label}
-                    </h4>
-                  </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedTech}
+                className="rounded-xl border border-zinc-200 bg-white p-8 shadow-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-4">
+                  <Image
+                    src={`/icons/${selectedInfo.iconName}.png`}
+                    alt={selectedInfo.label}
+                    width={36}
+                    height={36}
+                  />
+                  <h4 className="text-xl font-semibold text-zinc-900">
+                    {selectedInfo.label}
+                  </h4>
+                </div>
 
-                  <p className="mt-5 text-base leading-relaxed text-zinc-700">
-                    {selectedInfo.fullDescription}
-                  </p>
+                <p className="mt-5 text-base leading-relaxed text-zinc-700">
+                  {selectedInfo.fullDescription}
+                </p>
 
-                  <div className="mt-8">
-                    <Link
-                      href={selectedInfo.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900"
+                <div className="mt-8">
+                  <Link
+                    href={selectedInfo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900"
+                  >
+                    <span>Visitar site oficial</span>
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-200 group-hover:translate-x-1"
                     >
-                      <span>Visitar site oficial</span>
-                      <span
-                        aria-hidden="true"
-                        className="transition-transform duration-200 group-hover:translate-x-1"
-                      >
-                        →
-                      </span>
-                    </Link>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
+                      →
+                    </span>
+                  </Link>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
