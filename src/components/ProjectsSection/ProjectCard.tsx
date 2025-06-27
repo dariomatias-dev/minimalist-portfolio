@@ -6,10 +6,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 import type { Project } from "@/@types/Project";
-import { linkDetails } from "@/constants/linkDetails";
 import { technologyDetails } from "@/lib/technologyDetails";
 import { Badge } from "../ui/badge";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
+import { linkDetails } from "@/lib/linkDetails";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
   const [imageSrc, setImageSrc] = useState(
@@ -85,22 +85,30 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           </div>
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            {project.links.map(({ type, url }) => {
-              const detail = linkDetails[type];
+            <TooltipProvider>
+              {project.links.map(({ type, url }) => {
+                const detail = linkDetails[type];
 
-              return (
-                <Link
-                  key={url}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:text-primary hover:border-primary inline-flex h-auto items-center gap-1.5 rounded-none border-b border-transparent p-0 text-sm font-medium no-underline transition-colors"
-                >
-                  <detail.icon className="h-4 w-4" />
-                  {detail.label}
-                </Link>
-              );
-            })}
+                return (
+                  <Tooltip key={url}>
+                    <TooltipTrigger asChild>
+                      <Link
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary hover:border-primary inline-flex h-auto items-center gap-1.5 rounded-none border-b border-transparent p-0 text-sm font-medium no-underline transition-colors"
+                      >
+                        <detail.icon className="h-4 w-4" />
+                        {detail.label}
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent side="top">
+                      <p className="max-w-xs text-wrap">{detail.tooltip}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                );
+              })}
+            </TooltipProvider>
           </div>
         </div>
       </div>
