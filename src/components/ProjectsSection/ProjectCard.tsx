@@ -1,14 +1,15 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
 import type { Project } from "@/@types/Project";
+import { linkDetails } from "@/constants/linkDetails";
 import { technologyDetails } from "@/lib/technologyDetails";
 import { Badge } from "../ui/badge";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
-import { linkDetails } from "@/constants/linkDetails";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
   const [imageSrc, setImageSrc] = useState(
@@ -16,7 +17,13 @@ export const ProjectCard = ({ project }: { project: Project }) => {
   );
 
   return (
-    <article className="group bg-card text-card-foreground relative flex h-full flex-col rounded-lg border shadow-sm transition-shadow duration-300 hover:shadow-md">
+    <motion.article
+      className="group bg-card text-card-foreground relative flex h-full flex-col rounded-lg border shadow-sm transition-shadow duration-300 hover:shadow-md"
+      variants={{
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: { opacity: 1, scale: 1 },
+      }}
+    >
       <div className="bg-background relative h-48 w-full overflow-hidden rounded-t-lg border-b">
         <Image
           src={imageSrc}
@@ -97,6 +104,6 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           </div>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 };
