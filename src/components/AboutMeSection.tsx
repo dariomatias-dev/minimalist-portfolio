@@ -2,7 +2,7 @@ export const AboutMeSection = () => {
   return (
     <section
       id="about"
-      className="mx-auto max-w-3xl scroll-mt-20 px-4 text-center sm:scroll-mt-24"
+      className="mx-auto max-w-3xl px-4 text-center scroll-mt-24"
     >
       <h2 className="text-foreground text-4xl font-bold">Sobre Mim</h2>
 

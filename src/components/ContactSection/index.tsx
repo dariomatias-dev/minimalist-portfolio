@@ -79,7 +79,7 @@ export const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="mx-auto w-full max-w-3xl scroll-mt-20 px-6 text-center sm:scroll-mt-24"
+      className="mx-auto w-full max-w-3xl px-6 text-center scroll-mt-24"
     >
       <h2 className="text-foreground text-4xl font-bold">Entre em Contato</h2>
 

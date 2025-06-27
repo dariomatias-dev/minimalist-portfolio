@@ -16,7 +16,7 @@ export const SpecialtiesSection = () => {
   return (
     <section
       id="specialties"
-      className="mx-auto max-w-5xl scroll-mt-20 leading-relaxed text-gray-800 sm:scroll-mt-24"
+      className="mx-auto max-w-5xl leading-relaxed text-gray-800 scroll-mt-24"
     >
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-foreground text-4xl font-bold tracking-tight">
