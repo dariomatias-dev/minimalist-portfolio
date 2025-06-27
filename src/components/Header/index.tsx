@@ -2,6 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import { MouseEvent, useCallback, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 import { navItems } from "@/constants/navItems";
 import { MobileMenu } from "./MobileMenu";
@@ -38,7 +39,12 @@ export const Header = () => {
   }, [menuOpen]);
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-gray-300 bg-white/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="fixed top-0 z-50 w-full border-b border-gray-300 bg-white/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/60"
+    >
       <div className="mx-auto max-w-5xl px-6">
         <nav className="flex h-16 items-center justify-between text-sm font-semibold text-gray-800">
           <a
@@ -60,8 +66,10 @@ export const Header = () => {
 
           {/* Desktop Menu */}
           <ul className="hidden space-x-8 md:flex">
-            {navItems.map(({ label, href, id }) => (
-              <li key={href}>
+            {navItems.map(({ label, href, id }, index) => (
+              <li
+                key={href}
+              >
                 <a
                   href={href}
                   onClick={(e) => handleScroll(e, id)}
@@ -85,6 +93,6 @@ export const Header = () => {
           isVisible={menuOpen}
         />
       )}
-    </header>
+    </motion.header>
   );
 };
