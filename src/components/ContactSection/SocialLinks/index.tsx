@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 import { socialLinks } from "@/constants/socialLinks";
@@ -19,7 +20,12 @@ export const SocialLinks = () => {
   };
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.65, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <h3
         id="social-section"
         className="mb-6 text-xl font-semibold tracking-tight text-gray-900"
@@ -50,6 +56,6 @@ export const SocialLinks = () => {
           );
         })}
       </ul>
-    </div>
+    </motion.div>
   );
 };

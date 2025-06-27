@@ -8,7 +8,12 @@ import { useState } from "react";
 import type { Project } from "@/@types/Project";
 import { technologyDetails } from "@/lib/technologyDetails";
 import { Badge } from "../ui/badge";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 import { linkDetails } from "@/lib/linkDetails";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
