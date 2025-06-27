@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Portfólio",
-  description: "Explore projetos, habilidades e experiências.",
+  description: "Explore projetos, habilidades e experiências de Dário Matias.",
 };
 
 export default function RootLayout({
