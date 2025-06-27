@@ -18,36 +18,64 @@ export const SpecialtiesSection = () => {
       id="specialties"
       className="mx-auto max-w-5xl leading-relaxed text-gray-800 scroll-mt-24"
     >
-      <div className="mx-auto max-w-2xl text-center">
+      <motion.div
+        className="mx-auto max-w-2xl text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <h2 className="text-foreground text-4xl font-bold tracking-tight">
           Uma Abordagem Completa
         </h2>
-
         <p className="mt-4 text-lg leading-8 text-zinc-600">
           Da concepção à entrega, meu trabalho abrange todo o ciclo de vida de
           um produto digital.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="mx-auto mt-20 grid max-w-6xl grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+      <motion.div
+        className="mx-auto mt-20 grid max-w-6xl grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.15,
+            },
+          },
+        }}
+      >
         {services.map(({ title, description, icon }) => (
-          <div key={title} className="flex flex-col items-center text-center">
+          <motion.div
+            key={title}
+            className="flex flex-col items-center text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-zinc-500">
               {icon}
             </div>
-
             <h3 className="text-base font-medium text-zinc-900">{title}</h3>
-
             <p className="mt-2 max-w-xs text-sm leading-6 text-zinc-600">
               {description}
             </p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Technical Skills */}
       <div id="skills" className="mt-20 sm:mt-28">
-        <div className="mx-auto max-w-2xl text-center">
+        <motion.div
+          className="mx-auto max-w-2xl text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <h3 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">
             Minha Stack Tecnológica
           </h3>
@@ -56,77 +84,98 @@ export const SpecialtiesSection = () => {
             Ferramentas e tecnologias que utilizo para construir soluções
             digitais modernas, performáticas e de alta qualidade.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Technology List */}
         <div className="mx-auto mt-16 grid max-w-5xl items-start gap-x-8 gap-y-10 lg:mt-20 lg:grid-cols-12">
-          <div className="lg:col-span-4">
+          <motion.div
+            className="lg:col-span-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-base leading-7 font-semibold text-zinc-900">
               Tecnologias
             </h3>
 
-            <div className="mt-4 flex flex-wrap gap-3">
+            <motion.div
+              className="mt-4 flex flex-wrap gap-3"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
+                },
+              }}
+            >
               {techKeys.map((techKey) => (
-                <button
+                <motion.button
                   key={techKey}
                   onClick={() => setSelectedTech(techKey)}
-                  className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${
-                    selectedTech === techKey
-                      ? "border-zinc-900 bg-zinc-900 text-white"
-                      : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900"
-                  }`}
+                  className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${selectedTech === techKey
+                    ? "border-zinc-900 bg-zinc-900 text-white"
+                    : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900"
+                    }`}
+                  variants={{
+                    hidden: { opacity: 0, scale: 0.8 },
+                    visible: { opacity: 1, scale: 1 },
+                  }}
                 >
                   {technologyDetails[techKey].label}
-                </button>
+                </motion.button>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Technology Description */}
           <div className="lg:sticky lg:top-24 lg:col-span-8">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selectedTech}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="rounded-xl border border-zinc-200 bg-white p-8 shadow-sm"
-              >
-                <div className="flex items-center gap-4">
-                  <Image
-                    src={`/icons/${selectedInfo.iconName}.png`}
-                    alt={selectedInfo.label}
-                    width={36}
-                    height={36}
-                  />
-                  <h4 className="text-xl font-semibold text-zinc-900">
-                    {selectedInfo.label}
-                  </h4>
-                </div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedTech}
+                  className="rounded-xl border border-zinc-200 bg-white p-8 shadow-sm"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex items-center gap-4">
+                    <Image
+                      src={`/icons/${selectedInfo.iconName}.png`}
+                      alt={selectedInfo.label}
+                      width={36}
+                      height={36}
+                    />
+                    <h4 className="text-xl font-semibold text-zinc-900">
+                      {selectedInfo.label}
+                    </h4>
+                  </div>
 
-                <p className="mt-5 text-base leading-relaxed text-zinc-700">
-                  {selectedInfo.fullDescription}
-                </p>
+                  <p className="mt-5 text-base leading-relaxed text-zinc-700">
+                    {selectedInfo.fullDescription}
+                  </p>
 
-                <div className="mt-8">
-                  <Link
-                    href={selectedInfo.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900"
-                  >
-                    <span>Visitar site oficial</span>
-                    <span
-                      aria-hidden="true"
-                      className="transition-transform duration-200 group-hover:translate-x-1"
+                  <div className="mt-8">
+                    <Link
+                      href={selectedInfo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900"
                     >
-                      →
-                    </span>
-                  </Link>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+                      <span>Visitar site oficial</span>
+                      <span
+                        aria-hidden="true"
+                        className="transition-transform duration-200 group-hover:translate-x-1"
+                      >
+                        →
+                      </span>
+                    </Link>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
           </div>
         </div>
       </div>
