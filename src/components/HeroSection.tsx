@@ -4,6 +4,7 @@ import { ChevronDown, Download } from "lucide-react";
 import Link from "next/link";
 import { MouseEvent } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 import { ActionButton } from "./ActionButton";
 
@@ -22,7 +23,12 @@ export const HeroSection = () => {
       id="hero"
       className="relative mx-auto flex min-h-screen max-w-3xl scroll-mt-20 flex-col items-center justify-center px-6 text-center sm:scroll-mt-24"
     >
-      <div className="mb-10 pb-10">
+      <motion.div
+        className="mb-10 pb-10"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <p className="mb-4 text-base font-semibold text-gray-700 sm:text-lg">
           Olá! Eu sou Dário Matias
         </p>
@@ -37,9 +43,14 @@ export const HeroSection = () => {
           Sistemas no IFPB - campus Esperança, ampliando conhecimentos através
           de projetos diversos.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="flex flex-wrap justify-center gap-4">
+      <motion.div
+        className="flex flex-wrap justify-center gap-4"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         <Link
           href="https://wa.me/5583986404371"
           target="_blank"
@@ -58,18 +69,21 @@ export const HeroSection = () => {
             icon={<Download className="h-5 w-5" />}
           />
         </Link>
-      </div>
+      </motion.div>
 
       <div className="absolute right-0 bottom-10 left-0 hidden justify-center sm:flex">
-        <a
+        <motion.a
           href="#about"
           aria-label="Scroll para a próxima seção"
-          className="animate-bounce text-gray-400 transition-colors hover:text-gray-600"
+          className="text-gray-400 transition-colors hover:text-gray-600"
           style={{ animationDuration: "1500ms" }}
           onClick={scrollToAbout}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
         >
-          <ChevronDown className="h-8 w-8" />
-        </a>
+          <ChevronDown className="h-8 w-8 animate-bounce" />
+        </motion.a>
       </div>
     </section>
   );
