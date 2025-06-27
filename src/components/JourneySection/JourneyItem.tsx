@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 interface JourneyItemProps {
   date: string;
   title: string;
@@ -21,13 +25,19 @@ export const JourneyItem = ({
   return (
     <li className={`relative flex ${itemContainerClasses}`}>
       <div
-        className={`absolute top-[11px] hidden h-px w-12 bg-slate-200 sm:block ${
+        className={`absolute top-[11px] z-0 hidden h-px w-12 bg-slate-200 sm:block ${
           isLeft ? "right-1/2" : "left-1/2"
         }`}
       />
-      <div className="absolute -top-5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-slate-300 sm:top-1.5" />
+      <div className="absolute -top-5 left-1/2 z-10 h-3 w-3 -translate-x-1/2 rounded-full bg-slate-300 sm:top-1.5" />
 
-      <div className={`bg-background w-full sm:w-1/2 ${alignmentClasses}`}>
+      <motion.div
+        className={`z-10 w-full sm:w-1/2 ${alignmentClasses}`}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
         <p className="text-sm text-slate-500">{date}</p>
         <h4 className="mt-1.5 text-xl font-semibold text-slate-800">{title}</h4>
         <p className="mt-1.5 text-slate-600">{subtitle}</p>
@@ -36,7 +46,7 @@ export const JourneyItem = ({
             {details}
           </p>
         )}
-      </div>
+      </motion.div>
     </li>
   );
 };
