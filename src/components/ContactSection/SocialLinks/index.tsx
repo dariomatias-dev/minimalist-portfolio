@@ -33,7 +33,7 @@ export const SocialLinks = () => {
         Redes Sociais
       </h3>
 
-      <p className="text-muted-foreground mb-10">
+      <p className="text-gray-600 dark:text-gray-400 mb-10">
         Me acompanhe para ficar por dentro dos meus projetos e atualizações, ou
         envie uma mensagem.
       </p>

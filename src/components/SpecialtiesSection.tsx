@@ -28,7 +28,8 @@ export const SpecialtiesSection = () => {
           <h2 className="text-foreground text-4xl font-bold tracking-tight dark:text-white">
             Uma Abordagem Completa
           </h2>
-          <p className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+
+          <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">
             Da concepção à entrega, meu trabalho abrange todo o ciclo de vida de
             um produto digital.
           </p>
@@ -49,7 +50,7 @@ export const SpecialtiesSection = () => {
               <h3 className="text-base font-medium text-zinc-900 dark:text-gray-100">
                 {title}
               </h3>
-              <p className="mt-2 max-w-xs text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+              <p className="mt-2 max-w-xs text-sm leading-6 text-gray-600 dark:text-gray-400">
                 {description}
               </p>
             </motion.div>
@@ -70,7 +71,7 @@ export const SpecialtiesSection = () => {
             Minha Stack Tecnológica
           </h3>
 
-          <p className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+          <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">
             Ferramentas e tecnologias que utilizo para construir soluções
             digitais modernas, performáticas e de alta qualidade.
           </p>
@@ -101,7 +102,7 @@ export const SpecialtiesSection = () => {
                 className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${
                   selectedTech === techKey
                     ? "border-zinc-900 bg-zinc-900 text-white dark:border-zinc-200 dark:bg-zinc-100 dark:text-zinc-900"
-                    : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-600 dark:text-zinc-400 dark:hover:border-zinc-400 dark:hover:text-white"
+                    : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-600 dark:text-zinc-400 dark:hover:border-zinc-800 dark:hover:text-white"
                 } `}
                 variants={{
                   hidden: { opacity: 0, scale: 0.8 },
@@ -118,7 +119,7 @@ export const SpecialtiesSection = () => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedTech}
-                className="rounded-xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-700 dark:bg-zinc-900"
+                className="rounded-xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-950"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}

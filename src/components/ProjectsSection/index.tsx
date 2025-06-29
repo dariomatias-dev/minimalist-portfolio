@@ -52,7 +52,7 @@ export const ProjectsSection = () => {
             O Que Tenho Criado
           </h2>
 
-          <p className="text-muted-foreground mt-4 text-lg dark:text-gray-400">
+          <p className="text-gray-600 dark:text-gray-400 mt-4 text-lg dark:text-gray-400">
             Uma seleção dos meus principais projetos desenvolvidos ao longo da
             minha trajetória.
           </p>

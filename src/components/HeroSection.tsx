@@ -38,6 +38,7 @@ export const HeroSection = () => {
         </h1>
 
         <p className="mx-auto max-w-xl text-sm text-gray-600 sm:text-base dark:text-gray-400">
+          {/* <p className="mx-auto max-w-xl text-sm text-gray-600 dark:text-gray-400 sm:text-base"> */}
           Sou um desenvolvedor Full Stack, com destaque em frontend web e
           mobile, e experiência em backend. Atualmente, curso Análise e
           Desenvolvimento de Sistemas no IFPB - Campus Esperança e, de forma
