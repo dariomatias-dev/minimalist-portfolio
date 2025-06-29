@@ -49,7 +49,7 @@ export const AboutMeSection = () => {
       </motion.h2>
 
       <motion.div
-        className="text-gray-600 dark:text-gray-400 mt-8 space-y-6 text-base leading-relaxed text-balance sm:text-lg"
+        className="mt-8 space-y-6 text-base leading-relaxed text-balance text-gray-600 sm:text-lg dark:text-gray-400"
         initial="hidden"
         whileInView="visible"
         transition={{ staggerChildren: 0.2 }}

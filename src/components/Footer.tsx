@@ -12,7 +12,7 @@ export const Footer = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
     >
-      <div className="text-gray-600 dark:text-gray-400 mx-auto flex max-w-screen-2xl flex-col items-center justify-between gap-4 py-6 text-center text-sm md:flex-row md:text-left">
+      <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-between gap-4 py-6 text-center text-sm text-gray-600 md:flex-row md:text-left dark:text-gray-400">
         <motion.div
           className="flex flex-col items-center gap-2 md:flex-row md:gap-3"
           initial={{ opacity: 0, y: 10 }}

@@ -94,7 +94,7 @@ export const ContactSection = () => {
       </motion.h2>
 
       <motion.p
-        className="text-gray-600 dark:text-gray-400 mt-4 text-lg leading-relaxed"
+        className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-400"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}

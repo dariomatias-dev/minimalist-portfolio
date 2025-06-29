@@ -46,7 +46,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           <span>{project.title}</span>
         </h3>
 
-        <p className="text-gray-600 dark:text-gray-400 mt-2 flex-1 text-sm dark:text-gray-400">
+        <p className="mt-2 flex-1 text-sm text-gray-600 dark:text-gray-400">
           {project.description}
         </p>
 

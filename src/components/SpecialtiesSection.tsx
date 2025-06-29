@@ -43,6 +43,7 @@ export const SpecialtiesSection = () => {
           </p>
         </div>
 
+        {/* Services */}
         <div className="mx-auto mt-20 flex max-w-6xl flex-wrap justify-start gap-12">
           {services.map(({ title, description, icon }) => (
             <motion.div
@@ -108,10 +109,11 @@ export const SpecialtiesSection = () => {
               <motion.button
                 key={techKey}
                 onClick={() => setSelectedTech(techKey)}
-                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${selectedTech === techKey
-                  ? "border-zinc-900 bg-zinc-900 text-white dark:border-zinc-200 dark:bg-zinc-100 dark:text-zinc-900"
-                  : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-600 dark:text-zinc-400 dark:hover:border-zinc-800 dark:hover:text-white"
-                  } `}
+                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${
+                  selectedTech === techKey
+                    ? "border-zinc-900 bg-zinc-900 text-white dark:border-zinc-200 dark:bg-zinc-100 dark:text-zinc-900"
+                    : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-600 dark:text-zinc-400 dark:hover:border-zinc-800 dark:hover:text-white"
+                } `}
                 variants={{
                   hidden: { opacity: 0, scale: 0.8 },
                   visible: { opacity: 1, scale: 1 },
