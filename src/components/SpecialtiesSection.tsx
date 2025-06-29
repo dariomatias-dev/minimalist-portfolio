@@ -56,9 +56,11 @@ export const SpecialtiesSection = () => {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800">
                 <service.icon className="h-5 w-5" />
               </div>
+
               <h3 className="text-base font-medium text-zinc-900 dark:text-gray-100">
                 {service.title}
               </h3>
+
               <p className="mt-2 max-w-xs text-sm leading-6 text-gray-600 dark:text-gray-400">
                 {service.description}
               </p>

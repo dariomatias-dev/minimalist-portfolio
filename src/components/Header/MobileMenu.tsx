@@ -48,7 +48,6 @@ export const MobileMenu = ({
         ))}
       </div>
 
-      {/* Theme Toggle Mobile */}
       <div className="mb-8">
         <ThemeToggle />
       </div>

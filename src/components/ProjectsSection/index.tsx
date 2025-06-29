@@ -24,14 +24,18 @@ export const ProjectsSection = () => {
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
+
     setCanScrollPrev(emblaApi.canScrollPrev());
     setCanScrollNext(emblaApi.canScrollNext());
   }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
+
     onSelect();
+
     emblaApi.on("select", onSelect).on("reInit", onSelect);
+
     return () => {
       emblaApi.off("select", onSelect).off("reInit", onSelect);
     };

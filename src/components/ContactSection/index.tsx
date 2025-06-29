@@ -63,12 +63,14 @@ export const ContactSection = () => {
       );
 
       form.reset();
+
       showToast({
         type: ToastType.Success,
         message: "Email enviado com sucesso",
       });
     } catch (error) {
       console.error("Erro ao enviar email:", error);
+
       showToast({ type: ToastType.Error, message: "Erro ao enviar email" });
     } finally {
       setIsSending(false);
@@ -132,6 +134,7 @@ export const ContactSection = () => {
                   </FormItem>
                 )}
               />
+
               <FormField
                 control={form.control}
                 name="email"
