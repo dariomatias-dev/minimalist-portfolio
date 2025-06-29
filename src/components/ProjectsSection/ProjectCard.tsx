@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import type { Project } from "@/@types/Project";
-import { technologyDetails } from "@/lib/technologyDetails";
+import { technologyDetails } from "@/constants/technologyDetails";
 import { Badge } from "../ui/badge";
 import {
   Tooltip,
@@ -14,7 +14,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
-import { linkDetails } from "@/lib/linkDetails";
+import { linkDetails } from "@/constants/linkDetails";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
   const [imageSrc, setImageSrc] = useState(

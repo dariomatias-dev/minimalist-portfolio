@@ -1,11 +1,4 @@
-export type Technology = {
-  label: string;
-  iconName: string;
-  iconNameDark?: string;
-  url: string;
-  shortDescription: string;
-  fullDescription: string;
-};
+import { Technology } from "@/@types/Technology";
 
 export const technologyDetails: Record<string, Technology> = {
   // Programming Languages

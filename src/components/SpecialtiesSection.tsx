@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useTheme } from "next-themes";
 
 import { services } from "@/constants/services";
-import { technologyDetails } from "@/lib/technologyDetails";
+import { technologyDetails } from "@/constants/technologyDetails";
 
 export const SpecialtiesSection = () => {
   const techKeys = Object.keys(technologyDetails);
