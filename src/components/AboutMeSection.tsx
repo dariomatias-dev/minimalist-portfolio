@@ -2,6 +2,36 @@
 
 import { motion } from "framer-motion";
 
+const aboutTexts = [
+  `Sou um desenvolvedor Full Stack com experiência na criação de soluções completas — de interfaces modernas e acessíveis a integrações com sistemas robustos de backend.`,
+  `No frontend, utilizo React e Next.js para desenvolver aplicações responsivas, performáticas e com excelente experiência do usuário. Também atuo com Flutter no desenvolvimento mobile, criando apps nativos e multiplataforma.`,
+  `No backend, trabalho com TypeScript (Node.js) e Go, construindo APIs escaláveis, seguras e de alta performance, com foco em boas práticas, testes e manutenção.`,
+  `Tenho compromisso com a qualidade técnica e estou em constante evolução, buscando entregar soluções bem estruturadas, eficientes e sustentáveis — seja em projetos pessoais ou profissionais.`,
+];
+
+const highlightWords = [
+  "Flutter",
+  "Next.js",
+  "React",
+  "TypeScript",
+  "Go",
+  "Full Stack",
+];
+
+const highlightText = (text: string) => {
+  return text
+    .split(new RegExp(`(${highlightWords.join("|")})`, "g"))
+    .map((part, i) =>
+      highlightWords.includes(part) ? (
+        <strong key={i} className="text-foreground dark:text-white">
+          {part}
+        </strong>
+      ) : (
+        <span key={i}>{part}</span>
+      ),
+    );
+};
+
 export const AboutMeSection = () => {
   return (
     <section
@@ -24,17 +54,9 @@ export const AboutMeSection = () => {
         whileInView="visible"
         transition={{ staggerChildren: 0.2 }}
         viewport={{ once: true }}
-        variants={{
-          hidden: {},
-          visible: {},
-        }}
+        variants={{ hidden: {}, visible: {} }}
       >
-        {[
-          `Sou um desenvolvedor Full Stack com experiência na criação de soluções completas — de interfaces modernas e acessíveis a integrações com sistemas robustos de backend.`,
-          `No frontend, utilizo React e Next.js para desenvolver aplicações responsivas, performáticas e com excelente experiência do usuário. Também atuo com Flutter no desenvolvimento mobile, criando apps nativos e multiplataforma.`,
-          `No backend, trabalho com TypeScript (Node.js) e Go, construindo APIs escaláveis, seguras e de alta performance, com foco em boas práticas, testes e manutenção.`,
-          `Tenho compromisso com a qualidade técnica e estou em constante evolução, buscando entregar soluções bem estruturadas, eficientes e sustentáveis — seja em projetos pessoais ou profissionais.`,
-        ].map((text, index) => (
+        {aboutTexts.map((paragraph, index) => (
           <motion.p
             key={index}
             variants={{
@@ -43,24 +65,7 @@ export const AboutMeSection = () => {
             }}
             transition={{ duration: 0.5 }}
           >
-            {text
-              .split(/(Flutter|Next\.js|React|TypeScript|Go|Full Stack)/g)
-              .map((part, i) =>
-                [
-                  "Flutter",
-                  "Next.js",
-                  "React",
-                  "TypeScript",
-                  "Go",
-                  "Full Stack",
-                ].includes(part) ? (
-                  <strong key={i} className="text-foreground">
-                    {part}
-                  </strong>
-                ) : (
-                  <span key={i}>{part}</span>
-                ),
-              )}
+            {highlightText(paragraph)}
           </motion.p>
         ))}
       </motion.div>

@@ -29,15 +29,15 @@ export const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <p className="mb-4 text-base font-semibold text-gray-700 dark:text-gray-300 sm:text-lg">
+        <p className="mb-4 text-base font-semibold text-gray-700 sm:text-lg dark:text-gray-300">
           Olá! Eu sou Dário Matias
         </p>
 
-        <h1 className="mb-8 text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-6xl">
+        <h1 className="mb-8 text-5xl font-extrabold tracking-tight text-gray-900 md:text-6xl dark:text-white">
           Full Stack Developer
         </h1>
 
-        <p className="mx-auto max-w-xl text-sm text-gray-600 dark:text-gray-400 sm:text-base">
+        <p className="mx-auto max-w-xl text-sm text-gray-600 sm:text-base dark:text-gray-400">
           Sou um desenvolvedor Full Stack, com destaque em frontend web e
           mobile, e experiência em backend. Atualmente, curso Análise e
           Desenvolvimento de Sistemas no IFPB - Campus Esperança e, de forma
