@@ -23,15 +23,11 @@ export const ThemeToggle = () => {
   return (
     <Button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="relative size-10 rounded-full focus-visible:ring-0"
+      className="relative rounded-full focus-visible:ring-0"
       variant="ghost"
       aria-label={isDark ? "Enable light mode" : "Enable dark mode"}
     >
-      {isDark ? (
-        <Sun className="h-[1.2rem] w-[1.2rem]" />
-      ) : (
-        <Moon className="h-[1.2rem] w-[1.2rem]" />
-      )}
+      {isDark ? <Sun /> : <Moon />}
     </Button>
   );
 };
