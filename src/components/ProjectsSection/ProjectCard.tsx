@@ -23,7 +23,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
 
   return (
     <motion.article
-      className="group bg-card text-card-foreground relative flex h-full flex-col rounded-lg border shadow-sm transition-shadow duration-300 hover:shadow-md"
+      className="group bg-card text-card-foreground relative flex h-full flex-col rounded-lg border shadow-sm transition-shadow duration-300 hover:shadow-md dark:bg-zinc-950"
       variants={{
         hidden: { opacity: 0, scale: 0.8 },
         visible: { opacity: 1, scale: 1 },
@@ -46,7 +46,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           <span>{project.title}</span>
         </h3>
 
-        <p className="text-muted-foreground mt-2 flex-1 text-sm">
+        <p className="text-muted-foreground mt-2 flex-1 text-sm dark:text-gray-400">
           {project.description}
         </p>
 
