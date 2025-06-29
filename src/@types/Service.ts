@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import { ElementType } from "react";
 
 export interface Service {
   title: string;
   description: string;
-  icon: ReactNode;
+  icon: ElementType;
 }

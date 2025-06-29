@@ -45,22 +45,22 @@ export const SpecialtiesSection = () => {
 
         {/* Services */}
         <div className="mx-auto mt-20 flex max-w-6xl flex-wrap justify-start gap-12">
-          {services.map(({ title, description, icon }) => (
+          {services.map((service) => (
             <motion.div
-              key={title}
+              key={service.title}
               className="mx-auto flex w-72 flex-col items-center text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800">
-                {icon}
+                <service.icon className="h-5 w-5" />
               </div>
               <h3 className="text-base font-medium text-zinc-900 dark:text-gray-100">
-                {title}
+                {service.title}
               </h3>
               <p className="mt-2 max-w-xs text-sm leading-6 text-gray-600 dark:text-gray-400">
-                {description}
+                {service.description}
               </p>
             </motion.div>
           ))}

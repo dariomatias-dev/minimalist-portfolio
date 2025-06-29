@@ -7,18 +7,18 @@ export const services: Service[] = [
     title: "Criação de Sites",
     description:
       "Desenvolvimento de websites responsivos, modernos e otimizados para SEO.",
-    icon: <Monitor className="h-5 w-5" />,
+    icon: Monitor,
   },
   {
     title: "Criação de Aplicativos",
     description:
       "Desenvolvimento de apps multiplataforma com ótima experiência do usuário.",
-    icon: <Smartphone className="h-5 w-5" />,
+    icon: Smartphone,
   },
   {
     title: "Criação de Servidores",
     description:
       "APIs e sistemas backend seguros, robustos e escaláveis com boas práticas.",
-    icon: <Server className="h-5 w-5" />,
+    icon: Server,
   },
 ];
