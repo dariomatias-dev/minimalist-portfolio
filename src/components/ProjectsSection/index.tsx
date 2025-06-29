@@ -52,7 +52,7 @@ export const ProjectsSection = () => {
             O Que Tenho Criado
           </h2>
 
-          <p className="text-muted-foreground mt-4 text-lg">
+          <p className="text-muted-foreground mt-4 text-lg dark:text-gray-400">
             Uma seleção dos meus principais projetos desenvolvidos ao longo da
             minha trajetória.
           </p>
@@ -103,10 +103,10 @@ export const ProjectsSection = () => {
                 disabled={!canScrollPrev}
                 variant="ghost"
                 size="icon"
-                className="cursor-pointer rounded-full shadow-md transition-colors duration-200 hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-gray-300 disabled:opacity-30"
                 aria-label="Anterior"
+                className="cursor-pointer rounded-full shadow-md transition-colors duration-200 hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-gray-300 disabled:opacity-30 dark:hover:bg-zinc-900 dark:focus-visible:ring-gray-500"
               >
-                <ChevronLeft className="h-5 w-5" />
+                <ChevronLeft className="h-5 w-5 text-gray-700 dark:text-gray-200" />
               </Button>
             </motion.div>
 
@@ -116,10 +116,10 @@ export const ProjectsSection = () => {
                 disabled={!canScrollNext}
                 variant="ghost"
                 size="icon"
-                className="cursor-pointer rounded-full shadow-md transition-colors duration-200 hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-gray-300 disabled:opacity-30"
                 aria-label="Próximo"
+                className="cursor-pointer rounded-full shadow-md transition-colors duration-200 hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-gray-300 disabled:opacity-30 dark:hover:bg-zinc-900 dark:focus-visible:ring-gray-500"
               >
-                <ChevronRight className="h-5 w-5" />
+                <ChevronRight className="h-5 w-5 text-gray-700 dark:text-gray-200" />
               </Button>
             </motion.div>
           </motion.div>
