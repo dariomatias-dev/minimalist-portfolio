@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 
 import { services } from "@/constants/services";
 import { technologyDetails } from "@/lib/technologyDetails";
@@ -12,6 +13,13 @@ export const SpecialtiesSection = () => {
   const techKeys = Object.keys(technologyDetails);
   const [selectedTech, setSelectedTech] = useState<string>(techKeys[0]);
   const selectedInfo = technologyDetails[selectedTech];
+
+  const { resolvedTheme } = useTheme();
+
+  const iconSrc =
+    resolvedTheme === "dark" && selectedInfo.iconNameDark
+      ? `/icons/${selectedInfo.iconNameDark}.png`
+      : `/icons/${selectedInfo.iconName}.png`;
 
   return (
     <section
@@ -78,6 +86,7 @@ export const SpecialtiesSection = () => {
         </motion.div>
 
         <div className="mx-auto mt-6 grid max-w-5xl items-start gap-x-8 gap-y-10 lg:mt-20 lg:grid-cols-12">
+          {/* Technologies */}
           <motion.div
             className="mt-4 flex flex-wrap justify-center gap-3 lg:col-span-4 lg:justify-start"
             initial="hidden"
@@ -99,11 +108,10 @@ export const SpecialtiesSection = () => {
               <motion.button
                 key={techKey}
                 onClick={() => setSelectedTech(techKey)}
-                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${
-                  selectedTech === techKey
-                    ? "border-zinc-900 bg-zinc-900 text-white dark:border-zinc-200 dark:bg-zinc-100 dark:text-zinc-900"
-                    : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-600 dark:text-zinc-400 dark:hover:border-zinc-800 dark:hover:text-white"
-                } `}
+                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-200 ease-in-out ${selectedTech === techKey
+                  ? "border-zinc-900 bg-zinc-900 text-white dark:border-zinc-200 dark:bg-zinc-100 dark:text-zinc-900"
+                  : "border-zinc-300 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-600 dark:text-zinc-400 dark:hover:border-zinc-800 dark:hover:text-white"
+                  } `}
                 variants={{
                   hidden: { opacity: 0, scale: 0.8 },
                   visible: { opacity: 1, scale: 1 },
@@ -127,11 +135,12 @@ export const SpecialtiesSection = () => {
               >
                 <div className="flex items-center gap-4">
                   <Image
-                    src={`/icons/${selectedInfo.iconName}.png`}
+                    src={iconSrc}
                     alt={selectedInfo.label}
                     width={36}
                     height={36}
                   />
+
                   <h4 className="text-xl font-semibold text-zinc-900 dark:text-white">
                     {selectedInfo.label}
                   </h4>
@@ -149,6 +158,7 @@ export const SpecialtiesSection = () => {
                     className="group inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
                   >
                     <span>Visitar site oficial</span>
+
                     <span
                       aria-hidden="true"
                       className="transition-transform duration-200 group-hover:translate-x-1"
