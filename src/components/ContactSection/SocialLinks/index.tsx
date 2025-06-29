@@ -28,12 +28,12 @@ export const SocialLinks = () => {
     >
       <h3
         id="social-section"
-        className="mb-6 text-xl font-semibold tracking-tight text-gray-900"
+        className="text-foreground mb-6 text-xl font-semibold tracking-tight"
       >
         Redes Sociais
       </h3>
 
-      <p className="mb-10 text-gray-600">
+      <p className="text-muted-foreground mb-10">
         Me acompanhe para ficar por dentro dos meus projetos e atualizações, ou
         envie uma mensagem.
       </p>

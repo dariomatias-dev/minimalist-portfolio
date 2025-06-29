@@ -25,12 +25,12 @@ export const JourneyItem = ({
   return (
     <li className={`relative flex ${itemContainerClasses}`}>
       <div
-        className={`absolute top-[11px] z-0 hidden h-px w-12 bg-slate-200 dark:bg-zinc-800 sm:block ${
+        className={`absolute top-[11px] z-0 hidden h-px w-12 bg-slate-200 sm:block dark:bg-zinc-800 ${
           isLeft ? "right-1/2" : "left-1/2"
         }`}
       />
 
-      <div className="absolute -top-5 left-1/2 z-10 h-3 w-3 -translate-x-1/2 rounded-full bg-slate-200 dark:bg-zinc-700 sm:top-1.5" />
+      <div className="absolute -top-5 left-1/2 z-10 h-3 w-3 -translate-x-1/2 rounded-full bg-slate-200 sm:top-1.5 dark:bg-zinc-700" />
 
       <motion.div
         className={`z-10 w-full sm:w-1/2 ${alignmentClasses}`}
@@ -49,7 +49,7 @@ export const JourneyItem = ({
           <p className="mt-1.5 text-slate-600 dark:text-zinc-300">{subtitle}</p>
 
           {details && (
-            <p className="mx-auto mt-4 max-w-prose text-sm leading-relaxed text-slate-500 dark:text-zinc-400 sm:mx-0">
+            <p className="mx-auto mt-4 max-w-prose text-sm leading-relaxed text-slate-500 sm:mx-0 dark:text-zinc-400">
               {details}
             </p>
           )}

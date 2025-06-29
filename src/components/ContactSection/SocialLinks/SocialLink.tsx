@@ -11,7 +11,7 @@ type SocialLinkProps = {
 };
 
 const baseClasses =
-  "flex w-full flex-col items-center justify-center gap-2 rounded-md border border-gray-200 px-6 py-7 shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500";
+  "flex w-full flex-col items-center justify-center gap-2 rounded-md border border-border px-6 py-7 shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 export const SocialLink = ({
   href,
@@ -23,10 +23,11 @@ export const SocialLink = ({
 }: SocialLinkProps) => {
   const isEmail = href.includes("@gmail");
 
-  const bgColor = isCopied
-    ? "bg-black text-white"
-    : "bg-white text-black hover:bg-black hover:text-white";
-  const classes = `${baseClasses} ${bgColor}`;
+  const dynamicClasses = isCopied
+    ? "bg-foreground text-background"
+    : "bg-background text-foreground hover:bg-foreground hover:text-background";
+
+  const classes = `${baseClasses} ${dynamicClasses}`;
 
   const content = (
     <>
@@ -58,7 +59,7 @@ export const SocialLink = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${baseClasses} text-black hover:bg-black hover:text-white`}
+      className={classes}
     >
       {content}
     </Link>

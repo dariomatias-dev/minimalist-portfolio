@@ -63,14 +63,12 @@ export const ContactSection = () => {
       );
 
       form.reset();
-
       showToast({
         type: ToastType.Success,
         message: "Email enviado com sucesso",
       });
     } catch (error) {
       console.error("Erro ao enviar email:", error);
-
       showToast({ type: ToastType.Error, message: "Erro ao enviar email" });
     } finally {
       setIsSending(false);
@@ -96,7 +94,7 @@ export const ContactSection = () => {
       </motion.h2>
 
       <motion.p
-        className="mt-4 text-lg leading-relaxed text-gray-600"
+        className="text-muted-foreground mt-4 text-lg leading-relaxed"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
@@ -127,7 +125,7 @@ export const ContactSection = () => {
                       <Input
                         placeholder="Assunto"
                         {...field}
-                        className="border-gray-200 bg-white/50 focus-visible:ring-0 focus-visible:ring-gray-400"
+                        className="border-input bg-background/80 focus-visible:ring-ring focus-visible:ring-0"
                       />
                     </FormControl>
                     <FormMessage />
@@ -144,7 +142,7 @@ export const ContactSection = () => {
                         type="email"
                         placeholder="Seu e-mail"
                         {...field}
-                        className="border-gray-200 bg-white/50 focus-visible:ring-0 focus-visible:ring-gray-400"
+                        className="border-input bg-background/80 focus-visible:ring-ring focus-visible:ring-0"
                       />
                     </FormControl>
                     <FormMessage />
@@ -163,7 +161,7 @@ export const ContactSection = () => {
                       rows={5}
                       placeholder="Sua mensagem..."
                       {...field}
-                      className="border-gray-200 bg-white/50 focus-visible:ring-0 focus-visible:ring-gray-400"
+                      className="border-input bg-background/80 focus-visible:ring-ring focus-visible:ring-0"
                     />
                   </FormControl>
                   <FormMessage />
@@ -190,7 +188,7 @@ export const ContactSection = () => {
       </motion.div>
 
       <motion.div
-        className="mx-auto my-12 h-px w-20 bg-gray-200 sm:my-16"
+        className="bg-border mx-auto my-12 h-px w-20 sm:my-16"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}

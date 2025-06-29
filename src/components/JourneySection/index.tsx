@@ -21,7 +21,7 @@ export const JourneySection = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-foreground dark:text-white text-4xl font-bold tracking-tight">
+        <h2 className="text-foreground text-4xl font-bold tracking-tight dark:text-white">
           Trajetória
         </h2>
 
