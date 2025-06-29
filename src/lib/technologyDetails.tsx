@@ -78,6 +78,7 @@ export const technologyDetails: Record<string, Technology> = {
   Fastify: {
     label: "Fastify",
     iconName: "fastify_icon",
+    iconNameDark: "fastify_dark_icon",
     url: "https://fastify.dev",
     shortDescription:
       "Framework web Node.js leve e rápido, com foco em performance.",
