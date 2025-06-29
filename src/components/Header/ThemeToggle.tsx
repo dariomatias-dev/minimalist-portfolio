@@ -24,7 +24,7 @@ export const ThemeToggle = () => {
   return (
     <Button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="relative rounded-full focus-visible:ring-0"
+      className="relative size-10 rounded-full focus-visible:ring-0"
       variant="ghost"
       aria-label={isDark ? "Enable light mode" : "Enable dark mode"}
     >
@@ -35,12 +35,12 @@ export const ThemeToggle = () => {
           animate={{ opacity: 1, rotate: 0 }}
           exit={{ opacity: 0, rotate: 90 }}
           transition={{ duration: 0.2, ease: "easeInOut" }}
-          className="absolute"
+          className="absolute inset-0 flex items-center justify-center"
         >
           {isDark ? (
-            <Sun className="size-5 text-gray-100 md:size-[1.1rem]" />
+            <Sun className="size-5 text-gray-100" />
           ) : (
-            <Moon className="size-5 text-gray-800 md:size-[1.1rem]" />
+            <Moon className="size-5 text-zinc-800" />
           )}
         </motion.div>
       </AnimatePresence>
