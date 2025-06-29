@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 
 import { navItems } from "@/constants/navItems";
 import { MobileMenu } from "./MobileMenu";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,7 +19,6 @@ export const Header = () => {
       const el = document.getElementById(id);
       if (el) {
         el.scrollIntoView({ behavior: "smooth" });
-
         setMenuOpen(false);
       }
     },
@@ -28,6 +28,7 @@ export const Header = () => {
   useEffect(() => {
     if (menuOpen) {
       setShowMenu(true);
+
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -43,42 +44,48 @@ export const Header = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="fixed top-0 z-50 w-full border-b border-gray-300 bg-white/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/60"
+      className="dark:supports-[backdrop-filter]:bg-bg-black/60 fixed top-0 z-50 w-full border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/60 dark:border-gray-800 dark:bg-black/80"
     >
       <div className="mx-auto max-w-5xl px-6">
-        <nav className="flex h-16 items-center justify-between text-sm font-semibold text-gray-800">
+        <nav className="flex h-16 items-center justify-between text-sm font-semibold text-gray-800 dark:text-gray-200">
           <a
             href="#hero"
             onClick={(e) => handleScroll(e, "hero")}
-            className="cursor-pointer text-xl font-bold tracking-tight transition-colors duration-300 hover:text-black"
+            className="cursor-pointer text-xl font-bold tracking-tight transition-colors duration-300 hover:text-black dark:hover:text-white"
           >
             Dário Matias
           </a>
 
-          {/* Mobile Menu Icon */}
-          <button
-            onClick={() => setMenuOpen((prev) => !prev)}
-            className="block md:hidden"
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-          >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-4">
+            {/* Desktop Menu */}
+            <ul className="hidden space-x-8 md:flex">
+              {navItems.map(({ label, href, id }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    onClick={(e) => handleScroll(e, id)}
+                    className="group relative cursor-pointer text-gray-700 transition-colors duration-300 hover:text-black dark:text-gray-300 dark:hover:text-white"
+                  >
+                    {label}
+                    <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full dark:bg-white" />
+                  </a>
+                </li>
+              ))}
+            </ul>
 
-          {/* Desktop Menu */}
-          <ul className="hidden space-x-8 md:flex">
-            {navItems.map(({ label, href, id }) => (
-              <li key={href}>
-                <a
-                  href={href}
-                  onClick={(e) => handleScroll(e, id)}
-                  className="group relative cursor-pointer text-gray-700 transition-colors duration-300 hover:text-black"
-                >
-                  {label}
-                  <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full" />
-                </a>
-              </li>
-            ))}
-          </ul>
+            <div className="ml-4 hidden items-center md:flex">
+              <ThemeToggle />
+            </div>
+
+            {/* Mobile Menu Icon */}
+            <button
+              onClick={() => setMenuOpen((prev) => !prev)}
+              className="block md:hidden"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+            >
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </nav>
       </div>
 

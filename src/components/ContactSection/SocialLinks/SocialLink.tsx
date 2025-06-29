@@ -58,7 +58,7 @@ export const SocialLink = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${baseClasses} bg-white text-black hover:bg-black hover:text-white`}
+      className={`${baseClasses} text-black hover:bg-black hover:text-white`}
     >
       {content}
     </Link>
