@@ -1,5 +1,4 @@
 import { MouseEvent } from "react";
-import { ThemeToggle } from "./ThemeToggle";
 import { X } from "lucide-react";
 
 type MobileMenuProps = {
@@ -46,10 +45,6 @@ export const MobileMenu = ({
             {label}
           </a>
         ))}
-      </div>
-
-      <div className="mb-8">
-        <ThemeToggle />
       </div>
     </div>
   );

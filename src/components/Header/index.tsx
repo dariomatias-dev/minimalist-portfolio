@@ -73,7 +73,11 @@ export const Header = () => {
               ))}
             </ul>
 
-            <div className="ml-4 hidden items-center md:flex">
+            <div className="ml-6 hidden items-center md:flex">
+              <ThemeToggle />
+            </div>
+
+            <div className="ml-4 block md:hidden">
               <ThemeToggle />
             </div>
 
