@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { ReactNode } from "react";
 
-type SocialLinkProps = {
-  href: string;
-  label: string;
-  subLabel: string;
-  icon: ReactNode;
+import { SocialLink } from "@/@types/SocialLink";
+
+type SocialLinkItemProps = {
+  socialLink: SocialLink;
   isCopied: boolean;
   onCopy?: () => void;
 };
@@ -13,15 +11,12 @@ type SocialLinkProps = {
 const baseClasses =
   "flex w-full flex-col items-center justify-center gap-2 rounded-md border border-border px-6 py-7 shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
-export const SocialLink = ({
-  href,
-  label,
-  subLabel,
-  icon,
+export const SocialLinkItem = ({
+  socialLink,
   isCopied,
   onCopy,
-}: SocialLinkProps) => {
-  const isEmail = href.includes("@gmail");
+}: SocialLinkItemProps) => {
+  const isEmail = socialLink.href.includes("@gmail");
 
   const dynamicClasses = isCopied
     ? "bg-foreground text-background"
@@ -31,13 +26,15 @@ export const SocialLink = ({
 
   const content = (
     <>
-      <div className="text-inherit">{icon}</div>
+      <div className="text-inherit">
+        <socialLink.icon className="h-6 w-6" />
+      </div>
 
       <span className="text-sm font-semibold text-inherit">
-        {isCopied ? "E-mail copiado!" : label}
+        {isCopied ? "E-mail copiado!" : socialLink.label}
       </span>
 
-      <span className="text-xs text-inherit">{subLabel}</span>
+      <span className="text-xs text-inherit">{socialLink.subLabel}</span>
     </>
   );
 
@@ -56,7 +53,7 @@ export const SocialLink = ({
 
   return (
     <Link
-      href={href}
+      href={socialLink.href}
       target="_blank"
       rel="noopener noreferrer"
       className={classes}

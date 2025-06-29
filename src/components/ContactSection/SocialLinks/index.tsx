@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 import { socialLinks } from "@/constants/socialLinks";
-import { SocialLink } from "./SocialLink";
+import { SocialLinkItem } from "./SocialLinkItem";
 
 export const SocialLinks = () => {
   const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
@@ -39,18 +39,17 @@ export const SocialLinks = () => {
       </p>
 
       <ul className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
-        {socialLinks.map(({ href, label, subLabel, icon }) => {
-          const isEmail = href.includes("@gmail");
+        {socialLinks.map((socialLink) => {
+          const isEmail = socialLink.href.includes("@gmail");
 
           return (
-            <li key={href}>
-              <SocialLink
-                href={href}
-                label={label}
-                subLabel={subLabel}
-                icon={icon}
-                isCopied={copiedEmail === href}
-                onCopy={isEmail ? () => handleCopyEmail(href) : undefined}
+            <li key={socialLink.href}>
+              <SocialLinkItem
+                socialLink={socialLink}
+                isCopied={copiedEmail === socialLink.href}
+                onCopy={
+                  isEmail ? () => handleCopyEmail(socialLink.href) : undefined
+                }
               />
             </li>
           );
