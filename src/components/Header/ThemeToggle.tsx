@@ -24,7 +24,7 @@ export const ThemeToggle = () => {
   return (
     <Button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="relative rounded-full p-0"
+      className="relative rounded-full p-0 focus-visible:ring-0"
       variant="ghost"
       size="icon"
       aria-label={isDark ? "Enable light mode" : "Enable dark mode"}
