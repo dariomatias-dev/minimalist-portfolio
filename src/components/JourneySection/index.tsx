@@ -21,11 +21,11 @@ export const JourneySection = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-foreground text-4xl font-bold tracking-tight">
+        <h2 className="text-foreground dark:text-white text-4xl font-bold tracking-tight">
           Trajetória
         </h2>
 
-        <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-600">
+        <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-600 dark:text-zinc-400">
           Minha jornada profissional e acadêmica, onde cada passo foi uma
           oportunidade de crescimento e aprendizado.
         </p>

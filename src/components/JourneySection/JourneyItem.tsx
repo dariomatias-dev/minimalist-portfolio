@@ -25,12 +25,12 @@ export const JourneyItem = ({
   return (
     <li className={`relative flex ${itemContainerClasses}`}>
       <div
-        className={`absolute top-[11px] z-0 hidden h-px w-12 bg-slate-200 sm:block ${
+        className={`absolute top-[11px] z-0 hidden h-px w-12 bg-slate-200 dark:bg-zinc-800 sm:block ${
           isLeft ? "right-1/2" : "left-1/2"
         }`}
       />
 
-      <div className="absolute -top-5 left-1/2 z-10 h-3 w-3 -translate-x-1/2 rounded-full bg-slate-200 sm:top-1.5" />
+      <div className="absolute -top-5 left-1/2 z-10 h-3 w-3 -translate-x-1/2 rounded-full bg-slate-200 dark:bg-zinc-700 sm:top-1.5" />
 
       <motion.div
         className={`z-10 w-full sm:w-1/2 ${alignmentClasses}`}
@@ -39,17 +39,17 @@ export const JourneyItem = ({
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        <div className="bg-background">
-          <p className="text-sm text-slate-500">{date}</p>
+        <div className="bg-background dark:bg-black">
+          <p className="text-sm text-slate-500 dark:text-zinc-400">{date}</p>
 
-          <h4 className="mt-1.5 text-xl font-semibold text-slate-800">
+          <h4 className="mt-1.5 text-xl font-semibold text-slate-800 dark:text-zinc-100">
             {title}
           </h4>
 
-          <p className="mt-1.5 text-slate-600">{subtitle}</p>
+          <p className="mt-1.5 text-slate-600 dark:text-zinc-300">{subtitle}</p>
 
           {details && (
-            <p className="mx-auto mt-4 max-w-prose text-sm leading-relaxed text-slate-500 sm:mx-0">
+            <p className="mx-auto mt-4 max-w-prose text-sm leading-relaxed text-slate-500 dark:text-zinc-400 sm:mx-0">
               {details}
             </p>
           )}
