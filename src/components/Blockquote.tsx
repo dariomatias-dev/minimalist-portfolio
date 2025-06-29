@@ -13,7 +13,7 @@ export const Blockquote = ({ quote, author }: BlockquoteProps) => {
       <div className="mx-auto max-w-3xl px-6">
         <blockquote className="text-center">
           <motion.hr
-            className="mx-auto mb-12 h-px w-24 border-0 bg-gray-300 dark:bg-gray-600"
+            className="mx-auto mb-12 h-px w-24 border-0 bg-gray-300 dark:bg-zinc-600"
             initial={{ opacity: 0, scaleX: 0 }}
             whileInView={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.5 }}

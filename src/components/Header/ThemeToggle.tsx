@@ -26,7 +26,6 @@ export const ThemeToggle = () => {
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="relative rounded-full p-0 focus-visible:ring-0"
       variant="ghost"
-      size="icon"
       aria-label={isDark ? "Enable light mode" : "Enable dark mode"}
     >
       <AnimatePresence mode="wait" initial={false}>
@@ -39,9 +38,9 @@ export const ThemeToggle = () => {
           className="absolute"
         >
           {isDark ? (
-            <Sun className="h-[1.1rem] w-[1.1rem] text-gray-100" />
+            <Sun className="size-5 text-gray-100 md:size-[1.1rem]" />
           ) : (
-            <Moon className="h-[1.1rem] w-[1.1rem] text-gray-800" />
+            <Moon className="size-5 text-gray-800 md:size-[1.1rem]" />
           )}
         </motion.div>
       </AnimatePresence>

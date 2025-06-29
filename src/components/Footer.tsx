@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export const Footer = () => {
   return (
     <motion.footer
-      className="w-full border-t border-gray-300"
+      className="w-full border-t-[0.5px] border-gray-300"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}

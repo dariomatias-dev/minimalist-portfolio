@@ -29,7 +29,7 @@ export const MobileMenu = ({
         className="fixed top-4 right-4 p-2 text-gray-700 transition hover:text-black"
         aria-label="Close menu"
       >
-        <X className="h-6 w-6" />
+        <X className="h-6 w-6 dark:text-white" />
       </button>
 
       {/* Navigation items */}

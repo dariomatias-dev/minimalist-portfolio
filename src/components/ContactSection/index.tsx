@@ -127,7 +127,7 @@ export const ContactSection = () => {
                       <Input
                         placeholder="Assunto"
                         {...field}
-                        className="border-input bg-background/80 focus-visible:ring-ring focus-visible:ring-0"
+                        className="border-input bg-background/80 focus-visible:ring-ring focus-visible:ring-0 dark:text-zinc-300 dark:placeholder-zinc-500"
                       />
                     </FormControl>
                     <FormMessage />
@@ -145,7 +145,7 @@ export const ContactSection = () => {
                         type="email"
                         placeholder="Seu e-mail"
                         {...field}
-                        className="border-input bg-background/80 focus-visible:ring-ring focus-visible:ring-0"
+                        className="border-input bg-background/80 focus-visible:ring-ring focus-visible:ring-0 dark:text-zinc-300 dark:placeholder-zinc-500"
                       />
                     </FormControl>
                     <FormMessage />
@@ -164,7 +164,7 @@ export const ContactSection = () => {
                       rows={5}
                       placeholder="Sua mensagem..."
                       {...field}
-                      className="border-input bg-background/80 focus-visible:ring-ring focus-visible:ring-0"
+                      className="border-input bg-background/80 focus-visible:ring-ring focus-visible:ring-0 dark:text-zinc-300 dark:placeholder-zinc-500"
                     />
                   </FormControl>
                   <FormMessage />
