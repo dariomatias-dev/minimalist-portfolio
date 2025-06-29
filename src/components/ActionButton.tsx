@@ -19,16 +19,16 @@ export const ActionButton = ({
   icon,
 }: ActionButtonProps) => {
   const baseClass =
-    "min-w-[200px] rounded-full py-6 text-base font-semibold transition-all duration-300 border border-black inline-flex items-center justify-center gap-2";
+    "min-w-[200px] rounded-full py-6 text-base font-semibold transition-all duration-300 border inline-flex items-center justify-center gap-2";
 
   const animations = {
     default: {
-      default: `${baseClass} bg-black text-white`,
-      outline: `${baseClass} bg-white text-black`,
+      default: `${baseClass} border-black bg-black text-white dark:border-white dark:bg-white dark:text-black`,
+      outline: `${baseClass} border-black bg-white text-black dark:border-white dark:bg-black dark:text-white`,
     },
     invert: {
-      default: `${baseClass} bg-black text-white hover:bg-white hover:text-black`,
-      outline: `${baseClass} bg-white text-black hover:bg-black hover:text-white`,
+      default: `${baseClass} border-black bg-black text-white hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white`,
+      outline: `${baseClass} border-black bg-white text-black hover:bg-black hover:text-white dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black`,
     },
   };
 
