@@ -8,7 +8,7 @@ import { SpecialtiesSection } from "@/components/SpecialtiesSection";
 
 export default function Home() {
   return (
-    <main className="mx-auto mb-16 flex min-h-screen max-w-5xl flex-col px-6 sm:mb-20">
+    <main className="mx-auto mb-10 flex min-h-screen max-w-5xl flex-col px-6 sm:mb-20">
       <HeroSection />
 
       <div className="flex min-h-screen flex-col gap-20 sm:gap-24">

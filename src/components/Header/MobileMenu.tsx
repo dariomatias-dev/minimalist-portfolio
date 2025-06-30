@@ -1,6 +1,8 @@
 import { MouseEvent } from "react";
 import { X } from "lucide-react";
 
+import { ThemeToggle } from "@/components/Header/ThemeToggle";
+
 type MobileMenuProps = {
   navItems: { label: string; href: string; id: string }[];
   handleScroll: (e: MouseEvent<HTMLAnchorElement>, id: string) => void;
@@ -20,7 +22,7 @@ export const MobileMenu = ({
         isVisible
           ? "pointer-events-auto translate-y-0 opacity-100"
           : "pointer-events-none -translate-y-5 opacity-0"
-      } `}
+      }`}
     >
       {/* Close Button */}
       <button
@@ -32,7 +34,7 @@ export const MobileMenu = ({
       </button>
 
       {/* Navigation items */}
-      <div className="flex flex-1 flex-col items-center justify-center">
+      <div className="flex flex-1 flex-col items-center justify-center gap-2">
         {navItems.map(({ label, href, id }) => (
           <a
             key={href}
@@ -45,6 +47,11 @@ export const MobileMenu = ({
             {label}
           </a>
         ))}
+
+        {/* Theme Toggle */}
+        <div className="mt-8">
+          <ThemeToggle />
+        </div>
       </div>
     </div>
   );

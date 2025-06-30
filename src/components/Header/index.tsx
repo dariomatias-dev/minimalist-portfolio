@@ -77,10 +77,6 @@ export const Header = () => {
               <ThemeToggle />
             </div>
 
-            <div className="ml-4 block md:hidden">
-              <ThemeToggle />
-            </div>
-
             {/* Mobile Menu Icon */}
             <button
               onClick={() => setMenuOpen((prev) => !prev)}
