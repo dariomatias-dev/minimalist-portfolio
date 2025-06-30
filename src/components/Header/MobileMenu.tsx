@@ -18,7 +18,7 @@ export const MobileMenu = ({
 }: MobileMenuProps) => {
   return (
     <div
-      className={`fixed inset-0 z-40 flex h-screen w-screen transform flex-col items-center bg-white/95 text-lg font-semibold text-gray-800 backdrop-blur-md transition-all duration-300 ease-in-out md:hidden dark:bg-black/95 dark:text-gray-200 ${
+      className={`fixed inset-0 z-40 flex h-screen w-screen transform flex-col items-center bg-white/96 text-lg font-semibold text-gray-800 backdrop-blur-md transition-all duration-300 ease-in-out md:hidden dark:bg-black/96 dark:text-gray-200 ${
         isVisible
           ? "pointer-events-auto translate-y-0 opacity-100"
           : "pointer-events-none -translate-y-5 opacity-0"
@@ -49,7 +49,7 @@ export const MobileMenu = ({
         ))}
 
         {/* Theme Toggle */}
-        <div className="mt-8">
+        <div className="mt-12">
           <ThemeToggle />
         </div>
       </div>
