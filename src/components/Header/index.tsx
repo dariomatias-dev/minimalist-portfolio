@@ -44,10 +44,10 @@ export const Header = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="dark:supports-[backdrop-filter]:bg-bg-black/60 fixed top-0 z-50 w-full border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/60 dark:border-zinc-800 dark:bg-black/80"
+      className="dark:supports-[backdrop-filter]:bg-bg-black/60 sticky top-0 z-50 h-14 w-full border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/60 dark:border-zinc-800 dark:bg-black/80"
     >
-      <div className="mx-auto max-w-5xl px-6">
-        <nav className="flex h-16 items-center justify-between text-sm font-semibold text-gray-800 dark:text-gray-200">
+      <div className="mx-auto h-full max-w-5xl px-6">
+        <nav className="flex h-full items-center justify-between text-sm font-semibold text-gray-800 dark:text-gray-200">
           <a
             href="#hero"
             onClick={(e) => handleScroll(e, "hero")}

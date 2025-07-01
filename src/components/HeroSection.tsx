@@ -21,7 +21,7 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative mx-auto flex min-h-screen max-w-3xl scroll-mt-20 flex-col items-center justify-center px-6 text-center sm:scroll-mt-24"
+      className="relative mx-auto flex min-h-[calc(100vh-3.5rem)] max-w-3xl scroll-mt-20 flex-col items-center justify-center px-6 text-center sm:scroll-mt-24"
     >
       <motion.div
         className="mb-10 pb-10"
