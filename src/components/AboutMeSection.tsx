@@ -1,13 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const aboutTexts = [
-  `Sou um desenvolvedor Full Stack com experiência na criação de soluções completas — de interfaces modernas e acessíveis a integrações com sistemas robustos de backend.`,
-  `No frontend, utilizo React e Next.js para desenvolver aplicações responsivas, performáticas e com excelente experiência do usuário. Também atuo com Flutter no desenvolvimento mobile, criando apps nativos e multiplataforma.`,
-  `No backend, trabalho com TypeScript (Node.js) e Go, construindo APIs escaláveis, seguras e de alta performance, com foco em boas práticas, testes e manutenção.`,
-  `Tenho compromisso com a qualidade técnica e estou em constante evolução, buscando entregar soluções bem estruturadas, eficientes e sustentáveis — seja em projetos pessoais ou profissionais.`,
-];
+import { useTranslations } from "next-intl";
 
 const highlightWords = [
   "Flutter",
@@ -33,6 +27,10 @@ const highlightText = (text: string) => {
 };
 
 export const AboutMeSection = () => {
+  const t = useTranslations("AboutSection");
+
+  const paragraphsCount = 4;
+
   return (
     <section
       id="about"
@@ -45,7 +43,7 @@ export const AboutMeSection = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        Sobre Mim
+        {t("title")}
       </motion.h2>
 
       <motion.div
@@ -56,7 +54,7 @@ export const AboutMeSection = () => {
         viewport={{ once: true }}
         variants={{ hidden: {}, visible: {} }}
       >
-        {aboutTexts.map((paragraph, index) => (
+        {Array.from({ length: paragraphsCount }).map((_, index) => (
           <motion.p
             key={index}
             variants={{
@@ -65,7 +63,7 @@ export const AboutMeSection = () => {
             }}
             transition={{ duration: 0.5 }}
           >
-            {highlightText(paragraph)}
+            {highlightText(t(`paragraphs.${index}`))}
           </motion.p>
         ))}
       </motion.div>
