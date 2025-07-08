@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ChevronDown, Download } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { MouseEvent } from "react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -9,6 +10,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import { ActionButton } from "./ActionButton";
 
 export const HeroSection = () => {
+  const t = useTranslations("HeroSection");
+
   const scrollToAbout = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
@@ -30,7 +33,7 @@ export const HeroSection = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <p className="mb-4 text-base font-semibold text-gray-700 sm:text-lg dark:text-gray-300">
-          Olá! Eu sou Dário Matias
+          {t("greeting")}
         </p>
 
         <h1 className="mb-8 text-5xl font-extrabold tracking-tight text-gray-900 md:text-6xl dark:text-white">
@@ -38,11 +41,7 @@ export const HeroSection = () => {
         </h1>
 
         <p className="mx-auto max-w-xl text-sm text-gray-600 sm:text-base dark:text-gray-400">
-          Sou um desenvolvedor Full Stack, com destaque em frontend web e
-          mobile, e experiência em backend. Atualmente, curso Análise e
-          Desenvolvimento de Sistemas no IFPB - Campus Esperança e, de forma
-          contínua, busco evoluir meus conhecimentos por meio de projetos
-          variados.
+          {t("description")}
         </p>
       </motion.div>
 
@@ -58,7 +57,7 @@ export const HeroSection = () => {
           rel="noopener noreferrer"
         >
           <ActionButton
-            label="Fale comigo"
+            label={t("contactButton")}
             icon={<FaWhatsapp className="h-5 w-5" />}
           />
         </Link>
@@ -66,7 +65,7 @@ export const HeroSection = () => {
         <Link href="/curriculum.pdf" target="_blank" download>
           <ActionButton
             variant="outline"
-            label="Baixar Currículo"
+            label={t("downloadCV")}
             icon={<Download className="h-5 w-5" />}
           />
         </Link>
@@ -75,7 +74,7 @@ export const HeroSection = () => {
       <div className="absolute right-0 bottom-10 left-0 hidden justify-center sm:flex">
         <motion.a
           href="#about"
-          aria-label="Scroll para a próxima seção"
+          aria-label={t("scrollLabel")}
           className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
           style={{ animationDuration: "1500ms" }}
           onClick={scrollToAbout}

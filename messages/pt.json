@@ -5,5 +5,12 @@
     "projects": "Projetos",
     "journey": "Trajetória",
     "contact": "Contato"
+  },
+  "HeroSection": {
+    "greeting": "Olá! Eu sou Dário Matias",
+    "description": "Sou um desenvolvedor Full Stack, com destaque em frontend web e mobile, e experiência em backend. Atualmente, curso Análise e Desenvolvimento de Sistemas no IFPB - Campus Esperança e, de forma contínua, busco evoluir meus conhecimentos por meio de projetos variados.",
+    "contactButton": "Fale comigo",
+    "downloadCV": "Baixar Currículo",
+    "scrollLabel": "Scroll para a próxima seção"
   }
 }

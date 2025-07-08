@@ -5,5 +5,12 @@
     "projects": "Projects",
     "journey": "Journey",
     "contact": "Contact"
+  },
+  "HeroSection": {
+    "greeting": "Hi! I'm Dário Matias",
+    "description": "I'm a Full Stack developer with a strong focus on web and mobile frontend, and experience in backend development. I'm currently studying Systems Analysis and Development at IFPB - Campus Esperança and continuously strive to improve my skills through various projects.",
+    "contactButton": "Contact me",
+    "downloadCV": "Download CV",
+    "scrollLabel": "Scroll to next section"
   }
 }
