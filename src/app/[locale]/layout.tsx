@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 import { Toaster } from "sonner";
 
-import "../globals.css";
+import "./globals.css";
 
 import { routing } from "@/i18n/routing";
 import { Footer } from "@/components/Footer";
