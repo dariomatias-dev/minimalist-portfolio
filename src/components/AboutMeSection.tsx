@@ -27,7 +27,7 @@ const highlightText = (text: string) => {
 };
 
 export const AboutMeSection = () => {
-  const t = useTranslations("AboutSection");
+  const t = useTranslations("HomePage.AboutSection");
 
   const paragraphsCount = 4;
 

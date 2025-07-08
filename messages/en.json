@@ -11,20 +11,22 @@
     "journey": "Journey",
     "contact": "Contact"
   },
-  "HeroSection": {
-    "greeting": "Hi! I'm Dário Matias",
-    "description": "I'm a Full Stack developer with a strong focus on web and mobile frontend, and experience in backend development. I'm currently studying Systems Analysis and Development at IFPB - Campus Esperança and continuously strive to improve my skills through various projects.",
-    "contactButton": "Contact me",
-    "downloadCV": "Download CV",
-    "scrollLabel": "Scroll to next section"
-  },
-  "AboutSection": {
-    "title": "About Me",
-    "paragraphs": [
-      "I'm a Full Stack developer with experience building complete solutions — from modern, accessible interfaces to robust backend integrations.",
-      "On the frontend, I use React and Next.js to develop responsive, high-performance applications with great user experience. I also work with Flutter to build native and cross-platform mobile apps.",
-      "On the backend, I work with TypeScript (Node.js) and Go, creating scalable, secure, and high-performance APIs with a focus on best practices, testing, and maintainability.",
-      "I'm committed to technical quality and continuously improving, aiming to deliver well-structured, efficient, and sustainable solutions — whether in personal or professional projects."
-    ]
+  "HomePage": {
+    "HeroSection": {
+      "greeting": "Hi! I'm Dário Matias",
+      "description": "I'm a Full Stack developer with a strong focus on web and mobile frontend, and experience in backend development. I'm currently studying Systems Analysis and Development at IFPB - Campus Esperança and continuously strive to improve my skills through various projects.",
+      "contactButton": "Contact me",
+      "downloadCV": "Download CV",
+      "scrollLabel": "Scroll to next section"
+    },
+    "AboutSection": {
+      "title": "About Me",
+      "paragraphs": [
+        "I'm a Full Stack developer with experience building complete solutions — from modern, accessible interfaces to robust backend integrations.",
+        "On the frontend, I use React and Next.js to develop responsive, high-performance applications with great user experience. I also work with Flutter to build native and cross-platform mobile apps.",
+        "On the backend, I work with TypeScript (Node.js) and Go, creating scalable, secure, and high-performance APIs with a focus on best practices, testing, and maintainability.",
+        "I'm committed to technical quality and continuously improving, aiming to deliver well-structured, efficient, and sustainable solutions — whether in personal or professional projects."
+      ]
+    }
   }
 }

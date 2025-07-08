@@ -10,7 +10,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { ActionButton } from "./ActionButton";
 
 export const HeroSection = () => {
-  const t = useTranslations("HeroSection");
+  const t = useTranslations("HomePage.HeroSection");
 
   const scrollToAbout = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
