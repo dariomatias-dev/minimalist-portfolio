@@ -3,28 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-const highlightWords = [
-  "Flutter",
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Go",
-  "Full Stack",
-];
-
-const highlightText = (text: string) => {
-  return text
-    .split(new RegExp(`(${highlightWords.join("|")})`, "g"))
-    .map((part, i) =>
-      highlightWords.includes(part) ? (
-        <strong key={i} className="text-foreground dark:text-white">
-          {part}
-        </strong>
-      ) : (
-        <span key={i}>{part}</span>
-      ),
-    );
-};
+import { highlightText } from "@/lib/AboutMehighlightText";
 
 export const AboutMeSection = () => {
   const t = useTranslations("HomePage.AboutSection");
