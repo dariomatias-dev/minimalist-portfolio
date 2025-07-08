@@ -1,6 +1,7 @@
 import { MouseEvent } from "react";
 import { X } from "lucide-react";
 
+import { LanguageSwitcher } from "@/components/Header/LanguageSwitcher";
 import { ThemeToggle } from "@/components/Header/ThemeToggle";
 
 type MobileMenuProps = {
@@ -48,8 +49,9 @@ export const MobileMenu = ({
           </a>
         ))}
 
-        {/* Theme Toggle */}
-        <div className="mt-12">
+        <div className="mt-12 flex flex-col items-center justify-center gap-6 text-lg">
+          <LanguageSwitcher />
+
           <ThemeToggle />
         </div>
       </div>
