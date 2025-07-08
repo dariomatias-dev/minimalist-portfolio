@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { MouseEvent, useCallback, useEffect, useState } from "react";
 
 import { getNavItems } from "@/constants/navItems";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -61,7 +62,6 @@ export const Header = () => {
           </a>
 
           <div className="flex items-center gap-4">
-            {/* Desktop Menu */}
             <ul className="hidden space-x-8 md:flex">
               {navItems.map(({ label, href, id }) => (
                 <li key={href}>
@@ -77,11 +77,12 @@ export const Header = () => {
               ))}
             </ul>
 
-            <div className="ml-6 hidden items-center md:flex">
+            <div className="ml-10 hidden items-center gap-5 md:flex">
+              <LanguageSwitcher />
+
               <ThemeToggle />
             </div>
 
-            {/* Mobile Menu Icon */}
             <button
               onClick={() => setMenuOpen((prev) => !prev)}
               className="block md:hidden"
