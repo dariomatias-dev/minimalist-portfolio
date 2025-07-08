@@ -1,4 +1,9 @@
 {
+  "NotFoundPage": {
+    "title": "Página não encontrada",
+    "description": "Desculpe, não conseguimos encontrar a página que você está procurando. Ela pode ter sido removida, renomeada ou estar temporariamente indisponível.",
+    "button": "Voltar à página inicial"
+  },
   "NavBar": {
     "aboutMe": "Sobre Mim",
     "specialties": "Especialidades",
