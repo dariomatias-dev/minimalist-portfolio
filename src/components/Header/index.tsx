@@ -1,14 +1,18 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
-import { MouseEvent, useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { MouseEvent, useCallback, useEffect, useState } from "react";
 
-import { navItems } from "@/constants/navItems";
+import { getNavItems } from "@/constants/navItems";
 import { MobileMenu } from "./MobileMenu";
 import { ThemeToggle } from "./ThemeToggle";
 
 export const Header = () => {
+  const t = useTranslations("NavBar");
+  const navItems = getNavItems(t);
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 

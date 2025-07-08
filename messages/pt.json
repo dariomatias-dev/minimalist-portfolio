@@ -1,1 +1,9 @@
-{}
+{
+  "NavBar": {
+    "aboutMe": "Sobre Mim",
+    "specialties": "Especialidades",
+    "projects": "Projetos",
+    "journey": "Trajetória",
+    "contact": "Contato"
+  }
+}
