@@ -1,10 +1,10 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { ChevronDown, Download } from "lucide-react";
 import Link from "next/link";
 import { MouseEvent } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { motion } from "framer-motion";
 
 import { ActionButton } from "./ActionButton";
 
