@@ -20,6 +20,64 @@
     "A maior glória não é ficar de pé, mas levantar-se cada vez que se cai."
   ],
   "HomePage": {
+    "technologies": {
+      "typescript": {
+        "short": "Superset do JavaScript que adiciona tipagem estática ao JS.",
+        "full": "TypeScript é uma linguagem baseada em JavaScript que adiciona tipagem estática opcional. Essa tipagem melhora a legibilidade do código, facilita a manutenção e reduz erros durante o desenvolvimento, sendo amplamente adotada em aplicações de médio e grande porte."
+      },
+      "dart": {
+        "short": "Linguagem moderna desenvolvida pelo Google, usada principalmente com Flutter.",
+        "full": "Dart é uma linguagem de programação otimizada para desenvolvimento de interfaces modernas e reativas. Desenvolvida pelo Google, é fortemente tipada, suporta orientação a objetos e é amplamente utilizada com o Flutter para criar aplicações multiplataforma."
+      },
+      "golang": {
+        "short": "Linguagem de programação eficiente e compilada, ideal para backends escaláveis.",
+        "full": "Go, também conhecida como Golang, é uma linguagem de programação compilada e criada pelo Google, focada em simplicidade, performance e concorrência. É amplamente utilizada no desenvolvimento de APIs, servidores e sistemas distribuídos devido à sua leveza e robustez."
+      },
+      "tailwindcss": {
+        "short": "Framework utilitário de CSS para construir interfaces modernas e responsivas.",
+        "full": "TailwindCSS é um framework utilitário que oferece classes pré-definidas para estilização direta no HTML. Ele proporciona agilidade no desenvolvimento de interfaces responsivas, mantendo consistência visual e reduzindo a necessidade de CSS personalizado."
+      },
+      "nextjs": {
+        "short": "Framework React com renderização híbrida, ótimo para SEO e performance.",
+        "full": "Next.js é um framework para aplicações React que permite renderização do lado do servidor (SSR), geração de sites estáticos (SSG) e APIs integradas. Ideal para aplicações modernas, com foco em performance, SEO e ótima experiência de desenvolvedor."
+      },
+      "shadcnui": {
+        "short": "Componentes acessíveis e estilizados usando Radix e TailwindCSS.",
+        "full": "shadcn/ui é uma coleção de componentes acessíveis, construídos com Radix UI e estilizados com TailwindCSS. Ele combina acessibilidade, personalização e boas práticas, sendo ideal para interfaces modernas em aplicações React com foco em usabilidade e consistência."
+      },
+      "flutter": {
+        "short": "Framework da Google para criar apps multiplataforma com uma única base de código.",
+        "full": "Flutter é um framework de UI criado pela Google que permite desenvolver aplicações nativas para Android, iOS, Web e Desktop com uma única base de código, utilizando a linguagem Dart. Ele oferece uma rica coleção de widgets, alta performance e suporte a interfaces modernas."
+      },
+      "fastify": {
+        "short": "Framework web Node.js leve e rápido, com foco em performance.",
+        "full": "Fastify é um framework web para Node.js projetado para oferecer alta performance com baixa sobrecarga. É extensível por plugins e é excelente para APIs rápidas e escaláveis."
+      },
+      "nestjs": {
+        "short": "Framework backend para Node.js com arquitetura modular baseada em TypeScript.",
+        "full": "NestJS é um framework backend moderno construído com TypeScript e inspirado no Angular. Ele promove uma arquitetura modular, facilita testes e permite o uso de bibliotecas express ou fastify."
+      },
+      "sqlite": {
+        "short": "Banco de dados relacional leve e embutido, ideal para apps locais.",
+        "full": "SQLite é um banco de dados SQL leve, embutido, autocontido e sem servidor. Ele é amplamente utilizado em aplicações mobile, desktop e sistemas embarcados por sua simplicidade e eficiência."
+      },
+      "postgresql": {
+        "short": "Banco de dados relacional robusto, open source e altamente escalável.",
+        "full": "PostgreSQL é um banco de dados relacional open source conhecido por sua robustez, conformidade com padrões e extensibilidade. Ele oferece suporte a JSON, replicação, indexação avançada e mais."
+      },
+      "prisma": {
+        "short": "ORM moderno para Node.js e TypeScript com foco em performance e DX.",
+        "full": "Prisma é um ORM de próxima geração que facilita o acesso a bancos de dados com uma API tipada em TypeScript. Ele melhora a produtividade do desenvolvedor, garante consistência nos dados e é compatível com bancos como PostgreSQL, MySQL e SQLite."
+      },
+      "firebase": {
+        "short": "Plataforma do Google com serviços para apps como auth, banco em tempo real e mais.",
+        "full": "Firebase é uma plataforma do Google que oferece diversos serviços como autenticação, banco de dados em tempo real, Firestore, analytics, notificações push, storage e hosting para acelerar o desenvolvimento de aplicações."
+      },
+      "nodejs": {
+        "short": "Ambiente de execução para JavaScript no backend, baseado em V8.",
+        "full": "Node.js é um ambiente de execução de JavaScript no lado do servidor, baseado no motor V8 do Chrome. Ele é amplamente usado para construir APIs, servidores e aplicações em tempo real com alta performance."
+      }
+    },
     "HeroSection": {
       "greeting": "Olá! Eu sou Dário Matias",
       "description": "Sou um desenvolvedor Full Stack, com destaque em frontend web e mobile, e experiência em backend. Atualmente, curso Análise e Desenvolvimento de Sistemas no IFPB - Campus Esperança e, de forma contínua, busco evoluir meus conhecimentos por meio de projetos variados.",
@@ -55,65 +113,9 @@
           "title": "Criação de Servidores",
           "description": "APIs e sistemas backend seguros, robustos e escaláveis com boas práticas."
         }
-      },
-      "technologies": {
-        "typescript": {
-          "short": "Superset do JavaScript que adiciona tipagem estática ao JS.",
-          "full": "TypeScript é uma linguagem baseada em JavaScript que adiciona tipagem estática opcional. Essa tipagem melhora a legibilidade do código, facilita a manutenção e reduz erros durante o desenvolvimento, sendo amplamente adotada em aplicações de médio e grande porte."
-        },
-        "dart": {
-          "short": "Linguagem moderna desenvolvida pelo Google, usada principalmente com Flutter.",
-          "full": "Dart é uma linguagem de programação otimizada para desenvolvimento de interfaces modernas e reativas. Desenvolvida pelo Google, é fortemente tipada, suporta orientação a objetos e é amplamente utilizada com o Flutter para criar aplicações multiplataforma."
-        },
-        "golang": {
-          "short": "Linguagem de programação eficiente e compilada, ideal para backends escaláveis.",
-          "full": "Go, também conhecida como Golang, é uma linguagem de programação compilada e criada pelo Google, focada em simplicidade, performance e concorrência. É amplamente utilizada no desenvolvimento de APIs, servidores e sistemas distribuídos devido à sua leveza e robustez."
-        },
-        "tailwindcss": {
-          "short": "Framework utilitário de CSS para construir interfaces modernas e responsivas.",
-          "full": "TailwindCSS é um framework utilitário que oferece classes pré-definidas para estilização direta no HTML. Ele proporciona agilidade no desenvolvimento de interfaces responsivas, mantendo consistência visual e reduzindo a necessidade de CSS personalizado."
-        },
-        "nextjs": {
-          "short": "Framework React com renderização híbrida, ótimo para SEO e performance.",
-          "full": "Next.js é um framework para aplicações React que permite renderização do lado do servidor (SSR), geração de sites estáticos (SSG) e APIs integradas. Ideal para aplicações modernas, com foco em performance, SEO e ótima experiência de desenvolvedor."
-        },
-        "shadcnui": {
-          "short": "Componentes acessíveis e estilizados usando Radix e TailwindCSS.",
-          "full": "shadcn/ui é uma coleção de componentes acessíveis, construídos com Radix UI e estilizados com TailwindCSS. Ele combina acessibilidade, personalização e boas práticas, sendo ideal para interfaces modernas em aplicações React com foco em usabilidade e consistência."
-        },
-        "flutter": {
-          "short": "Framework da Google para criar apps multiplataforma com uma única base de código.",
-          "full": "Flutter é um framework de UI criado pela Google que permite desenvolver aplicações nativas para Android, iOS, Web e Desktop com uma única base de código, utilizando a linguagem Dart. Ele oferece uma rica coleção de widgets, alta performance e suporte a interfaces modernas."
-        },
-        "fastify": {
-          "short": "Framework web Node.js leve e rápido, com foco em performance.",
-          "full": "Fastify é um framework web para Node.js projetado para oferecer alta performance com baixa sobrecarga. É extensível por plugins e é excelente para APIs rápidas e escaláveis."
-        },
-        "nestjs": {
-          "short": "Framework backend para Node.js com arquitetura modular baseada em TypeScript.",
-          "full": "NestJS é um framework backend moderno construído com TypeScript e inspirado no Angular. Ele promove uma arquitetura modular, facilita testes e permite o uso de bibliotecas express ou fastify."
-        },
-        "sqlite": {
-          "short": "Banco de dados relacional leve e embutido, ideal para apps locais.",
-          "full": "SQLite é um banco de dados SQL leve, embutido, autocontido e sem servidor. Ele é amplamente utilizado em aplicações mobile, desktop e sistemas embarcados por sua simplicidade e eficiência."
-        },
-        "postgresql": {
-          "short": "Banco de dados relacional robusto, open source e altamente escalável.",
-          "full": "PostgreSQL é um banco de dados relacional open source conhecido por sua robustez, conformidade com padrões e extensibilidade. Ele oferece suporte a JSON, replicação, indexação avançada e mais."
-        },
-        "prisma": {
-          "short": "ORM moderno para Node.js e TypeScript com foco em performance e DX.",
-          "full": "Prisma é um ORM de próxima geração que facilita o acesso a bancos de dados com uma API tipada em TypeScript. Ele melhora a produtividade do desenvolvedor, garante consistência nos dados e é compatível com bancos como PostgreSQL, MySQL e SQLite."
-        },
-        "firebase": {
-          "short": "Plataforma do Google com serviços para apps como auth, banco em tempo real e mais.",
-          "full": "Firebase é uma plataforma do Google que oferece diversos serviços como autenticação, banco de dados em tempo real, Firestore, analytics, notificações push, storage e hosting para acelerar o desenvolvimento de aplicações."
-        },
-        "nodejs": {
-          "short": "Ambiente de execução para JavaScript no backend, baseado em V8.",
-          "full": "Node.js é um ambiente de execução de JavaScript no lado do servidor, baseado no motor V8 do Chrome. Ele é amplamente usado para construir APIs, servidores e aplicações em tempo real com alta performance."
-        }
-      },
+      }
+    },
+    "ProjectsSection": {
       "createdTitle": "O Que Tenho Criado",
       "createdDescription": "Uma seleção dos meus principais projetos desenvolvidos ao longo da minha trajetória.",
       "projects": {
@@ -137,9 +139,7 @@
           "title": "Go Validators",
           "description": "Pacote com utilitários de validação para garantir a integridade dos dados em aplicações Go (GoLang), utilizando apenas bibliotecas nativas."
         }
-      }
-    },
-    "ProjectsSection": {
+      },
       "linkDetails": {
         "github": {
           "label": "Ver Repositório",

@@ -42,7 +42,7 @@ export const ProjectsSection = () => {
     };
   }, [emblaApi, onSelect]);
 
-  const t = useTranslations("HomePage.SpecialtiesSection");
+  const t = useTranslations("HomePage.ProjectsSection");
   const projects = getProjects(t);
 
   return (

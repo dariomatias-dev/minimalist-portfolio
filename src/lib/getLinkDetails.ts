@@ -1,5 +1,5 @@
 import { ArrowUpRight, Package, Play } from "lucide-react";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 import { FaGithub } from "react-icons/fa";
 
 import { LinkDetail } from "@/@types/LinkDetail";

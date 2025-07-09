@@ -13,7 +13,9 @@ import { getTechnologyDetails } from "@/lib/getTechnologyDetails ";
 export const SpecialtiesSection = () => {
   const t = useTranslations("HomePage.SpecialtiesSection");
 
-  const technologyDetails = getTechnologyDetails(t);
+  const technologyDetails = getTechnologyDetails(
+    useTranslations("HomePage.technologies"),
+  );
 
   const techKeys = Object.keys(technologyDetails);
   const [selectedTech, setSelectedTech] = useState<string>(techKeys[0]);

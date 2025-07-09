@@ -18,16 +18,16 @@ import {
 } from "../ui/tooltip";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
-  const t = useTranslations("HomePage.SpecialtiesSection");
+  const t = useTranslations("HomePage.ProjectsSection");
 
   const [imageSrc, setImageSrc] = useState(
     project.image || "/image_placeholder.png",
   );
 
-  const technologyDetails = getTechnologyDetails(t);
-  const linkDetails = getLinkDetails(
-    useTranslations("HomePage.ProjectsSection"),
+  const technologyDetails = getTechnologyDetails(
+    useTranslations("HomePage.technologies"),
   );
+  const linkDetails = getLinkDetails(t);
 
   return (
     <motion.article

@@ -20,6 +20,64 @@
     "Our greatest glory is not in never falling, but in rising every time we fall."
   ],
   "HomePage": {
+    "technologies": {
+      "typescript": {
+        "short": "JavaScript superset that adds static typing.",
+        "full": "TypeScript is a language based on JavaScript that adds optional static typing. This improves code readability, simplifies maintenance, and reduces development-time errors, making it widely used in medium to large-scale applications."
+      },
+      "dart": {
+        "short": "Modern language by Google, mainly used with Flutter.",
+        "full": "Dart is a programming language optimized for building modern, reactive interfaces. Developed by Google, it is strongly typed, object-oriented, and widely used with Flutter for building cross-platform applications."
+      },
+      "golang": {
+        "short": "Efficient, compiled language ideal for scalable backends.",
+        "full": "Go, also known as Golang, is a compiled language created by Google focused on simplicity, performance, and concurrency. It is widely used in APIs, servers, and distributed systems due to its lightness and robustness."
+      },
+      "tailwindcss": {
+        "short": "Utility-first CSS framework for modern responsive UIs.",
+        "full": "TailwindCSS is a utility-first framework that provides predefined classes for styling directly in HTML. It speeds up development, keeps visual consistency, and reduces custom CSS."
+      },
+      "nextjs": {
+        "short": "React framework with hybrid rendering, great for SEO and performance.",
+        "full": "Next.js is a React framework supporting server-side rendering (SSR), static site generation (SSG), and built-in APIs. It's ideal for modern applications focused on performance, SEO, and great developer experience."
+      },
+      "shadcnui": {
+        "short": "Accessible components styled with Radix and TailwindCSS.",
+        "full": "shadcn/ui is a component library built with Radix UI and styled using TailwindCSS. It combines accessibility, customization, and best practices for building modern React interfaces with strong usability."
+      },
+      "flutter": {
+        "short": "Google's framework for cross-platform apps with one codebase.",
+        "full": "Flutter is a UI toolkit by Google for building native apps for Android, iOS, Web, and Desktop from a single codebase using Dart. It offers a rich widget collection, high performance, and modern UI capabilities."
+      },
+      "fastify": {
+        "short": "Lightweight and fast Node.js web framework focused on performance.",
+        "full": "Fastify is a web framework for Node.js designed for high performance with low overhead. It's extensible via plugins and great for building fast, scalable APIs."
+      },
+      "nestjs": {
+        "short": "Backend framework for Node.js with modular TypeScript architecture.",
+        "full": "NestJS is a modern backend framework built with TypeScript and inspired by Angular. It promotes modular architecture, eases testing, and supports both Express and Fastify under the hood."
+      },
+      "sqlite": {
+        "short": "Lightweight, embedded relational database ideal for local apps.",
+        "full": "SQLite is a lightweight, embedded, self-contained, serverless SQL database engine. It's widely used in mobile apps, desktop tools, and embedded systems for its simplicity and efficiency."
+      },
+      "postgresql": {
+        "short": "Robust, open-source, and highly scalable relational database.",
+        "full": "PostgreSQL is an open-source relational database known for its robustness, standards compliance, and extensibility. It supports JSON, replication, advanced indexing, and more."
+      },
+      "prisma": {
+        "short": "Modern ORM for Node.js and TypeScript focused on performance and DX.",
+        "full": "Prisma is a next-gen ORM that makes database access easy with a type-safe API for TypeScript. It improves developer productivity, ensures data consistency, and supports databases like PostgreSQL, MySQL, and SQLite."
+      },
+      "firebase": {
+        "short": "Google platform offering services like auth, real-time DB, and more.",
+        "full": "Firebase is a platform by Google offering services like authentication, real-time database, Firestore, analytics, push notifications, storage, and hosting to speed up app development."
+      },
+      "nodejs": {
+        "short": "JavaScript runtime for backend development, based on V8.",
+        "full": "Node.js is a JavaScript runtime built on Chrome's V8 engine for running code server-side. It's widely used for building APIs, servers, and real-time applications with high performance."
+      }
+    },
     "HeroSection": {
       "greeting": "Hi! I'm Dário Matias",
       "description": "I'm a Full Stack developer with a strong focus on web and mobile frontend, and experience in backend development. I'm currently studying Systems Analysis and Development at IFPB - Campus Esperança and continuously strive to improve my skills through various projects.",
@@ -55,65 +113,9 @@
           "title": "Server Development",
           "description": "Secure, robust, and scalable backend APIs and systems."
         }
-      },
-      "technologies": {
-        "typescript": {
-          "short": "JavaScript superset that adds static typing.",
-          "full": "TypeScript is a language based on JavaScript that adds optional static typing. This improves code readability, simplifies maintenance, and reduces development-time errors, making it widely used in medium to large-scale applications."
-        },
-        "dart": {
-          "short": "Modern language by Google, mainly used with Flutter.",
-          "full": "Dart is a programming language optimized for building modern, reactive interfaces. Developed by Google, it is strongly typed, object-oriented, and widely used with Flutter for building cross-platform applications."
-        },
-        "golang": {
-          "short": "Efficient, compiled language ideal for scalable backends.",
-          "full": "Go, also known as Golang, is a compiled language created by Google focused on simplicity, performance, and concurrency. It is widely used in APIs, servers, and distributed systems due to its lightness and robustness."
-        },
-        "tailwindcss": {
-          "short": "Utility-first CSS framework for modern responsive UIs.",
-          "full": "TailwindCSS is a utility-first framework that provides predefined classes for styling directly in HTML. It speeds up development, keeps visual consistency, and reduces custom CSS."
-        },
-        "nextjs": {
-          "short": "React framework with hybrid rendering, great for SEO and performance.",
-          "full": "Next.js is a React framework supporting server-side rendering (SSR), static site generation (SSG), and built-in APIs. It's ideal for modern applications focused on performance, SEO, and great developer experience."
-        },
-        "shadcnui": {
-          "short": "Accessible components styled with Radix and TailwindCSS.",
-          "full": "shadcn/ui is a component library built with Radix UI and styled using TailwindCSS. It combines accessibility, customization, and best practices for building modern React interfaces with strong usability."
-        },
-        "flutter": {
-          "short": "Google's framework for cross-platform apps with one codebase.",
-          "full": "Flutter is a UI toolkit by Google for building native apps for Android, iOS, Web, and Desktop from a single codebase using Dart. It offers a rich widget collection, high performance, and modern UI capabilities."
-        },
-        "fastify": {
-          "short": "Lightweight and fast Node.js web framework focused on performance.",
-          "full": "Fastify is a web framework for Node.js designed for high performance with low overhead. It's extensible via plugins and great for building fast, scalable APIs."
-        },
-        "nestjs": {
-          "short": "Backend framework for Node.js with modular TypeScript architecture.",
-          "full": "NestJS is a modern backend framework built with TypeScript and inspired by Angular. It promotes modular architecture, eases testing, and supports both Express and Fastify under the hood."
-        },
-        "sqlite": {
-          "short": "Lightweight, embedded relational database ideal for local apps.",
-          "full": "SQLite is a lightweight, embedded, self-contained, serverless SQL database engine. It's widely used in mobile apps, desktop tools, and embedded systems for its simplicity and efficiency."
-        },
-        "postgresql": {
-          "short": "Robust, open-source, and highly scalable relational database.",
-          "full": "PostgreSQL is an open-source relational database known for its robustness, standards compliance, and extensibility. It supports JSON, replication, advanced indexing, and more."
-        },
-        "prisma": {
-          "short": "Modern ORM for Node.js and TypeScript focused on performance and DX.",
-          "full": "Prisma is a next-gen ORM that makes database access easy with a type-safe API for TypeScript. It improves developer productivity, ensures data consistency, and supports databases like PostgreSQL, MySQL, and SQLite."
-        },
-        "firebase": {
-          "short": "Google platform offering services like auth, real-time DB, and more.",
-          "full": "Firebase is a platform by Google offering services like authentication, real-time database, Firestore, analytics, push notifications, storage, and hosting to speed up app development."
-        },
-        "nodejs": {
-          "short": "JavaScript runtime for backend development, based on V8.",
-          "full": "Node.js is a JavaScript runtime built on Chrome's V8 engine for running code server-side. It's widely used for building APIs, servers, and real-time applications with high performance."
-        }
-      },
+      }
+    },
+    "ProjectsSection": {
       "createdTitle": "What I Have Created",
       "createdDescription": "A selection of my main projects developed throughout my journey.",
       "projects": {
@@ -137,9 +139,7 @@
           "title": "Go Validators",
           "description": "Package with validation utilities to ensure data integrity in Go (GoLang) applications, using only native libraries."
         }
-      }
-    },
-    "ProjectsSection": {
+      },
       "linkDetails": {
         "github": {
           "label": "View Repository",
