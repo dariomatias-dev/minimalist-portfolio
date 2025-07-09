@@ -8,8 +8,11 @@ import { useTheme } from "next-themes";
 
 import { services } from "@/constants/services";
 import { technologyDetails } from "@/constants/technologyDetails";
+import { useTranslations } from "next-intl";
 
 export const SpecialtiesSection = () => {
+  const t = useTranslations("HomePage.SpecialtiesSection");
+
   const techKeys = Object.keys(technologyDetails);
   const [selectedTech, setSelectedTech] = useState<string>(techKeys[0]);
   const selectedInfo = technologyDetails[selectedTech];
@@ -34,12 +37,11 @@ export const SpecialtiesSection = () => {
       >
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-foreground text-4xl font-bold tracking-tight dark:text-white">
-            Uma Abordagem Completa
+            {t("title")}
           </h2>
 
           <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">
-            Da concepção à entrega, meu trabalho abrange todo o ciclo de vida de
-            um produto digital.
+            {t("description")}
           </p>
         </div>
 
@@ -79,12 +81,11 @@ export const SpecialtiesSection = () => {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-white">
-            Minha Stack Tecnológica
+            {t("techTitle")}
           </h3>
 
           <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">
-            Ferramentas e tecnologias que utilizo para construir soluções
-            digitais modernas, performáticas e de alta qualidade.
+            {t("techDescription")}
           </p>
         </motion.div>
 
@@ -161,7 +162,7 @@ export const SpecialtiesSection = () => {
                     rel="noopener noreferrer"
                     className="group inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
                   >
-                    <span>Visitar site oficial</span>
+                    <span>{t("visitOfficialSite")}</span>
 
                     <span
                       aria-hidden="true"

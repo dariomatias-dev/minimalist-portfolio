@@ -31,6 +31,13 @@
         "No backend, trabalho com TypeScript (Node.js) e Go, construindo APIs escaláveis, seguras e de alta performance, com foco em boas práticas, testes e manutenção.",
         "Tenho compromisso com a qualidade técnica e estou em constante evolução, buscando entregar soluções bem estruturadas, eficientes e sustentáveis — seja em projetos pessoais ou profissionais."
       ]
+    },
+    "SpecialtiesSection": {
+      "title": "Uma Abordagem Completa",
+      "description": "Da concepção à entrega, meu trabalho abrange todo o ciclo de vida de um produto digital.",
+      "techTitle": "Minha Stack Tecnológica",
+      "techDescription": "Ferramentas e tecnologias que utilizo para construir soluções digitais modernas, performáticas e de alta qualidade.",
+      "visitOfficialSite": "Visitar site oficial"
     }
   }
 }
