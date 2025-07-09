@@ -7,11 +7,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import { technologyDetails } from "@/constants/technologyDetails";
 import { getServices } from "@/lib/getServices";
+import { getTechnologyDetails } from "@/lib/getTechnologyDetails ";
 
 export const SpecialtiesSection = () => {
   const t = useTranslations("HomePage.SpecialtiesSection");
+
+  const technologyDetails = getTechnologyDetails(t);
 
   const techKeys = Object.keys(technologyDetails);
   const [selectedTech, setSelectedTech] = useState<string>(techKeys[0]);
