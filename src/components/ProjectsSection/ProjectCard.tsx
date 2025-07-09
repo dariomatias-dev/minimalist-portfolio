@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import type { Project } from "@/@types/Project";
-import { linkDetails } from "@/constants/linkDetails";
+import { getLinkDetails } from "@/lib/getLinkDetails";
 import { getTechnologyDetails } from "@/lib/getTechnologyDetails ";
 import { Badge } from "../ui/badge";
 import {
@@ -25,6 +25,9 @@ export const ProjectCard = ({ project }: { project: Project }) => {
   );
 
   const technologyDetails = getTechnologyDetails(t);
+  const linkDetails = getLinkDetails(
+    useTranslations("HomePage.ProjectsSection"),
+  );
 
   return (
     <motion.article
@@ -75,7 +78,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                   </TooltipTrigger>
 
                   <TooltipContent
-                    className="z-50 max-w-xs rounded-md bg-black px-3 py-2 text-xs text-white shadow-md"
+                    className="z-50 max-w-xs rounded-md px-3 py-2 text-xs shadow-md"
                     sideOffset={8}
                   >
                     <div className="flex items-center gap-2">

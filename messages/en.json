@@ -139,6 +139,30 @@
         }
       }
     },
+    "ProjectsSection": {
+      "linkDetails": {
+        "github": {
+          "label": "View Repository",
+          "tooltip": "Repository on GitHub, where you can access the full source code of the project, follow updates, issues, and contribute."
+        },
+        "site": {
+          "label": "View Site",
+          "tooltip": "Official project website."
+        },
+        "playStore": {
+          "label": "View on Play Store",
+          "tooltip": "Application page on Google Play Store, the official app store for Android devices, where you can download and rate the app."
+        },
+        "pubDev": {
+          "label": "View on pub.dev",
+          "tooltip": "Dart/Flutter package hosted on pub.dev, the official repository for Dart/Flutter packages, where you can see documentation, versions, and dependencies."
+        },
+        "goDev": {
+          "label": "View on pkg.go.dev",
+          "tooltip": "Go (GoLang) package hosted on pkg.go.dev, the official repository of Go libraries, with documentation and technical details."
+        }
+      }
+    },
     "JourneySection": {
       "title": "Journey",
       "description": "My professional and academic journey, where each step was an opportunity for growth and learning.",
