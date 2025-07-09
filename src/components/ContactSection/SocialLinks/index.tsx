@@ -1,12 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { socialLinks } from "@/constants/socialLinks";
 import { SocialLinkItem } from "./SocialLinkItem";
 
 export const SocialLinks = () => {
+  const t = useTranslations("HomePage.ContactSection.socialLinks");
+
   const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
 
   const handleCopyEmail = async (email: string) => {
@@ -32,12 +35,11 @@ export const SocialLinks = () => {
         id="social-section"
         className="text-foreground mb-6 text-xl font-semibold tracking-tight"
       >
-        Redes Sociais
+        {t("title")}
       </h3>
 
       <p className="mb-10 text-gray-600 dark:text-gray-400">
-        Me acompanhe para ficar por dentro dos meus projetos e atualizações, ou
-        envie uma mensagem.
+        {t("description")}
       </p>
 
       <ul className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">

@@ -179,6 +179,10 @@
       "toast": {
         "success": "Email successfully sent",
         "error": "Error while sending email"
+      },
+      "socialLinks": {
+        "title": "Social Networks",
+        "description": "Follow me to stay updated on my projects and updates, or send a message."
       }
     }
   }
