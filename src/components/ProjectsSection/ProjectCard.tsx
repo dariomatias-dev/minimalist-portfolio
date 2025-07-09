@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -19,6 +20,10 @@ import {
 
 export const ProjectCard = ({ project }: { project: Project }) => {
   const t = useTranslations("HomePage.ProjectsSection");
+
+  const { resolvedTheme } = useTheme();
+
+  const isDark = resolvedTheme === "dark";
 
   const [imageSrc, setImageSrc] = useState(
     project.image || "/image_placeholder.png",
@@ -83,7 +88,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                   >
                     <div className="flex items-center gap-2">
                       <Image
-                        src={`/icons/${info.iconNameDark ?? info.iconName}.png`}
+                        src={`/icons/${isDark ? info.iconName : (info.iconNameDark ?? info.iconName)}.png`}
                         alt={info.label}
                         width={16}
                         height={16}
