@@ -1,14 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 
 import { getProjects } from "@/lib/getProjects";
 import { Button } from "../ui/button";
 import { ProjectCard } from "./ProjectCard";
-import { useTranslations } from "next-intl";
 
 export const ProjectsSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({

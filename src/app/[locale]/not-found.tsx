@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
@@ -18,10 +18,8 @@ export default function NotFound() {
         <h2 className="mt-4 text-2xl font-semibold text-gray-800 dark:text-zinc-200">
           {t("title")}
         </h2>
-        
-        <p>
-          {t("description")}
-        </p>
+
+        <p>{t("description")}</p>
 
         <Link href="/" className="mt-8 inline-block">
           <Button

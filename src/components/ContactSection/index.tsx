@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useTranslations } from "next-intl";
 import * as z from "zod";
 
 import {
@@ -18,8 +18,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { showToast, ToastType } from "@/lib/toastNotification";
-import { SocialLinks } from "./SocialLinks";
 import { ActionButton } from "../ActionButton";
+import { SocialLinks } from "./SocialLinks";
 
 export const ContactSection = () => {
   const t = useTranslations("HomePage.ContactSection");

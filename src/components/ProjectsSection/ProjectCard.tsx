@@ -58,7 +58,8 @@ export const ProjectCard = ({ project }: { project: Project }) => {
         <div className="mt-4 flex flex-col gap-4 border-t pt-4">
           <div className="flex flex-wrap gap-2">
             {project.technologies.slice(0, 4).map((tech) => {
-              const info = technologyDetails[tech.toLowerCase().replace(/[^a-z]/g, "")];
+              const info =
+                technologyDetails[tech.toLowerCase().replace(/[^a-z]/g, "")];
 
               return (
                 <Tooltip key={tech} delayDuration={150}>

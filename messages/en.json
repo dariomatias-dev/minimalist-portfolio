@@ -11,7 +11,7 @@
     "journey": "Journey",
     "contact": "Contact"
   },
-    "footer": {
+  "footer": {
     "rights": "All rights reserved",
     "developedBy": "Developed by"
   },
@@ -75,7 +75,7 @@
         },
         "nextjs": {
           "short": "React framework with hybrid rendering, great for SEO and performance.",
-          "full": "Next.js is a React framework supporting server-side rendering (SSR), static site generation (SSG), and built-in APIs. It’s ideal for modern applications focused on performance, SEO, and great developer experience."
+          "full": "Next.js is a React framework supporting server-side rendering (SSR), static site generation (SSG), and built-in APIs. It's ideal for modern applications focused on performance, SEO, and great developer experience."
         },
         "shadcnui": {
           "short": "Accessible components styled with Radix and TailwindCSS.",
@@ -155,7 +155,7 @@
       "educations": {
         "ads": {
           "degree": "Technologist in Systems Analysis and Development",
-          "period": "Feb 2024 – Dec 2027",
+          "period": "Feb 2024 - Dec 2027",
           "status": "In progress"
         }
       }

@@ -18,7 +18,7 @@ export const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="flex items-center gap-1 text-md md:text-sm font-semibold">
+    <div className="text-md flex items-center gap-1 font-semibold md:text-sm">
       <button
         onClick={() => switchLocale("en")}
         disabled={isPending || locale === "en"}

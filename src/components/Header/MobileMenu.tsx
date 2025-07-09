@@ -1,5 +1,5 @@
-import { MouseEvent } from "react";
 import { X } from "lucide-react";
+import { MouseEvent } from "react";
 
 import { LanguageSwitcher } from "@/components/Header/LanguageSwitcher";
 import { ThemeToggle } from "@/components/Header/ThemeToggle";

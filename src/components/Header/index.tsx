@@ -77,7 +77,7 @@ export const Header = () => {
               ))}
             </ul>
 
-            <div className="ml-6 lg:ml-12 hidden items-center gap-5 md:flex">
+            <div className="ml-6 hidden items-center gap-5 md:flex lg:ml-12">
               <LanguageSwitcher />
 
               <ThemeToggle />
