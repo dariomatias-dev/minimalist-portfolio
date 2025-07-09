@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { MouseEvent, useCallback, useEffect, useState } from "react";
 
-import { getNavItems } from "@/constants/navItems";
+import { getNavItems } from "@/lib/getNavItems";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import { ThemeToggle } from "./ThemeToggle";

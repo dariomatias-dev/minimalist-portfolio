@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-import { getEducations } from "@/constants/educations";
+import { getEducations } from "@/lib/getEducations";
 import { getExperiences } from "@/lib/getExperiences";
 import { JourneyItem } from "./JourneyItem";
 import { SectionTitle } from "./SectionTitle";

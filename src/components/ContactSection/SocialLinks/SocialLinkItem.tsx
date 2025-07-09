@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 import { SocialLink } from "@/@types/SocialLink";
@@ -16,6 +17,8 @@ export const SocialLinkItem = ({
   isCopied,
   onCopy,
 }: SocialLinkItemProps) => {
+  const t = useTranslations("HomePage.ContactSection.email");
+
   const isEmail = socialLink.href.includes("@gmail");
 
   const dynamicClasses = isCopied
@@ -31,7 +34,7 @@ export const SocialLinkItem = ({
       </div>
 
       <span className="text-sm font-semibold text-inherit">
-        {isCopied ? "E-mail copiado!" : socialLink.label}
+        {isCopied ? t("copied") : socialLink.label}
       </span>
 
       <span className="text-xs text-inherit">{socialLink.subLabel}</span>
@@ -43,7 +46,7 @@ export const SocialLinkItem = ({
       <button
         type="button"
         onClick={onCopy}
-        aria-label="Copiar e-mail"
+        aria-label={t("ariaLabel")}
         className={classes}
       >
         {content}

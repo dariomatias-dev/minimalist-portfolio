@@ -211,6 +211,10 @@
       "socialLinks": {
         "title": "Redes Sociais",
         "description": "Me acompanhe para ficar por dentro dos meus projetos e atualizações, ou envie uma mensagem."
+      },
+      "email": {
+        "copied": "E-mail copiado!",
+        "ariaLabel": "Copiar e-mail"
       }
     }
   }
