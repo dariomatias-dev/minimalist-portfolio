@@ -147,7 +147,14 @@
           "type": "Internship"
         }
       },
-      "education": "Education"
+      "education": "Education",
+      "educations": {
+        "ads": {
+          "degree": "Technologist in Systems Analysis and Development",
+          "period": "Feb 2024 – Dec 2027",
+          "status": "In progress"
+        }
+      }
     }
   }
 }

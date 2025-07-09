@@ -147,7 +147,14 @@
           "type": "Estágio"
         }
       },
-      "education": "Educação"
+      "education": "Educação",
+      "educations": {
+        "ads": {
+          "degree": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+          "period": "fev de 2024 - dez de 2027",
+          "status": "Em andamento"
+        }
+      }
     }
   }
 }

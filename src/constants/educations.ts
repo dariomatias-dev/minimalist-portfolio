@@ -1,11 +1,15 @@
+import { useTranslations } from "next-intl";
+
 import { Education } from "@/@types/Education";
 
-export const educations: Education[] = [
+export const getEducations = (
+  t: ReturnType<typeof useTranslations>,
+): Education[] => [
   {
     institution: "Instituto Federal da Paraíba",
     campus: "Campus Esperança",
-    degree: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
-    period: "fev de 2024 - dez de 2027",
-    status: "Em andamento",
+    degree: t("educations.ads.degree"),
+    period: t("educations.ads.period"),
+    status: t("educations.ads.status"),
   },
 ];

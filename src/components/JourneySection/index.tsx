@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-import { educations } from "@/constants/educations";
+import { getEducations } from "@/constants/educations";
 import { getExperiences } from "@/lib/getExperiences";
 import { JourneyItem } from "./JourneyItem";
 import { SectionTitle } from "./SectionTitle";
@@ -17,6 +17,7 @@ export const JourneySection = () => {
   };
 
   const experiences = getExperiences(t);
+  const educations = getEducations(t);
 
   return (
     <section id="journey" className="mx-auto max-w-5xl scroll-mt-24 px-4">
