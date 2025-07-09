@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+
 import { educations } from "@/constants/educations";
 import { experiences } from "@/constants/experiences";
 import { JourneyItem } from "./JourneyItem";
@@ -8,6 +10,8 @@ import { SectionTitle } from "./SectionTitle";
 import { TimelineSpine } from "./TimelineSpine";
 
 export const JourneySection = () => {
+  const t = useTranslations("HomePage.JourneySection");
+
   const formatYear = (date: string) => {
     return new Date(date).getFullYear().toString();
   };
@@ -22,12 +26,11 @@ export const JourneySection = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-foreground text-4xl font-bold tracking-tight dark:text-white">
-          Trajetória
+          {t("title")}
         </h2>
 
         <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-600 dark:text-zinc-400">
-          Minha jornada profissional e acadêmica, onde cada passo foi uma
-          oportunidade de crescimento e aprendizado.
+          {t("description")}
         </p>
       </motion.div>
 
@@ -38,7 +41,7 @@ export const JourneySection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <SectionTitle>Carreira</SectionTitle>
+          <SectionTitle>{t("career")}</SectionTitle>
 
           <div className="relative mt-12">
             <TimelineSpine />
@@ -69,7 +72,7 @@ export const JourneySection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <SectionTitle>Educação</SectionTitle>
+          <SectionTitle>{t("education")}</SectionTitle>
           <div className="relative mt-12">
             <TimelineSpine />
 

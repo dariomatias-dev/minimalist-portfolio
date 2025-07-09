@@ -134,6 +134,12 @@
           "description": "Package with validation utilities to ensure data integrity in Go (GoLang) applications, using only native libraries."
         }
       }
+    },
+    "JourneySection": {
+      "title": "Journey",
+      "description": "My professional and academic journey, where each step was an opportunity for growth and learning.",
+      "career": "Career",
+      "education": "Education"
     }
   }
 }

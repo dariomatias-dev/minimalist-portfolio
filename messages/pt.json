@@ -134,6 +134,12 @@
           "description": "Pacote com utilitários de validação para garantir a integridade dos dados em aplicações Go (GoLang), utilizando apenas bibliotecas nativas."
         }
       }
+    },
+    "JourneySection": {
+      "title": "Trajetória",
+      "description": "Minha jornada profissional e acadêmica, onde cada passo foi uma oportunidade de crescimento e aprendizado.",
+      "career": "Carreira",
+      "education": "Educação"
     }
   }
 }
