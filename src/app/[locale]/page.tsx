@@ -1,3 +1,7 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 import { AboutMeSection } from "@/components/AboutMeSection";
 import { Blockquote } from "@/components/Blockquote";
 import { ContactSection } from "@/components/ContactSection";
@@ -7,6 +11,8 @@ import { ProjectsSection } from "@/components/ProjectsSection";
 import { SpecialtiesSection } from "@/components/SpecialtiesSection";
 
 export default function Home() {
+  const t = useTranslations("quotes");
+
   return (
     <main className="mx-auto mb-10 flex min-h-screen max-w-5xl flex-col px-6 sm:mb-20">
       <HeroSection />
@@ -14,10 +20,7 @@ export default function Home() {
       <div className="flex min-h-screen flex-col gap-20 sm:gap-24">
         <AboutMeSection />
 
-        <Blockquote
-          quote="Comece de onde você está. Use o que você tem. Faça o que você pode."
-          author="Arthur Ashe"
-        />
+        <Blockquote quote={t("0")} author="Arthur Ashe" />
 
         <SpecialtiesSection />
 
@@ -25,10 +28,7 @@ export default function Home() {
 
         <JourneySection />
 
-        <Blockquote
-          quote="A maior glória não é ficar de pé, mas levantar-se cada vez que se cai."
-          author="Confúcio"
-        />
+        <Blockquote quote={t("1")} author="Confucius" />
 
         <ContactSection />
       </div>
