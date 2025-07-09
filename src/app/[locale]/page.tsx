@@ -24,7 +24,7 @@ export default function Home() {
 
         <SpecialtiesSection />
 
-        {/* <ProjectsSection /> */}
+        <ProjectsSection />
 
         <JourneySection />
 

@@ -1,27 +1,23 @@
+import { useTranslations } from "next-intl";
+
 import { Project } from "@/@types/Project";
 
-export const projects: Project[] = [
+export const getProjects = (
+  t: ReturnType<typeof useTranslations>,
+): Project[] => [
   {
-    title: "Portfólio",
-    description:
-      "Portfólio pessoal com informações sobre mim, projetos, experiências e contato.",
+    title: t("projects.portfolio.title"),
+    description: t("projects.portfolio.description"),
     technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
     image: "/image_placeholder.png",
     links: [
-      {
-        type: "site",
-        url: "https://dariomatias-portfolio.vercel.app/",
-      },
-      {
-        type: "github",
-        url: "https://github.com/dariomatias-dev/portfolio",
-      },
+      { type: "site", url: "https://dariomatias-portfolio.vercel.app/" },
+      { type: "github", url: "https://github.com/dariomatias-dev/portfolio" },
     ],
   },
   {
-    title: "Flutter Guide App",
-    description:
-      "Flutter Guide é um app educativo que ajuda desenvolvedores a aprender Flutter com exemplos práticos.",
+    title: t("projects.flutterGuideApp.title"),
+    description: t("projects.flutterGuideApp.description"),
     technologies: ["Dart", "Flutter"],
     image: "/image_placeholder.png",
     links: [
@@ -36,16 +32,12 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Flutter Guide Web",
-    description:
-      "Site oficial do Flutter Guide, com informações, principais funcionalidades, capturas de tela, política de privacidade e link direto para download na Google Play Store.",
+    title: t("projects.flutterGuideWeb.title"),
+    description: t("projects.flutterGuideWeb.description"),
     technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
     image: "/image_placeholder.png",
     links: [
-      {
-        type: "site",
-        url: "https://flutter-guide-web.vercel.app/",
-      },
+      { type: "site", url: "https://flutter-guide-web.vercel.app/" },
       {
         type: "github",
         url: "https://github.com/dariomatias-dev/flutter_guide_web",
@@ -53,15 +45,12 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Scroll Infinity",
-    description: "Pacote Flutter para adição simplificada de rolagem infinita.",
+    title: t("projects.scrollInfinity.title"),
+    description: t("projects.scrollInfinity.description"),
     technologies: ["Dart", "Flutter"],
     image: "/image_placeholder.png",
     links: [
-      {
-        type: "pubDev",
-        url: "https://pub.dev/packages/scroll_infinity",
-      },
+      { type: "pubDev", url: "https://pub.dev/packages/scroll_infinity" },
       {
         type: "github",
         url: "https://github.com/dariomatias-dev/scroll_infinity",
@@ -69,9 +58,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Go Validators",
-    description:
-      "Pacote com utilitários de validação para garantir a integridade dos dados em aplicações Go (GoLang), utilizando apenas bibliotecas nativas.",
+    title: t("projects.goValidators.title"),
+    description: t("projects.goValidators.description"),
     technologies: ["Go"],
     image: "/image_placeholder.png",
     links: [

@@ -19,7 +19,7 @@ export const getTechnologyDetails = (
     shortDescription: t("technologies.dart.short"),
     fullDescription: t("technologies.dart.full"),
   },
-  golang: {
+  go: {
     label: "Go (Golang)",
     iconName: "golang_icon",
     url: "https://go.dev",

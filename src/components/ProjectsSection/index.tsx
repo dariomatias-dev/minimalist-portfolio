@@ -5,9 +5,10 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
-import { projects } from "@/constants/projects";
+import { getProjects } from "@/lib/getProjects";
 import { Button } from "../ui/button";
 import { ProjectCard } from "./ProjectCard";
+import { useTranslations } from "next-intl";
 
 export const ProjectsSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -41,6 +42,9 @@ export const ProjectsSection = () => {
     };
   }, [emblaApi, onSelect]);
 
+  const t = useTranslations("HomePage.SpecialtiesSection");
+  const projects = getProjects(t);
+
   return (
     <section id="projects" className="w-full scroll-mt-24">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
@@ -53,12 +57,11 @@ export const ProjectsSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-foreground text-4xl font-bold tracking-tight">
-            O Que Tenho Criado
+            {t("createdTitle")}
           </h2>
 
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-            Uma seleção dos meus principais projetos desenvolvidos ao longo da
-            minha trajetória.
+            {t("createdDescription")}
           </p>
         </motion.div>
 

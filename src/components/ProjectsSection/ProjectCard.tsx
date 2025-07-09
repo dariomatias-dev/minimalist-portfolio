@@ -1,12 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
 import type { Project } from "@/@types/Project";
-import { technologyDetails } from "@/constants/technologyDetails";
+import { linkDetails } from "@/constants/linkDetails";
+import { getTechnologyDetails } from "@/lib/getTechnologyDetails ";
 import { Badge } from "../ui/badge";
 import {
   Tooltip,
@@ -14,12 +16,15 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
-import { linkDetails } from "@/constants/linkDetails";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
+  const t = useTranslations("HomePage.SpecialtiesSection");
+
   const [imageSrc, setImageSrc] = useState(
     project.image || "/image_placeholder.png",
   );
+
+  const technologyDetails = getTechnologyDetails(t);
 
   return (
     <motion.article
@@ -53,7 +58,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
         <div className="mt-4 flex flex-col gap-4 border-t pt-4">
           <div className="flex flex-wrap gap-2">
             {project.technologies.slice(0, 4).map((tech) => {
-              const info = technologyDetails[tech];
+              const info = technologyDetails[tech.toLowerCase().replace(/[^a-z]/g, "")];
 
               return (
                 <Tooltip key={tech} delayDuration={150}>

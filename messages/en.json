@@ -109,6 +109,30 @@
           "short": "JavaScript runtime for backend development, based on V8.",
           "full": "Node.js is a JavaScript runtime built on Chrome's V8 engine for running code server-side. It's widely used for building APIs, servers, and real-time applications with high performance."
         }
+      },
+      "createdTitle": "What I Have Created",
+      "createdDescription": "A selection of my main projects developed throughout my journey.",
+      "projects": {
+        "portfolio": {
+          "title": "Portfolio",
+          "description": "Personal portfolio with information about me, projects, experiences, and contact."
+        },
+        "flutterGuideApp": {
+          "title": "Flutter Guide App",
+          "description": "Flutter Guide is an educational app that helps developers learn Flutter through practical examples."
+        },
+        "flutterGuideWeb": {
+          "title": "Flutter Guide Web",
+          "description": "Official Flutter Guide website with information, main features, screenshots, privacy policy, and a direct link to download on the Google Play Store."
+        },
+        "scrollInfinity": {
+          "title": "Scroll Infinity",
+          "description": "Flutter package for simplified infinite scrolling."
+        },
+        "goValidators": {
+          "title": "Go Validators",
+          "description": "Package with validation utilities to ensure data integrity in Go (GoLang) applications, using only native libraries."
+        }
       }
     }
   }
