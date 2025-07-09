@@ -139,6 +139,14 @@
       "title": "Trajetória",
       "description": "Minha jornada profissional e acadêmica, onde cada passo foi uma oportunidade de crescimento e aprendizado.",
       "career": "Carreira",
+      "experiences": {
+        "media4all": {
+          "role": "Desenvolvedor Mobile",
+          "description": "Desenvolvimento e manutenção de aplicativos móveis construídos em Flutter e integração com APIs REST.",
+          "location": "João Pessoa, Paraíba, Brasil · Remota",
+          "type": "Estágio"
+        }
+      },
       "education": "Educação"
     }
   }

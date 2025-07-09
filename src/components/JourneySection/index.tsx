@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import { educations } from "@/constants/educations";
-import { experiences } from "@/constants/experiences";
+import { getExperiences } from "@/lib/getExperiences";
 import { JourneyItem } from "./JourneyItem";
 import { SectionTitle } from "./SectionTitle";
 import { TimelineSpine } from "./TimelineSpine";
@@ -15,6 +15,8 @@ export const JourneySection = () => {
   const formatYear = (date: string) => {
     return new Date(date).getFullYear().toString();
   };
+
+  const experiences = getExperiences(t);
 
   return (
     <section id="journey" className="mx-auto max-w-5xl scroll-mt-24 px-4">

@@ -139,6 +139,14 @@
       "title": "Journey",
       "description": "My professional and academic journey, where each step was an opportunity for growth and learning.",
       "career": "Career",
+      "experiences": {
+        "media4all": {
+          "role": "Mobile Developer",
+          "description": "Development and maintenance of mobile applications built with Flutter and integration with REST APIs.",
+          "location": "João Pessoa, Paraíba, Brazil · Remote",
+          "type": "Internship"
+        }
+      },
       "education": "Education"
     }
   }
