@@ -11,6 +11,10 @@
     "journey": "Trajetória",
     "contact": "Contato"
   },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "developedBy": "Desenvolvido por"
+  },
   "quotes": [
     "Comece de onde você está. Use o que você tem. Faça o que você pode.",
     "A maior glória não é ficar de pé, mas levantar-se cada vez que se cai."

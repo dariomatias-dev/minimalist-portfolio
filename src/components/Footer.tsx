@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export const Footer = () => {
+  const t = useTranslations("footer");
+
   return (
     <motion.footer
       className="w-full border-t-[0.5px] border-gray-300"
@@ -24,7 +27,7 @@ export const Footer = () => {
 
           <span className="hidden md:inline">|</span>
 
-          <span>Todos os direitos reservados</span>
+          <span>{t("rights")}</span>
         </motion.div>
 
         <motion.div
@@ -33,7 +36,7 @@ export const Footer = () => {
           transition={{ delay: 0.3, duration: 0.5 }}
           viewport={{ once: true }}
         >
-          Desenvolvido por{" "}
+          {t("developedBy")}{" "}
           <Link
             href="https://github.com/dariomatias-dev"
             target="_blank"

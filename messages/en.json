@@ -11,6 +11,10 @@
     "journey": "Journey",
     "contact": "Contact"
   },
+    "footer": {
+    "rights": "All rights reserved",
+    "developedBy": "Developed by"
+  },
   "quotes": [
     "Start where you are. Use what you have. Do what you can.",
     "Our greatest glory is not in never falling, but in rising every time we fall."
