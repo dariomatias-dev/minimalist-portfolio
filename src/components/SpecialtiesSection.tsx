@@ -1,14 +1,14 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { useTheme } from "next-themes";
 
-import { services } from "@/constants/services";
 import { technologyDetails } from "@/constants/technologyDetails";
-import { useTranslations } from "next-intl";
+import { getServices } from "@/lib/getServices";
 
 export const SpecialtiesSection = () => {
   const t = useTranslations("HomePage.SpecialtiesSection");
@@ -18,6 +18,8 @@ export const SpecialtiesSection = () => {
   const selectedInfo = technologyDetails[selectedTech];
 
   const { resolvedTheme } = useTheme();
+
+  const services = getServices(t);
 
   const iconSrc =
     resolvedTheme === "dark" && selectedInfo.iconNameDark

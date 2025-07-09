@@ -37,7 +37,21 @@
       "description": "Da concepção à entrega, meu trabalho abrange todo o ciclo de vida de um produto digital.",
       "techTitle": "Minha Stack Tecnológica",
       "techDescription": "Ferramentas e tecnologias que utilizo para construir soluções digitais modernas, performáticas e de alta qualidade.",
-      "visitOfficialSite": "Visitar site oficial"
+      "visitOfficialSite": "Visitar site oficial",
+      "services": {
+        "site": {
+          "title": "Criação de Sites",
+          "description": "Desenvolvimento de websites responsivos, modernos e otimizados para SEO."
+        },
+        "app": {
+          "title": "Criação de Aplicativos",
+          "description": "Desenvolvimento de apps multiplataforma com ótima experiência do usuário."
+        },
+        "server": {
+          "title": "Criação de Servidores",
+          "description": "APIs e sistemas backend seguros, robustos e escaláveis com boas práticas."
+        }
+      }
     }
   }
 }

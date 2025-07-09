@@ -37,7 +37,21 @@
       "description": "From conception to delivery, my work covers the entire lifecycle of a digital product.",
       "techTitle": "My Tech Stack",
       "techDescription": "Tools and technologies I use to build modern, high-performance, and high-quality digital solutions.",
-      "visitOfficialSite": "Visit official website"
+      "visitOfficialSite": "Visit official website",
+      "services": {
+        "site": {
+          "title": "Website Development",
+          "description": "Responsive, modern, and SEO-optimized websites."
+        },
+        "app": {
+          "title": "App Development",
+          "description": "Cross-platform apps with great user experience."
+        },
+        "server": {
+          "title": "Server Development",
+          "description": "Secure, robust, and scalable backend APIs and systems."
+        }
+      }
     }
   }
 }
