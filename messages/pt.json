@@ -155,6 +155,31 @@
           "status": "Em andamento"
         }
       }
+    },
+    "ContactSection": {
+      "title": "Entre em Contato",
+      "description": "Estou à disposição para discutir possíveis colaborações, ideias de projeto ou quaisquer assuntos profissionais.",
+      "form": {
+        "subject": {
+          "placeholder": "Assunto",
+          "error": "O assunto é obrigatório."
+        },
+        "email": {
+          "placeholder": "Seu e-mail",
+          "errorRequired": "O e-mail é obrigatório.",
+          "errorInvalid": "Por favor, insira um e-mail válido."
+        },
+        "message": {
+          "placeholder": "Sua mensagem...",
+          "error": "A mensagem é obrigatória."
+        },
+        "submit": "Enviar",
+        "sending": "Enviando..."
+      },
+      "toast": {
+        "success": "Email enviado com sucesso",
+        "error": "Erro ao enviar email"
+      }
     }
   }
 }

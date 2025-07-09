@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslations } from "next-intl";
 import * as z from "zod";
 
 import {
@@ -20,18 +21,20 @@ import { showToast, ToastType } from "@/lib/toastNotification";
 import { SocialLinks } from "./SocialLinks";
 import { ActionButton } from "../ActionButton";
 
-const schema = z.object({
-  subject: z.string().min(1, "O assunto é obrigatório."),
-  email: z
-    .string()
-    .min(1, "O e-mail é obrigatório.")
-    .email("Por favor, insira um e-mail válido."),
-  message: z.string().min(1, "A mensagem é obrigatória."),
-});
-
-type FormData = z.infer<typeof schema>;
-
 export const ContactSection = () => {
+  const t = useTranslations("HomePage.ContactSection");
+
+  const schema = z.object({
+    subject: z.string().min(1, t("form.subject.error")),
+    email: z
+      .string()
+      .min(1, t("form.email.errorRequired"))
+      .email(t("form.email.errorInvalid")),
+    message: z.string().min(1, t("form.message.error")),
+  });
+
+  type FormData = z.infer<typeof schema>;
+
   const [isSending, setIsSending] = useState(false);
 
   const form = useForm<FormData>({
@@ -66,12 +69,12 @@ export const ContactSection = () => {
 
       showToast({
         type: ToastType.Success,
-        message: "Email enviado com sucesso",
+        message: t("toast.success"),
       });
     } catch (error) {
       console.error("Erro ao enviar email:", error);
 
-      showToast({ type: ToastType.Error, message: "Erro ao enviar email" });
+      showToast({ type: ToastType.Error, message: t("toast.error") });
     } finally {
       setIsSending(false);
     }
@@ -92,7 +95,7 @@ export const ContactSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.15, duration: 0.5 }}
       >
-        Entre em Contato
+        {t("title")}
       </motion.h2>
 
       <motion.p
@@ -101,8 +104,7 @@ export const ContactSection = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
       >
-        Estou à disposição para discutir possíveis colaborações, ideias de
-        projeto ou quaisquer assuntos profissionais.
+        {t("description")}
       </motion.p>
 
       <motion.div
@@ -125,7 +127,7 @@ export const ContactSection = () => {
                   <FormItem>
                     <FormControl>
                       <Input
-                        placeholder="Assunto"
+                        placeholder={t("form.subject.placeholder")}
                         {...field}
                         className="border-input bg-background/80 focus-visible:ring-ring focus-visible:ring-0 dark:text-zinc-300 dark:placeholder-zinc-500"
                       />
@@ -143,7 +145,7 @@ export const ContactSection = () => {
                     <FormControl>
                       <Input
                         type="email"
-                        placeholder="Seu e-mail"
+                        placeholder={t("form.email.placeholder")}
                         {...field}
                         className="border-input bg-background/80 focus-visible:ring-ring focus-visible:ring-0 dark:text-zinc-300 dark:placeholder-zinc-500"
                       />
@@ -162,7 +164,7 @@ export const ContactSection = () => {
                   <FormControl>
                     <Textarea
                       rows={5}
-                      placeholder="Sua mensagem..."
+                      placeholder={t("form.message.placeholder")}
                       {...field}
                       className="border-input bg-background/80 focus-visible:ring-ring focus-visible:ring-0 dark:text-zinc-300 dark:placeholder-zinc-500"
                     />
@@ -181,7 +183,7 @@ export const ContactSection = () => {
                   type="submit"
                   variant="outline"
                   animation="invert"
-                  label={isSending ? "Enviando..." : "Enviar"}
+                  label={isSending ? t("form.sending") : t("form.submit")}
                   disabled={isSending}
                 />
               </motion.div>

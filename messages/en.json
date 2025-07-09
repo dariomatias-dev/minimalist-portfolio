@@ -155,6 +155,31 @@
           "status": "In progress"
         }
       }
+    },
+    "ContactSection": {
+      "title": "Get in Touch",
+      "description": "I'm available to discuss potential collaborations, project ideas, or any professional matters.",
+      "form": {
+        "subject": {
+          "placeholder": "Subject",
+          "error": "Subject is required."
+        },
+        "email": {
+          "placeholder": "Your email",
+          "errorRequired": "Email is required.",
+          "errorInvalid": "Please enter a valid email address."
+        },
+        "message": {
+          "placeholder": "Your message...",
+          "error": "Message is required."
+        },
+        "submit": "Send",
+        "sending": "Sending..."
+      },
+      "toast": {
+        "success": "Email successfully sent",
+        "error": "Error while sending email"
+      }
     }
   }
 }
