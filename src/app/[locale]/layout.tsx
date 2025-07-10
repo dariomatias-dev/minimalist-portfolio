@@ -7,8 +7,6 @@ import { Toaster } from "sonner";
 
 import "./globals.css";
 
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { routing } from "@/i18n/routing";
 
@@ -23,8 +21,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfólio",
-  description: "Explore projetos, habilidades e experiências de Dário Matias.",
+  title: "Portfolio",
+  description: "Explore projects, skills, and experiences of Dário Matias.",
 };
 
 export default async function RootLayout({
@@ -52,11 +50,8 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Header />
-
             {children}
 
-            <Footer />
             <Toaster />
           </ThemeProvider>
         </NextIntlClientProvider>
