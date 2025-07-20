@@ -58,6 +58,22 @@ export const getProjects = (
     ],
   },
   {
+    title: t("projects.flutterSyntaxHighlighter.title"),
+    description: t("projects.flutterSyntaxHighlighter.description"),
+    technologies: ["Dart", "Flutter"],
+    image: "/image_placeholder.png",
+    links: [
+      {
+        type: "pubDev",
+        url: "https://pub.dev/packages/flutter_syntax_highlighter",
+      },
+      {
+        type: "github",
+        url: "https://github.com/dariomatias-dev/flutter_syntax_highlighter",
+      },
+    ],
+  },
+  {
     title: t("projects.goValidators.title"),
     description: t("projects.goValidators.description"),
     technologies: ["Go"],

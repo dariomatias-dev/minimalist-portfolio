@@ -135,6 +135,10 @@
           "title": "Scroll Infinity",
           "description": "Pacote Flutter para adição simplificada de rolagem infinita."
         },
+        "flutterSyntaxHighlighter": {
+          "title": "Flutter Syntax Highlighter",
+          "description": "Um widget para realce de sintaxe de código Dart e Flutter, com suporte para temas claro e escuro, numeração de linhas e seleção de código."
+        },
         "goValidators": {
           "title": "Go Validators",
           "description": "Pacote com utilitários de validação para garantir a integridade dos dados em aplicações Go (GoLang), utilizando apenas bibliotecas nativas."
