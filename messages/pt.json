@@ -120,27 +120,21 @@
       "createdDescription": "Uma seleção dos meus principais projetos desenvolvidos ao longo da minha trajetória.",
       "projects": {
         "portfolio": {
-          "title": "Portfólio",
           "description": "Portfólio pessoal com informações sobre mim, projetos, experiências e contato."
         },
         "flutterGuideApp": {
-          "title": "Flutter Guide App",
           "description": "Flutter Guide é um app educativo que ajuda desenvolvedores a aprender Flutter por meio de exemplos práticos."
         },
         "flutterGuideWeb": {
-          "title": "Flutter Guide Web",
           "description": "Site oficial do Flutter Guide, com informações, principais funcionalidades, capturas de tela, política de privacidade e link direto para download na Google Play Store."
         },
         "scrollInfinity": {
-          "title": "Scroll Infinity",
           "description": "Pacote Flutter para adição simplificada de rolagem infinita."
         },
         "flutterSyntaxHighlighter": {
-          "title": "Flutter Syntax Highlighter",
           "description": "Um widget para realce de sintaxe de código Dart e Flutter, com suporte para temas claro e escuro, numeração de linhas e seleção de código."
         },
         "goValidators": {
-          "title": "Go Validators",
           "description": "Pacote com utilitários de validação para garantir a integridade dos dados em aplicações Go (GoLang), utilizando apenas bibliotecas nativas."
         }
       },

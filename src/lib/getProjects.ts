@@ -6,7 +6,7 @@ export const getProjects = (
   t: ReturnType<typeof useTranslations>,
 ): Project[] => [
   {
-    title: t("projects.portfolio.title"),
+    title: "Portfolio",
     description: t("projects.portfolio.description"),
     technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
     image: "/image_placeholder.png",
@@ -16,7 +16,7 @@ export const getProjects = (
     ],
   },
   {
-    title: t("projects.flutterGuideApp.title"),
+    title: "FlutterGuide App",
     description: t("projects.flutterGuideApp.description"),
     technologies: ["Dart", "Flutter"],
     image: "/image_placeholder.png",
@@ -32,7 +32,7 @@ export const getProjects = (
     ],
   },
   {
-    title: t("projects.flutterGuideWeb.title"),
+    title: "FlutterGuide Web",
     description: t("projects.flutterGuideWeb.description"),
     technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
     image: "/image_placeholder.png",
@@ -45,7 +45,7 @@ export const getProjects = (
     ],
   },
   {
-    title: t("projects.scrollInfinity.title"),
+    title: "Scroll Infinity",
     description: t("projects.scrollInfinity.description"),
     technologies: ["Dart", "Flutter"],
     image: "/image_placeholder.png",
@@ -58,7 +58,7 @@ export const getProjects = (
     ],
   },
   {
-    title: t("projects.flutterSyntaxHighlighter.title"),
+    title: "Flutter Syntax Highlighter",
     description: t("projects.flutterSyntaxHighlighter.description"),
     technologies: ["Dart", "Flutter"],
     image: "/image_placeholder.png",
@@ -74,7 +74,7 @@ export const getProjects = (
     ],
   },
   {
-    title: t("projects.goValidators.title"),
+    title: "Go Validators",
     description: t("projects.goValidators.description"),
     technologies: ["Go"],
     image: "/image_placeholder.png",
