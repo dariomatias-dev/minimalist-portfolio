@@ -62,7 +62,7 @@ export const HeroSection = () => {
           />
         </Link>
 
-        <Link href="/curriculum.pdf" target="_blank" download>
+        <Link href="/cv.pdf" target="_blank" download>
           <ActionButton
             variant="outline"
             label={t("downloadCV")}
