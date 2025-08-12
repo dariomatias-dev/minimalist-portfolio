@@ -61,7 +61,10 @@ To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-Ensure you have Node.js and a package manager (npm, Yarn, or pnpm) installed on your machine.
+Ensure you have Node.js and a package manager (pnpm) installed on your machine.
+
+- Node.js
+- pnpm
 
 ### Installation
 
@@ -92,11 +95,10 @@ pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the result.
-You can start editing the page by modifying `app/[locale]/page.tsx`. The page auto-updates as you edit the file.
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+Distributed under the **MIT License**. See the [LICENSE](LICENSE) file for more information.
 
 ## Contact
 
