@@ -47,10 +47,13 @@ The project was built with a focus on performance and modern development practic
 
 This project was developed using the following core technologies:
 
-- **[Next.js](https://nextjs.org/)** – A React framework optimized for performance and SEO.
 - **[React](https://reactjs.org/)** – A JavaScript library for building user interfaces.
+- **[Next.js](https://nextjs.org/)** – A React framework optimized for performance and SEO.
 - **[TypeScript](https://www.typescriptlang.org/)** – A typed superset of JavaScript that compiles to plain JavaScript.
 - **[Tailwind CSS](https://tailwindcss.com/)** – A utility-first CSS framework for rapid UI development.
+- **[shadcn/ui](https://ui.shadcn.com/)** – Reusable components built using Radix UI and Tailwind CSS.
+- **[Embla Carousel](https://www.embla-carousel.com/)** – Lightweight and performant carousel library.
+- **[next-themes](https://github.com/pacocoursey/next-themes)** – Light and dark mode toggling.
 
 ## Getting Started
 
