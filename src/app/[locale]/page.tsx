@@ -25,7 +25,7 @@ export default function Home() {
         <div className="flex min-h-screen flex-col gap-20 sm:gap-24">
           <AboutMeSection />
 
-          <Blockquote quote={t("0")} author="Arthur Ashe" />
+          <Blockquote quote={t("0.message")} author={t("0.author")} />
 
           <SpecialtiesSection />
 
@@ -33,7 +33,7 @@ export default function Home() {
 
           <JourneySection />
 
-          <Blockquote quote={t("1")} author="Confucius" />
+          <Blockquote quote={t("1.message")} author={t("1.author")} />
 
           <ContactSection />
         </div>

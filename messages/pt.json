@@ -16,8 +16,38 @@
     "developedBy": "Desenvolvido por"
   },
   "quotes": [
-    "Comece de onde você está. Use o que você tem. Faça o que você pode.",
-    "A maior glória não é ficar de pé, mas levantar-se cada vez que se cai."
+    {
+      "message": "Comece de onde você está. Use o que você tem. Faça o que você pode.",
+      "author": "Arthur Ashe"
+    },
+    {
+      "message": "A maior glória não é ficar de pé, mas levantar-se cada vez que se cai.",
+      "author": "Confúcio"
+    },
+    {
+      "message": "Não encontre falhas, encontre soluções.",
+      "author": "Henry Ford"
+    },
+    {
+      "message": "A simplicidade é o último grau de sofisticação.",
+      "author": "Leonardo da Vinci"
+    },
+    {
+      "message": "O fracasso é apenas a oportunidade de começar de novo, desta vez de forma mais inteligente.",
+      "author": "Henry Ford"
+    },
+    {
+      "message": "Não importa quão devagar você vá, desde que não pare.",
+      "author": "Confúcio"
+    },
+    {
+      "message": "Se você não pode explicar algo de forma simples, então você não entendeu bem o suficiente.",
+      "author": "Albert Einstein"
+    },
+    {
+      "message": "Não existe fracasso, apenas resultados e aprendizados.",
+      "author": "Tony Robbins"
+    }
   ],
   "HomePage": {
     "technologies": {
