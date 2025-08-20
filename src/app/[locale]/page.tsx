@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 import { AboutMeSection } from "@/components/AboutMeSection";
 import { Blockquote } from "@/components/Blockquote";
@@ -11,9 +12,19 @@ import { HeroSection } from "@/components/HeroSection";
 import { JourneySection } from "@/components/JourneySection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { SpecialtiesSection } from "@/components/SpecialtiesSection";
+import { generateUniqueNumbers } from "@/lib/generateUniqueNumbers";
 
 export default function Home() {
   const t = useTranslations("quotes");
+
+  const totalQuotes = 8;
+  const [quoteIndices, setQuoteIndices] = useState<number[]>([]);
+
+  useEffect(() => {
+    setQuoteIndices(
+      generateUniqueNumbers(Math.min(2, totalQuotes), totalQuotes - 1),
+    );
+  }, []);
 
   return (
     <>
@@ -25,7 +36,12 @@ export default function Home() {
         <div className="flex min-h-screen flex-col gap-20 sm:gap-24">
           <AboutMeSection />
 
-          <Blockquote quote={t("0.message")} author={t("0.author")} />
+          {quoteIndices[0] !== undefined && (
+            <Blockquote
+              quote={t(`${quoteIndices[0]}.message`)}
+              author={t(`${quoteIndices[0]}.author`)}
+            />
+          )}
 
           <SpecialtiesSection />
 
@@ -33,7 +49,12 @@ export default function Home() {
 
           <JourneySection />
 
-          <Blockquote quote={t("1.message")} author={t("1.author")} />
+          {quoteIndices[1] !== undefined && (
+            <Blockquote
+              quote={t(`${quoteIndices[1]}.message`)}
+              author={t(`${quoteIndices[1]}.author`)}
+            />
+          )}
 
           <ContactSection />
         </div>
