@@ -7,7 +7,7 @@ import Link from "next/link";
 import { MouseEvent } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
-import { ActionButton } from "./ActionButton";
+import { ActionButton } from "./action-button";
 
 export const HeroSection = () => {
   const t = useTranslations("HomePage.HeroSection");

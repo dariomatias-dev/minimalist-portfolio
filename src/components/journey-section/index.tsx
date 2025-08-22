@@ -5,9 +5,9 @@ import { useTranslations } from "next-intl";
 
 import { getEducations } from "@/lib/getEducations";
 import { getExperiences } from "@/lib/getExperiences";
-import { JourneyItem } from "./JourneyItem";
-import { SectionTitle } from "./SectionTitle";
-import { TimelineSpine } from "./TimelineSpine";
+import { JourneyItem } from "./journey-item";
+import { SectionTitle } from "./section-title";
+import { TimelineSpine } from "./timeline-spine";
 
 export const JourneySection = () => {
   const t = useTranslations("HomePage.JourneySection");

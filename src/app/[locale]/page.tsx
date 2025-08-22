@@ -3,15 +3,15 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
-import { AboutMeSection } from "@/components/AboutMeSection";
-import { Blockquote } from "@/components/Blockquote";
+import { AboutMeSection } from "@/components/about-me-section";
+import { Blockquote } from "@/components/blockquote";
 import { ContactSection } from "@/components/ContactSection";
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/Header";
-import { HeroSection } from "@/components/HeroSection";
+import { HeroSection } from "@/components/hero-section";
 import { JourneySection } from "@/components/JourneySection";
 import { ProjectsSection } from "@/components/ProjectsSection";
-import { SpecialtiesSection } from "@/components/SpecialtiesSection";
+import { SpecialtiesSection } from "@/components/specialties-section";
 import { generateUniqueNumbers } from "@/lib/generateUniqueNumbers";
 
 export default function Home() {

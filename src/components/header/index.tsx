@@ -6,9 +6,9 @@ import { useTranslations } from "next-intl";
 import { MouseEvent, useCallback, useEffect, useState } from "react";
 
 import { getNavItems } from "@/lib/getNavItems";
-import { LanguageSwitcher } from "./LanguageSwitcher";
-import { MobileMenu } from "./MobileMenu";
-import { ThemeToggle } from "./ThemeToggle";
+import { LanguageSwitcher } from "./language-switcher";
+import { MobileMenu } from "./mobile-menu";
+import { ThemeToggle } from "./theme-toggle";
 
 export const Header = () => {
   const t = useTranslations("NavBar");

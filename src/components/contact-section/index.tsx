@@ -18,8 +18,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { showToast, ToastType } from "@/lib/toastNotification";
-import { ActionButton } from "../ActionButton";
-import { SocialLinks } from "./SocialLinks";
+import { ActionButton } from "../action-button";
+import { SocialLinks } from "./social-links";
 
 export const ContactSection = () => {
   const t = useTranslations("HomePage.ContactSection");

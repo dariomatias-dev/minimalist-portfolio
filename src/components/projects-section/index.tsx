@@ -8,7 +8,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import { getProjects } from "@/lib/getProjects";
 import { Button } from "../ui/button";
-import { ProjectCard } from "./ProjectCard";
+import { ProjectCard } from "./project-card";
 
 export const ProjectsSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({

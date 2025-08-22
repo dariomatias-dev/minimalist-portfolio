@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { socialLinks } from "@/constants/socialLinks";
-import { SocialLinkItem } from "./SocialLinkItem";
+import { SocialLinkItem } from "./social-link-item";
 
 export const SocialLinks = () => {
   const t = useTranslations("HomePage.ContactSection.socialLinks");
