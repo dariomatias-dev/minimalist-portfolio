@@ -27,7 +27,7 @@
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
 - [License](#license)
-- [Contact](#contact)
+- [Author](#author)
 
 ## About The Project
 
@@ -72,7 +72,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/dariomatias-dev/portfolio.git
-````
+```
 
 Navigate into the project directory:
 
@@ -100,11 +100,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 Distributed under the **MIT License**. See the [LICENSE](LICENSE) file for more information.
 
-## Contact
+## Author
 
-I am always open to discussing new projects and ideas. Feel free to get in touch.
+Developed by **Dário Matias**:
 
 - **Portfolio**: [dariomatias-dev](https://dariomatias-dev.com)
+- **GitHub**: [dariomatias-dev](https://github.com/dariomatias-dev)
 - **Email**: [matiasdario75@gmail.com](mailto:matiasdario75@gmail.com)
 - **Instagram**: [@dariomatias_dev](https://instagram.com/dariomatias_dev)
 - **LinkedIn**: [linkedin.com/in/dariomatias-dev](https://linkedin.com/in/dariomatias-dev)
