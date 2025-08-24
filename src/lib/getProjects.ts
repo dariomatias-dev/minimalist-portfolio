@@ -16,7 +16,7 @@ export const getProjects = (
     ],
   },
   {
-    title: "FlutterGuide App",
+    title: "Flutter Guide App",
     description: t("projects.flutterGuideApp.description"),
     technologies: ["Dart", "Flutter"],
     image: "/image_placeholder.png",
@@ -32,7 +32,7 @@ export const getProjects = (
     ],
   },
   {
-    title: "FlutterGuide Web",
+    title: "Flutter Guide Web",
     description: t("projects.flutterGuideWeb.description"),
     technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
     image: "/image_placeholder.png",

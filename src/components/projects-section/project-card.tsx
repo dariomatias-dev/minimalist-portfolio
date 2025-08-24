@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import type { Project } from "@/@types/Project";
 import { getLinkDetails } from "@/lib/getLinkDetails";
@@ -33,6 +33,12 @@ export const ProjectCard = ({ project }: { project: Project }) => {
     useTranslations("HomePage.technologies"),
   );
   const linkDetails = getLinkDetails(t);
+
+  useEffect(() => {
+    setImageSrc(
+      `/screenshots/${project.title.toLowerCase().replaceAll(" ", "_")}_screenshot.png`,
+    );
+  }, []);
 
   return (
     <motion.article
