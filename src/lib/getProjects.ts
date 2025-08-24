@@ -45,6 +45,18 @@ export const getProjects = (
     ],
   },
   {
+    title: "ElevaSign",
+    description: t("projects.elevaSign.description"),
+    technologies: ["Dart", "Flutter"],
+    image: "/image_placeholder.png",
+    links: [
+      {
+        type: "playStore",
+        url: "https://play.google.com/store/apps/details?id=media4all.com.br.portaldeassinaturasvivo_app",
+      },
+    ],
+  },
+  {
     title: "Scroll Infinity",
     description: t("projects.scrollInfinity.description"),
     technologies: ["Dart", "Flutter"],

@@ -166,6 +166,9 @@
         "flutterGuideWeb": {
           "description": "Official Flutter Guide website with information, main features, screenshots, privacy policy, and a direct link to download on the Google Play Store."
         },
+        "elevaSign": {
+          "description": "Digital Signature Platform for managing contracts and documents, featuring a complete workflow that covers all stages of the process. Contributed to the development since the early versions, adding various features to the app."
+        },
         "scrollInfinity": {
           "description": "Flutter package for simplified infinite scrolling."
         },
