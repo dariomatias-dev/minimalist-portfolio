@@ -79,7 +79,7 @@ const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
             alt={alt}
             width={1920}
             height={1080}
-            className="h-full w-full object-contain"
+            className="h-full w-auto object-cover"
           />
         </div>
       </motion.div>
@@ -139,7 +139,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
       >
         <button
           onClick={openViewer}
-          className="bg-background relative h-48 w-full cursor-pointer overflow-hidden rounded-t-lg border-b"
+          className="bg-background relative h-48 w-full cursor-pointer overflow-hidden rounded-t-lg border-b outline-0"
           aria-label={`Visualizar imagem do projeto ${project.title}`}
         >
           <Image
