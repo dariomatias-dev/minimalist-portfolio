@@ -9,7 +9,6 @@ export const getProjects = (
     title: "Portfolio",
     description: t("projects.portfolio.description"),
     technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
-    image: "/image_placeholder.png",
     links: [
       { type: "site", url: "https://dariomatias-portfolio.vercel.app/" },
       { type: "github", url: "https://github.com/dariomatias-dev/portfolio" },
@@ -19,7 +18,6 @@ export const getProjects = (
     title: "Flutter Guide App",
     description: t("projects.flutterGuideApp.description"),
     technologies: ["Dart", "Flutter"],
-    image: "/image_placeholder.png",
     links: [
       {
         type: "playStore",
@@ -35,7 +33,6 @@ export const getProjects = (
     title: "Flutter Guide Web",
     description: t("projects.flutterGuideWeb.description"),
     technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
-    image: "/image_placeholder.png",
     links: [
       { type: "site", url: "https://flutter-guide-web.vercel.app/" },
       {
@@ -48,7 +45,6 @@ export const getProjects = (
     title: "ElevaSign",
     description: t("projects.elevaSign.description"),
     technologies: ["Dart", "Flutter"],
-    image: "/image_placeholder.png",
     links: [
       {
         type: "playStore",
@@ -60,7 +56,6 @@ export const getProjects = (
     title: "Scroll Infinity",
     description: t("projects.scrollInfinity.description"),
     technologies: ["Dart", "Flutter"],
-    image: "/image_placeholder.png",
     links: [
       { type: "pubDev", url: "https://pub.dev/packages/scroll_infinity" },
       {
@@ -73,7 +68,6 @@ export const getProjects = (
     title: "Flutter Syntax Highlighter",
     description: t("projects.flutterSyntaxHighlighter.description"),
     technologies: ["Dart", "Flutter"],
-    image: "/image_placeholder.png",
     links: [
       {
         type: "pubDev",
@@ -89,7 +83,6 @@ export const getProjects = (
     title: "Go Validators",
     description: t("projects.goValidators.description"),
     technologies: ["Go"],
-    image: "/image_placeholder.png",
     links: [
       {
         type: "goDev",

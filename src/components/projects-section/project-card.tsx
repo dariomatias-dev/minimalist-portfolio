@@ -24,9 +24,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
 
-  const [imageSrc, setImageSrc] = useState(
-    project.image || "/image_placeholder.png",
-  );
+  const [imageSrc, setImageSrc] = useState("/image_placeholder.png");
   const [isViewerOpen, setIsViewerOpen] = useState(false);
 
   const technologyDetails = getTechnologyDetails(
