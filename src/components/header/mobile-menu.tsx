@@ -1,8 +1,8 @@
 import { X } from "lucide-react";
 import { MouseEvent } from "react";
 
-import { LanguageSwitcher } from "@/components/Header/LanguageSwitcher";
-import { ThemeToggle } from "@/components/Header/ThemeToggle";
+import { LanguageSwitcher } from "./language-switcher";
+import { ThemeToggle } from "./theme-toggle";
 
 type MobileMenuProps = {
   navItems: { label: string; href: string; id: string }[];

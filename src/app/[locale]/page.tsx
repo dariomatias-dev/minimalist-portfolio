@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 
 import { AboutMeSection } from "@/components/about-me-section";
 import { Blockquote } from "@/components/blockquote";
-import { ContactSection } from "@/components/ContactSection";
+import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/Header";
+import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
-import { JourneySection } from "@/components/JourneySection";
-import { ProjectsSection } from "@/components/ProjectsSection";
+import { JourneySection } from "@/components/journey-section";
+import { ProjectsSection } from "@/components/projects-section";
 import { SpecialtiesSection } from "@/components/specialties-section";
 import { generateUniqueNumbers } from "@/lib/generateUniqueNumbers";
 
