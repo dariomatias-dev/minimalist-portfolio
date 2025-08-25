@@ -12,6 +12,8 @@ interface ImageViewerProps {
 
 export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
   const [isMounted, setIsMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -37,6 +39,15 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
+  const handleLoad = () => {
+    setIsLoading(false);
+  };
+
+  const handleError = () => {
+    setIsLoading(false);
+    setHasError(true);
+  };
+
   const modalContent = (
     <motion.div
       initial={{ opacity: 0 }}
@@ -57,14 +68,44 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
         className="relative h-auto max-h-[90vh] w-full max-w-5xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="overflow-hidden rounded-lg border border-zinc-700 shadow-xl dark:border-zinc-800">
+        <div className="relative overflow-hidden rounded-lg border border-zinc-700 bg-zinc-900 shadow-xl dark:border-zinc-800">
           <Image
             src={src}
             alt={alt}
             width={1920}
             height={1080}
-            className="h-full w-auto object-cover"
+            className={`h-auto w-full object-contain transition-opacity duration-300 ${
+              isLoading || hasError ? "opacity-0" : "opacity-100"
+            }`}
+            onLoad={handleLoad}
+            onError={handleError}
+            style={{
+              maxHeight: "90vh",
+            }}
           />
+
+          {isLoading && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div
+                className="h-10 w-10 animate-spin rounded-full border-4 border-solid border-white/20 border-t-white"
+                role="status"
+              >
+                <span className="sr-only">Carregando...</span>
+              </div>
+            </div>
+          )}
+
+          {hasError && (
+            <div className="absolute inset-0 flex items-center justify-center p-4">
+              <Image
+                src="/image_placeholder.png"
+                width={256}
+                height={256}
+                alt="Erro ao carregar imagem"
+                className="w-2/5 opacity-60 sm:w-1/3"
+              />
+            </div>
+          )}
         </div>
       </motion.div>
 
