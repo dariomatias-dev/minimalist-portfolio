@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { showToast, ToastType } from "@/lib/toastNotification";
+import { showToast, ToastType } from "@/lib/toast-notification";
 import { ActionButton } from "../action-button";
 import { SocialLinks } from "./social-links";
 

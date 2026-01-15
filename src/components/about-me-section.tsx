@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-import { highlightText } from "@/lib/AboutMehighlightText";
+import { highlightText } from "@/lib/about-mehighlight-text";
 
 export const AboutMeSection = () => {
   const t = useTranslations("HomePage.AboutSection");

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-import { socialLinks } from "@/constants/socialLinks";
+import { socialLinks } from "@/constants/social-links";
 import { SocialLinkItem } from "./social-link-item";
 
 export const SocialLinks = () => {

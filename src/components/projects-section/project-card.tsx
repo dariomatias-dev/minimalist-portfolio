@@ -7,9 +7,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
-import type { Project } from "@/@types/Project";
-import { getLinkDetails } from "@/lib/getLinkDetails";
-import { getTechnologyDetails } from "@/lib/getTechnologyDetails ";
+import { Project } from "@/@types/project";
+import { getLinkDetails } from "@/lib/get-link-details";
+import { getTechnologyDetails } from "@/lib/get-technology-details";
 import { Badge } from "../ui/badge";
 import {
   Tooltip,

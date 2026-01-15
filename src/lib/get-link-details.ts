@@ -2,8 +2,8 @@ import { ArrowUpRight, Package, Play } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { FaGithub } from "react-icons/fa";
 
-import { LinkDetail } from "@/@types/LinkDetail";
-import type { ProjectLinkType } from "@/@types/Project";
+import { LinkDetail } from "@/@types/link-detail";
+import { ProjectLinkType } from "@/@types/project";
 
 export const getLinkDetails = (
   t: ReturnType<typeof useTranslations>,

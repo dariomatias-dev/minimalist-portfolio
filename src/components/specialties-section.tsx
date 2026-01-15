@@ -7,8 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import { getServices } from "@/lib/getServices";
-import { getTechnologyDetails } from "@/lib/getTechnologyDetails ";
+import { getServices } from "@/lib/get-services";
+import { getTechnologyDetails } from "@/lib/get-technology-details";
 
 export const SpecialtiesSection = () => {
   const t = useTranslations("HomePage.SpecialtiesSection");

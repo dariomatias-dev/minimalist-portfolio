@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { Education } from "@/@types/Education";
+import { Education } from "@/@types/education";
 
 export const getEducations = (
   t: ReturnType<typeof useTranslations>,

@@ -1,6 +1,6 @@
 import { FiGithub, FiInstagram, FiLinkedin, FiMail } from "react-icons/fi";
 
-import { SocialLink } from "@/@types/SocialLink";
+import { SocialLink } from "@/@types/social-link";
 
 export const socialLinks: SocialLink[] = [
   {

@@ -12,7 +12,7 @@ import { HeroSection } from "@/components/hero-section";
 import { JourneySection } from "@/components/journey-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { SpecialtiesSection } from "@/components/specialties-section";
-import { generateUniqueNumbers } from "@/lib/generateUniqueNumbers";
+import { generateUniqueNumbers } from "@/lib/generate-unique-numbers";
 
 export default function Home() {
   const t = useTranslations("quotes");

@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { Project } from "@/@types/Project";
+import { Project } from "@/@types/project";
 
 export const getProjects = (
   t: ReturnType<typeof useTranslations>,

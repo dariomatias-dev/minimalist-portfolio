@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { NavBarItem } from "@/@types/NavBarItem";
+import { NavBarItem } from "@/@types/nav-bar-item";
 
 export const getNavItems = (
   t: ReturnType<typeof useTranslations>,

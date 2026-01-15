@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-import { getEducations } from "@/lib/getEducations";
-import { getExperiences } from "@/lib/getExperiences";
+import { getEducations } from "@/lib/get-educations";
+import { getExperiences } from "@/lib/get-experiences";
 import { JourneyItem } from "./journey-item";
 import { SectionTitle } from "./section-title";
 import { TimelineSpine } from "./timeline-spine";

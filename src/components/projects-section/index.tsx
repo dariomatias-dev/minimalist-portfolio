@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 
-import { getProjects } from "@/lib/getProjects";
+import { getProjects } from "@/lib/get-projects";
 import { Button } from "../ui/button";
 import { ProjectCard } from "./project-card";
 

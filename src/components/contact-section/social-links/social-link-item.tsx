@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-import { SocialLink } from "@/@types/SocialLink";
+import { SocialLink } from "@/@types/social-link";
 
 type SocialLinkItemProps = {
   socialLink: SocialLink;

@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { Technology } from "@/@types/Technology";
+import { Technology } from "@/@types/technology";
 
 export const getTechnologyDetails = (
   t: ReturnType<typeof useTranslations>,

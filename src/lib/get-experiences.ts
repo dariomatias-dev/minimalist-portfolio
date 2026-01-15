@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { Experience } from "@/@types/Experience";
+import { Experience } from "@/@types/experience";
 
 export const getExperiences = (
   t: ReturnType<typeof useTranslations>,
