@@ -7,17 +7,17 @@
 </div>
 <br>
 
-<h1 align="center">Personal Portfolio</h1>
+<h1 align="center">Minimalist Personal Portfolio</h1>
 
 <p align="center">
-  A clean, responsive single-page application built to showcase my skills and projects.
+  A minimalist, clean, responsive single-page application built to showcase my skills and projects.
   <br>
   <a href="#about-the-project"><strong>Explore the docs »</strong></a>
   <br>
   <br>
   <a href="https://dariomatias-dev.com">View Live Version</a> · 
-  <a href="https://github.com/dariomatias-dev/portfolio/issues">Report Bug</a> · 
-  <a href="https://github.com/dariomatias-dev/portfolio/issues">Request Feature</a>
+  <a href="https://github.com/dariomatias-dev/minimalist-portfolio/issues">Report Bug</a> · 
+  <a href="https://github.com/dariomatias-dev/minimalist-portfolio/issues">Request Feature</a>
 </p>
 
 ## Table of Contents
@@ -31,14 +31,14 @@
 
 ## About The Project
 
-This portfolio was created to serve as a central showcase of my skills, projects, and professional background.  
+This **minimalist portfolio** was created to serve as a central showcase of my skills, projects, and professional background.  
 It is designed to be a clean, fast, and responsive single-page application that effectively communicates my capabilities as a developer.
 
 The project was built with a focus on performance and modern development practices.
 
 ## Features
 
-- **Responsive Design**: Fully functional and visually appealing on all devices, from mobile phones to desktops.
+- **Minimalist & Responsive Design**: Fully functional and visually appealing on all devices, from mobile phones to desktops.
 - **Projects Section**: A curated list of my work, complete with descriptions and links to live demos and source code.
 - **About Me**: A brief introduction to my professional journey, technical skills, and interests.
 - **Performance Optimized**: Built with Next.js to ensure fast load times and a smooth user experience.
@@ -71,13 +71,13 @@ Ensure you have Node.js and a package manager (pnpm) installed on your machine.
 Clone the repository:
 
 ```bash
-git clone https://github.com/dariomatias-dev/portfolio.git
+git clone https://github.com/dariomatias-dev/minimalist-portfolio.git
 ```
 
 Navigate into the project directory:
 
 ```bash
-cd portfolio
+cd minimalist-portfolio
 ```
 
 Install the required packages:
